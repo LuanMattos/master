@@ -63,7 +63,12 @@ psql -c "ALTER USER postgres WITH PASSWORD 'nova_senha'" -d postgres
 startar:
 sudo  -u postgre psql
 
+-----------------codegniter-----------------------
+Crirar date_to_br() === > system/core/common.php
 
+
+
+----------------------------------------
 
 DOCKER----------------------------------
 
