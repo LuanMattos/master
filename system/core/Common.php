@@ -26,6 +26,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link		https://codeigniter.com/user_guide/
  */
 
+// -----------------------------Funções inerentes ao sistema-------------------------------------------
+if ( ! function_exists('URL_RAIZ')) {
+    /**
+     * Determina a url raiz base do sistema
+     *
+     */
+    function URL_RAIZ(){
+        return "http" . (isset($_SERVER['HTTPS']) ?
+                (($_SERVER['HTTPS']=="on") ? "s" : "") : "") . "://" . "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    }
+}
 // ------------------------------------------------------------------------
 
 if ( ! function_exists('is_php'))
