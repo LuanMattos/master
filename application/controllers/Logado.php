@@ -11,6 +11,7 @@ class Logado extends CI_Controller {
     public function index(){
 
 
+<<<<<<< HEAD
 	}
 	public function auth(){
         $data=$this->input->post(null);
@@ -30,4 +31,21 @@ class Logado extends CI_Controller {
         $this->load->view('logado');
     }
 
+=======
+
+       $this->load->view('logado');
+
+	}
+	public function acao_salvar(){
+        $data=$this->input->post(null);
+
+        if(!empty($data['login']) || !empty($data['senha'])){
+            $this->Usuarios_model->setDados($data['login'],$data['senha']);
+
+        }
+        $data['error_senha']="Senha Inválida";
+        $this->load->view('index',$data);
+
+    }
+>>>>>>> f21574b377439b36c57f78b06312354c39fc1f7b
 }
