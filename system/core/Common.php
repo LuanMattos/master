@@ -34,7 +34,7 @@ if ( ! function_exists('URL_RAIZ')) {
      */
     function URL_RAIZ(){
         return "http" . (isset($_SERVER['HTTPS']) ?
-                (($_SERVER['HTTPS']=="on") ? "s" : "") : "") . "://" . "$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                (($_SERVER['HTTPS']=="on") ? "s" : "") : "") . "://" . "$_SERVER[HTTP_HOST]/master/";
     }
 }
 // ------------------------------------------------------------------------
@@ -59,6 +59,20 @@ if ( ! function_exists('is_php'))
 
 		return $_is_php[$version];
 	}
+}
+if (!function_exists('set_val'))
+{
+    /**
+     * determina se isset do objeto
+     *
+     * @param	string
+     * @return	bool
+     */
+
+    function set_val(){
+
+
+    }
 }
 
 // ------------------------------------------------------------------------
