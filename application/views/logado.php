@@ -1,7 +1,6 @@
 <head>
     <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/css/bootstrap.css">
-    <style>
-    </style>
+
 </head>
 <body>
 <div id="menu">
