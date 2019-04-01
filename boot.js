@@ -1,17 +1,9 @@
 ;(function() {
     'use strict';
 
-    require([ 'application/vendor/jquery'], function(name_controler) {
+    require([ 'application/vendor/jquery'], function() {
 
 
     });
 })();
 
-(function() {
-    'use strict';
-
-    require([ 'application/vendor/jquery/Logado'], function(name_controler) {
-
-
-    });
-})();

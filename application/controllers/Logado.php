@@ -6,24 +6,29 @@ class Logado extends CI_Controller {
         parent::__construct();
         $this->load->model("Usuarios_model");
     }
-
-
     public function index(){
+        $data=$this->input->post(null);
+        $user=$this->Usuarios_model->login($data['login']);
+
+        if(!empty($user)){
+            foreach ($user as $line){
+                if($line['senha'] === $data['senha']) {
+                    $this->load->view('logado');
+                }
+            }
+        }else{
+            $data['error_senha'] = "Usuário/senha errados";
+            $this->load->view('index',$data);
+        }
 
 
 
-       $this->load->view('logado');
+
+
 
 	}
-	public function acao_salvar(){
-        $data=$this->input->post(null);
-
-        if(!empty($data['login']) || !empty($data['senha'])){
-            $this->Usuarios_model->setDados($data['login'],$data['senha']);
-
-        }
-        $data['error_senha']="Senha Inválida";
-        $this->load->view('index',$data);
+	public function cadastrar(){
 
     }
+
 }

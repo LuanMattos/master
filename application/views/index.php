@@ -6,11 +6,11 @@
 <body>
 
 <div  class="col-4 mx-auto d-flex h-100 flex-column p-3">
-    <form method="POST" class="form-signin" action="<?php echo site_url('Logado/acao_salvar')?>">
+    <form method="POST" class="form-signin" action="<?php echo site_url('Logado/index')?>">
         <div class="text-center mb-4">
             <div class="form-label-group">
                 <img width="100" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png">
-                <h1 class="h3 mb-3">Router Firewall six</h1>
+                <h1 class="h3 mb-3">Área de acesso</h1>
             </div>
 
         </div>
