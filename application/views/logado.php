@@ -4,6 +4,21 @@
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/jquery3.3/jquery.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/js/bootstrap.js"></script>
 
+<style>
+    a{
+        text-decoration:none;
+        color:white;
+    }
+    a:hover{
+        text-decoration:none;
+        color:white;
+    }
+    img.menu{
+        max-width: 50px;
+    }
+
+</style>
+
 <div class="pos-f-t">
     <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
@@ -11,38 +26,60 @@
             <span class="text-muted">
             </span>
             <br>
-            <table class="table table-borderless table-hover">
-                <thead class="text-center">
-                <tr class="text-white font-weight-bold">
-                    <td>Único</td>
-                    <td>Arquivos</td>
-                    <td>Redes sociais</td>
-                    <td>Engenharia social</td>
-                    <td>Lista de ferramentas</td>
-                    <td>Manuais</td>
-                    <td>Configurações</td>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="text-center">
-                    <td><a href="#" class="text-white">Cadastro</a></td>
-                    <td><a href="#" class="text-white">Imagens</a></td>
-                    <td><a href="#" class="text-white">Facebook</a></td>
-                    <td><a href="#" class="text-white">Status</a></td>
-                    <td><a href="#" class="text-white">Abrir Lista</a></td>
-                    <td><a href="#" class="text-white">Oficiais</a></td>
-                    <td><a href="#" class="text-white">Acessos</a></td>
-                </tr>
-                <tr class="text-center">
-                    <td><a href="#" class="text-white">Listagem</a></td>
-                    <td><a href="#" class="text-white">Áudios</a></td>
-                    <td><a href="#" class="text-white">Gmail</a></td>
-                    <td><a href="#" class="text-white">Cadastro</a></td>
-                    <td><a href="#" class="text-white">Nova</a></td>
-                    <td><a href="#" class="text-white">Adaptados</a></td>
-                    <td><a href="#" class="text-white">Adicionar Menu <b>+</b></a></td>
-                </tr>
+            <table class="table table-borderless">
 
+                <tbody>
+
+                <tr class="text-white font-weight-bold text-center text-white">
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-database.svg">
+                            <br>Único
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-sign-in.svg">
+                            <br>Arquivos
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-person-public.svg">
+                            <br>Redes sociais
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-finder.svg">
+                            <br>Engenharia social
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-wrench-screwdriver.svg">
+                            <br>Lista de ferramentas
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-book-3.svg">
+                            <br>Manuais
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-document-copy.svg">
+                            <br>Anotações
+                        </a>
+                    </td>
+                    <td class="">
+                        <a href="#">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-wrench.svg">
+                            <br>Configurações
+                        </a>
+                    </td>
+                </tr>
 
                 </tbody>
 

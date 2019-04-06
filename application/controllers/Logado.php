@@ -17,7 +17,7 @@ class Logado extends CI_Controller {
                 }
             }
         }else{
-            $data['error_senha'] = "Usuário/senha errados";
+            $data['error_senha'] = "Usuário/senha incorreto(s)";
             $this->load->view('index',$data);
         }
 
