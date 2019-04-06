@@ -9,15 +9,17 @@
     <form method="POST" class="form-signin" action="<?php echo site_url('Logado/index')?>">
         <div class="text-center mb-4">
             <div class="form-label-group">
-                <img width="100" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png">
+                <img width="200" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png">
                 <h1 class="h3 mb-3">Área de acesso</h1>
             </div>
 
         </div>
         <div class="form-label-group">
-            <input type="text" name='login' id="login" class="form-control" placeholder="Login" required autofocus>
-            <input type="password" name='senha' id="senha" class="form-control" placeholder="Senha" required autofocus>
-        </div>
+            <div class="input-group">
+                <input type="text" name='login' id="login" class="form-control" placeholder="Login" required autofocus>
+                <input type="password" name='senha' id="senha" class="form-control" placeholder="Senha" required autofocus></div>
+            </div>
+        <br>
         <div class="form-label-group">
             <div class="checkbox mb-3">
                 <span>
