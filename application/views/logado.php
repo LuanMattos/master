@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/css/bootstrap.css">
-<script type="text/javascript"
-        src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/jquery3.3/jquery.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/js/bootstrap.js"></script>
+<!--<script type="text/javascript"-->
+<!--        src="--><?//= URL_RAIZ() ?><!--application/assets/bootstrap-4.3.1/js/bootstrap.bundle.js"></script>-->
+<!--<script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/jquery3.3/jquery.js"></script>-->
 
 <style>
     a{
@@ -32,7 +32,7 @@
 
                 <tr class="text-white font-weight-bold text-center text-white">
                     <td class="">
-                        <a href="#">
+                        <a href="<?=site_url('unico/Unico/index')?>">
                             <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-database.svg">
                             <br>Único
                         </a>
@@ -79,6 +79,12 @@
                             <br>Configurações
                         </a>
                     </td>
+                    <td class="">
+                        <a href="<?=site_url('Logado/logout')?>/">
+                            <img class='menu' src="<?= URL_RAIZ()?>application/assets/icons/svg/si-glyph-circle-error.svg">
+                            <br>Sair
+                        </a>
+                    </td>
                 </tr>
 
                 </tbody>
@@ -100,9 +106,10 @@
 
 
 <script>
+$(function(){
+
+    event.preventDefault();
+});
 
 
-    $('#search').click(function () {
-
-    });
 </script>

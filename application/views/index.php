@@ -1,12 +1,15 @@
 <head>
-    <script data-main="js/boot" src="<?= URL_RAIZ() ?>application/assets/jquery3.3/require.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/js/bootstrap.js"></script>
     <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/css/bootstrap.css">
+<!--    <script data-main="js/boot" src="--><?//= URL_RAIZ() ?><!--application/assets/jquery3.3/require.js"></script>-->
+<!--    <script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/jquery3.3/jquery.js"></script>-->
+    <script data-main="js/boot" src="application/vendor/require.js"></script>
 
 </head>
 <body>
 
 <div  class="col-4 mx-auto d-flex h-100 flex-column p-3">
-    <form method="POST" class="form-signin" action="<?php echo site_url('Logado/index')?>">
+    <form method="POST" class="form-signin" id="formulario-login" action="<?php echo site_url('Logado/index')?>">
         <div class="text-center mb-4">
             <div class="form-label-group">
                 <img width="200" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png">
@@ -35,3 +38,11 @@
 </div>
 </div>
 </body>
+<script>
+    // $('#formulario-login').submit(function(event){
+    //     event.preventDefault();
+    //     console.log('aqui');
+    // });
+
+
+</script>

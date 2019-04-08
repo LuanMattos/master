@@ -49,11 +49,20 @@ Nomear um container e cria-lo: docker run -d -p 5000:5000 --name NomeDoRepositor
 Caso queira que o servidor restarte automaticamente caso caia:docker run -d -p 5000:5000 --restart=always --name repositorio registry
 
 Inserir a imagem no localhost:5000/php:docker tag wordpress 192.168.0.10:5000/wordpress
+
 Agora temos que pussh na imagem: docker push 192.168.0.10:5000/wordpress
+
 Agora vamos avisar docker daemon que podemos confiar no diretorio:/lib/systemd/system/docker.service
+
 (editando o arquivo = ExecStart=/usr/bin/dockerd --insecure-registry localhost:5000)
+
 (assim avisaremos que localhost:5000 sera permitido)
+
 Agora vamos reiniciar os serviços: systemctl daemon-reload | systemctl restart docker
+
+docker run --name teste-postgres --network=postgres-network -e "POSTGRES_PASSWORD=Postgres2018!"
+-p 5432:5432 -v /home/renatogroffe/Desenvolvimento/PostgreSQL:/var/lib/postgresql/data -d postgres
+
 
 APACHE----------------------------------
 Para conceder permissões para criar/editar/excluir arquivos no diretorio do apache, assim podendo também o php storm editar os arquivos:
