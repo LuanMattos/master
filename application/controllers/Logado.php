@@ -6,40 +6,40 @@ class Logado extends CI_Controller{
         parent::__construct();
         $this->load->model("Usuarios_model");
     }
-
     public function index(){
-        $data = $this->input->post(null);
-        $user = $this->Usuarios_model->login($data['login']);
+//        $data = $this->input->post(null);
+//        $user = $this->Usuarios_model->login($data['login']);
+//
+//        if (!empty($data) && !empty($user)) {
+//            foreach ($user as $line) {
+//            }
+//            if ($line['usuario'] === $data['login']) {
+//                if (password_verify($data['senha'], $line['senha']) == true) {
+////                    $cry_user = password_hash($line['usuario'], PASSWORD_DEFAULT);//criptografa a sessão
+//                    $this->session->set_userdata($line['usuario'], 1);
+//                    $this->load->view('logado');
+//                } else {
+//                    $data['error_senha'] = "Usuário/senha incorreto(s)";
+//                    $this->load->view('index', $data);
+//                }
+//            } else {
+//                $data['error_senha'] = "Usuário/senha incorreto(s)";
+//                $this->load->view('index', $data);
+//            }
+//        } else {
+//            $data['error_senha'] = "Usuário/senha incorreto(s)";
+//            $this->load->view('index', $data);
+//        }
 
-        if (!empty($data) && !empty($user)) {
-            foreach ($user as $line) {
-            }
 
-            if ($line['usuario'] === $data['login']) {
 
-                if (password_verify($data['senha'], $line['senha']) == true) {
-//                    $cry_user = password_hash($line['usuario'], PASSWORD_DEFAULT);//criptografa a sessão
-                    $this->session->set_userdata($line['usuario'], 1);
-                    $this->load->view('logado');
-                } else {
 
-                    $data['error_senha'] = "Usuário/senha incorreto(s)";
-                    $this->load->view('index', $data);
-                }
-
-            } else {
-
-                $data['error_senha'] = "Usuário/senha incorreto(s)";
-                $this->load->view('index', $data);
-            }
-
-        } else {
-            $data['error_senha'] = "Usuário/senha incorreto(s)";
-            $this->load->view('index', $data);
-        }
-
+//        $data = array("teste","teste");
+//        $this->save($validate,$data);
+        $this->form_validation($this->Usuarios_model);
 
     }
+
 
     public function logout(){
 //        $this->session->unset_userdata();

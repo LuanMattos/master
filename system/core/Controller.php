@@ -33,7 +33,6 @@ class CI_Controller {
 		log_message('info', 'Controller Class Initialized');
 	}
 
-	// --------------------------------------------------------------------
 
 	/**
 	 * Get the CI singleton
@@ -41,9 +40,25 @@ class CI_Controller {
 	 * @static
 	 * @return	object
 	 */
-	public static function &get_instance()
-	{
+	public static function &get_instance(){
 		return self::$instance;
 	}
+	public function form_validation($model){
+
+        $classe  = get_class_vars(get_class($model));
+
+        foreach($classe as $tabela=>$entidades){
+            echo $tabela."<br>";
+            foreach($entidades as $entidade=>$configs){
+                echo "Entidade: ";
+                echo $entidade."<br>";
+                echo "Configs: ";
+                echo $configs['type']."<br>";
+            }
+
+        }    }
+
+
+
 
 }

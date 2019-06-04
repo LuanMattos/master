@@ -3,8 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios_model extends CI_Model {
 
+    public $usuarios   = array(
+                             'usuario'=>array('type'=>'VARCHAR','required'=>'true','maxlength'=>500),
+                            'senha'=>array('type'=>'VARCHAR','required'=>'true','maxlength'=>500,'minglength'=>8)
+                            );
 
-	public function login($usuario){
+    public function __construct(){
+        parent::__construct();
+    }
+    public function login($usuario){
         $results = FALSE;
         $user = $this->db->get_where('usuarios',array('usuario'=>$usuario));
         if($user->num_rows() > 0 ){
@@ -14,4 +21,5 @@ class Usuarios_model extends CI_Model {
     return  $results;
 
     }
+
 }

@@ -72,5 +72,21 @@ class CI_Model {
 		//	most likely a typo in your model code.
 		return get_instance()->$key;
 	}
+    /**
+     * Função responsável por salvar no banco case tenha ID
+     * Função responsável por atualizar no banco caso não receba ID
+     * $table   = string                                --> tabela onde será inserido os dados
+     * $data    = array('nome'=>'joao','senha'=>'123')  --> array associativo com as respectivas entidades
+     */
+    public function save($data,$table){
+
+//        if(is_array($data)){
+//            return $this->insert($table,$data);
+//            return var_dump(array_merge($data,$table[]));
+//        }
+
+        return $table;
+
+    }
 
 }
