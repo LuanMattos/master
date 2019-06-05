@@ -5,6 +5,7 @@ class Logado extends CI_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->model("Usuarios_model");
+        $this->output->enable_profiler(FALSE);
     }
     public function index(){
 //        $data = $this->input->post(null);
@@ -36,7 +37,9 @@ class Logado extends CI_Controller{
 
 //        $data = array("teste","teste");
 //        $this->save($validate,$data);
-        $this->form_validation($this->Usuarios_model);
+        $data = array('usuario'=>'','senha'=>'fdsf');
+        $new_data = $this->form_validate($data,$this->Usuarios_model);
+        var_dump($new_data);
 
     }
 
