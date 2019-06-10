@@ -64,6 +64,7 @@ class CI_Model {
 	 *
 	 * @param	string	$key
 	 */
+
 	public function __get($key)
 	{
 		// Debugging note:
@@ -72,6 +73,26 @@ class CI_Model {
 		//	most likely a typo in your model code.
 		return get_instance()->$key;
 	}
+
+
+    /** Responsável por validar os dados do formulário
+     * @param $data
+     * @param $model
+     */
+
+    public function form_validate($data){
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules($this->validate);
+
+        if($this->form_validation->run() == FALSE) {
+            $this->output->set_output(json_encode(array('error'=>validation_errors())));
+
+        }
+
+
+    }
+
     /**
      * Função responsável por salvar no banco case tenha ID
      * Função responsável por atualizar no banco caso não receba ID

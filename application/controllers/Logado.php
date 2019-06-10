@@ -37,10 +37,10 @@ class Logado extends CI_Controller{
 
 //        $data = array("teste","teste");
 //        $this->save($validate,$data);
-        $data = array('usuario'=>'','senha'=>'fdsf');
-        $new_data = $this->form_validate($data,$this->Usuarios_model);
-        var_dump($new_data);
-
+        date_to_br()
+        $data = array('usuario'=>'23423','senha'=>'fdsf');
+        $this->Usuarios_model->form_validate($data);
+//teste
     }
 
 
