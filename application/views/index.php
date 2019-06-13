@@ -1,10 +1,7 @@
 <head>
-    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/bootstrap-4.3.1/css/bootstrap.css">
-<!--    <script data-main="js/boot" src="--><?//= URL_RAIZ() ?><!--application/assets/jquery3.3/require.js"></script>-->
-<!--    <script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/jquery3.3/jquery.js"></script>-->
-    <script data-main="js/boot" src="application/vendor/require.js"></script>
-
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/dist/css/bootstrap.css">
 </head>
 <body>
 
@@ -19,8 +16,20 @@
         </div>
         <div class="form-label-group">
             <div class="input-group">
-                <input type="text" name='login' id="login" class="form-control" placeholder="Login" required autofocus>
-                <input type="password" name='senha' id="senha" class="form-control" placeholder="Senha" required autofocus></div>
+                <input type="text"
+                       name='login'
+                       id="login"
+                       class="form-control"
+                       placeholder="Login"
+                       autofocus
+                >
+                <input type="password"
+                       name='senha'
+                       id="senha"
+                       class="form-control"
+                       placeholder="Senha"
+                       autofocus
+                ></div>
             </div>
         <br>
         <div class="form-label-group">

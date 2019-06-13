@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Usuarios_model extends CI_Model{
 
     public $validate = array(array(
-            'field' => 'usuario',
-            'label' => 'Usuário',
+            'field' => 'login',
+            'label' => 'Login',
             'rules' => 'required'
         ), array(
             'field' => 'senha',

@@ -79,7 +79,6 @@ class CI_Model {
      * @param $data
      * @param $model
      */
-
     public function form_validate($data){
         $this->load->library('form_validation');
 
@@ -87,9 +86,7 @@ class CI_Model {
 
         if($this->form_validation->run() == FALSE) {
             $this->output->set_output(json_encode(array('error'=>validation_errors())));
-
         }
-
 
     }
 
@@ -99,14 +96,11 @@ class CI_Model {
      * $table   = string                                --> tabela onde será inserido os dados
      * $data    = array('nome'=>'joao','senha'=>'123')  --> array associativo com as respectivas entidades
      */
-    public function save($data,$table){
+    public function save($data){
 
-//        if(is_array($data)){
-//            return $this->insert($table,$data);
-//            return var_dump(array_merge($data,$table[]));
-//        }
+        if(is_array($data)){
+        }
 
-        return $table;
 
     }
 
