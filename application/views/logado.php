@@ -90,6 +90,4 @@
      filter:alpha(opacity=65);" width="300" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png"/>
 </div>
 
-
-
 </html>
