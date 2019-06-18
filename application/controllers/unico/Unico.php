@@ -7,7 +7,7 @@ class Unico extends CI_Controller{
     }
 
     public function index(){
-        $this->load->view('logado');
+        $this->load->view('unico/unico');
 
     }
 

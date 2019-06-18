@@ -6,6 +6,7 @@ class Logado extends CI_Controller{
         parent::__construct();
         $this->load->model("Usuarios_model");
         $this->output->enable_profiler(FALSE);
+
     }
     public function index(){
         $data = $this->input->post(NULL,TRUE);
@@ -34,7 +35,7 @@ class Logado extends CI_Controller{
 
 
     public function logout(){
-        $this->session->unset_userdata();
+//        $this->session->unset_userdata();
         $this->session->sess_destroy();
         redirect();
     }
