@@ -7,7 +7,7 @@
 <body>
 
 <div  class="col-4 mx-auto d-flex h-100 flex-column p-3">
-    <form method="POST" class="form-signin" id="formulario-login" action="<?php echo site_url('Logado/index')?>">
+    <form method="POST" class="form-signin" id="formulario-login" action="<?= site_url('Logado/index')?>">
         <div class="text-center mb-4">
             <div class="form-label-group">
                 <img width="200" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png">

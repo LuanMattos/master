@@ -116,8 +116,6 @@
 <!--------------------------------------------------------------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
 <!--------------------------------------------------------------------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-<!--------------------------------------------------------------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/fakeLoader.js-master/js/fakeLoader.js"></script>
 <!--------------------------------------------------------------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
