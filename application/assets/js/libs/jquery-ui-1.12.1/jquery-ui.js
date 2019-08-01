@@ -11968,10 +11968,8 @@ $.widget( "ui.dialog", {
 		autoOpen: true,
 		buttons: [],
 		classes: {
-			"ui-dialog": "ui-corner-all  bg-dark ",
+			"ui-dialog": "bg-transparent-modal",
 			"ui-dialog-titlebar": "ui-corner-all"
-			
-			
 		},
 		closeOnEscape: true,
 		closeText: "Close",
@@ -11982,7 +11980,7 @@ $.widget( "ui.dialog", {
 		maxWidth: null,
 		minHeight: 150,
 		minWidth: 150,
-		modal: false,
+		modal: true,
 		position: {
 			my: "center",
 			at: "center",
@@ -11997,8 +11995,11 @@ $.widget( "ui.dialog", {
 				}
 			}
 		},
-		resizable: true,
-		show: null,
+		resizable: false,
+		show: {
+			effect: "scale",
+			duration: 200
+		},
 		title: null,
 		width: 300,
 

@@ -45,7 +45,7 @@ class CI_Controller
         return self::$instance;
     }
 
-    public function success($data = array()){
+    public function response($data = array()){
         return $this->output->set_output(json_encode($data));
     }
 

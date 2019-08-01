@@ -6,6 +6,7 @@
 
 /* Layout helpers
 ----------------------------------*/
+
 .ui-helper-hidden {
 	display: none;
 }
@@ -494,9 +495,13 @@ button.ui-button::-moz-focus-inner {
 	padding: .2em;
 	outline: 0;
 }
+
 .ui-dialog .ui-dialog-titlebar {
 	padding: .4em 1em;
 	position: relative;
+	border:0px;
+	border-radius:0px 0px 0px 0px;
+	margin: -0.18889em;
 }
 .ui-dialog .ui-dialog-title {
 	float: left;
@@ -506,6 +511,7 @@ button.ui-button::-moz-focus-inner {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
 .ui-dialog .ui-dialog-titlebar-close {
 	position: absolute;
 	right: .3em;
@@ -515,12 +521,16 @@ button.ui-button::-moz-focus-inner {
 	padding: 1px;
 	height: 20px;
 }
-.ui-dialog .ui-dialog-content {
+
+.ui-dialog .ui-dialog-content{
 	position: relative;
 	border: 0;
 	padding: .5em 1em;
 	background: none;
 	overflow: auto;
+	opacity: 0.5;
+	filter: alpha(opacity=0.65);
+	/*aqui*/
 }
 .ui-dialog .ui-dialog-buttonpane {
 	text-align: left;
@@ -528,29 +538,38 @@ button.ui-button::-moz-focus-inner {
 	background-image: none;
 	margin-top: .5em;
 	padding: .3em 1em .5em .4em;
+	opacity: 0.5;
+
 }
+
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
 	float: right;
+
 }
 .ui-dialog .ui-dialog-buttonpane button {
 	margin: .5em .4em .5em 0;
 	cursor: pointer;
+
 }
 .ui-dialog .ui-resizable-n {
 	height: 2px;
 	top: 0;
+
 }
 .ui-dialog .ui-resizable-e {
 	width: 2px;
 	right: 0;
+
 }
 .ui-dialog .ui-resizable-s {
 	height: 2px;
 	bottom: 0;
+
 }
 .ui-dialog .ui-resizable-w {
 	width: 2px;
 	left: 0;
+
 }
 .ui-dialog .ui-resizable-se,
 .ui-dialog .ui-resizable-sw,
@@ -558,14 +577,17 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-resizable-nw {
 	width: 7px;
 	height: 7px;
+
 }
 .ui-dialog .ui-resizable-se {
 	right: 0;
 	bottom: 0;
+
 }
 .ui-dialog .ui-resizable-sw {
 	left: 0;
 	bottom: 0;
+
 }
 .ui-dialog .ui-resizable-ne {
 	right: 0;
@@ -1279,25 +1301,25 @@ a.ui-button:active,
 .ui-corner-top,
 .ui-corner-left,
 .ui-corner-tl {
-	border-top-left-radius: 3px;
+	border-top-left-radius: 0px;
 }
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
-	border-top-right-radius: 3px;
+	border-top-right-radius: 0px;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
-	border-bottom-left-radius: 3px;
+	border-bottom-left-radius: 0px;
 }
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
 .ui-corner-br {
-	border-bottom-right-radius: 3px;
+	border-bottom-right-radius: 0px;
 }
 
 /* Overlays */

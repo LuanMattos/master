@@ -9,10 +9,13 @@ class SI_Controller extends CI_Controller{
     public function __construct(){
         parent::__construct();
         self::$instance =& $this;
+        $this->menu();
 
     }
 
-
+    public function menu(){
+        return    $this->load->view('menus/menu_unico/menu');
+    }
 
 
 }

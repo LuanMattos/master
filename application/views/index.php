@@ -1,16 +1,15 @@
 <head>
-
-    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
-    <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/bootstrap-4.1.3/dist/css/bootstrap.css">
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 </head>
 <body>
 
 <div  class="col-4 mx-auto d-flex h-100 flex-column p-3">
     <form method="POST" class="form-signin" id="formulario-login" action="<?= site_url('Logado/index')?>">
-        <div class="text-center mb-4">
+            <div class="text-center mb-4">
             <div class="form-label-group">
-                <img width="200" src="<?= URL_RAIZ() ?>application/assets/imagens/look.png">
+                <img width="200" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
                 <h1 class="h3 mb-3">Área de acesso</h1>
             </div>
 
