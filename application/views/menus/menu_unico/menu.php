@@ -94,4 +94,6 @@
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_imagem.js"></script>
 <!---------------------------------------------cadastro-unico---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_unico.js"></script>
+<!---------------------------------------------cadastro-unico---------------------------------------------------------->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 

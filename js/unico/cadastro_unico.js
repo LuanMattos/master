@@ -13,37 +13,31 @@ var un_unico = {
         var self = this;
         $('.container').removeClass('d-none');
 
-        App.modal();
-        // $('.conteudo-div').dialog({
-        //     title: "Cadastro Único",
-        //     width: 1000,
-        //     height: 500,
-        //     autoOpen: true,
-        //     open: function (event, ui) {
-        //         console.log(j.html);
-        //         event.target.innerHTML = j.data;
-        //
-        //     }
-        //
-        // });
-
-        $(document).ready(function () {
-            $.ajax({
-                url: self.Url("/master/index.php/unico/", "cadastro_unico/Cadastro_unico/index"),
-                type: 'POST',
-                dataType: "json",
-                async: true,
-                data: {
-                    id: "AJAX ok"
-                },
-                success: function (j) {
-                    console.log(j);
+        // console.log(App.modal());
+        // console.log(Contents());
 
 
-                },
 
-            });
+        App.modal({
+            url:self.Url("/master/index.php/unico/", "cadastro_unico/Cadastro_unico/index"),
+            title:"Cadastro Único",
+            callback:function(j){
+                var html = JSON.stringify(j.html);
+                var json = JSON.parse(html);
+
+                div.html("<button id='confirmar'>Confirmar</button>");
+                $("#confirmar").on("click",function(){
+                    alert('fsf');
+                })
+
+            }
+
+
         });
+
+
+
+
 
 
 
