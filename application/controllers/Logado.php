@@ -10,7 +10,7 @@ class Logado extends CI_Controller{
     public function index(){
         $data = $this->input->post(NULL,TRUE);
         $user = $this->Usuarios_model->login($data['login']);
-//        var_dump(password_hash("k2l9g3v1", PASSWORD_DEFAULT));//criptografa a sessão
+//        var_dump(password_hash("saidaqui", PASSWORD_DEFAULT));//criptografa a sessão
         if (!empty($data) && !empty($user)) {
             foreach ($user as $line) {}
             if ($line['usuario'] === $data['login']) {
