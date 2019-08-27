@@ -38,7 +38,7 @@ class Cadastro_unico extends CI_Controller{
             1=>"Maria",
             2=>"fulano"]
         ;
-//        debug_x($data);
+//        pach_x($data);
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response(compact("html","data"));
 
