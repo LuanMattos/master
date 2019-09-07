@@ -46,8 +46,14 @@ App.modal = function(options){// ui-dialog bg-transparent-modal ui-widget ui-wid
                     width: options.width,
                     height: options.height,
                     autoOpen: true,
-                    open:  function (event, ui) {
-                        options.callback = j;
+                    open:  function (div) {
+                        console.log(j.data);
+                        console.log(j.html);
+
+                        $("div#app-modal.ui-dialog-content.ui-widget-content").append();
+
+                        // options.callback = j;
+                        // console.log(options.callback);
 
                     }
 

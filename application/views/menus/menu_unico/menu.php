@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/fakeLoader.js-master/dist/fakeLoader.min.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.css">
+<link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/vue.min.js">
+
 
 <body>
 <div id="full">
