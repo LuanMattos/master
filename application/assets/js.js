@@ -10,7 +10,7 @@ function Contents() {
 
 var App = {}
 
-App.modal = function(options){// ui-dialog bg-transparent-modal ui-widget ui-widget-content ui-front ui-draggable
+App.modal = function(options){
 
     if(typeof(options.width) == "undefined"){
         options.width = 1000;
@@ -28,36 +28,27 @@ App.modal = function(options){// ui-dialog bg-transparent-modal ui-widget ui-wid
 
     }
 
-    $(document).ready(function () {
+        $(document).ready( function () {
+
         $.ajax({
             url: options.url,
             type: 'POST',
             dataType: "json",
+            contentType: "application/json; charset=utf-8",
             async: true,
             data: {
                 id: "AJAX ok"
             },
-            success: function (j) {
+            success:    function (j) {
+                var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'></div>").html(j.html);
 
-                var div = $("<div id='app-modal' class='' style='color:white;font-family: verdana'></div>");
-
-                $(div).dialog({
-                    title: options.title,
-                    width: options.width,
-                    height: options.height,
-                    autoOpen: true,
-                    open:  function (div) {
-                        console.log(j.data);
-                        console.log(j.html);
-
-                        $("div#app-modal.ui-dialog-content.ui-widget-content").append();
-
-                        // options.callback = j;
-                        // console.log(options.callback);
-
-                    }
-
-                });
+                    $(div).dialog({
+                        title: options.title,
+                        width: options.width,
+                        height: options.height,
+                        autoOpen: true,
+                        open:options.callback
+                    });
 
             },
 

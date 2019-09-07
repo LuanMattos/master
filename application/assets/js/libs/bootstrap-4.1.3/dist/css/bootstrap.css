@@ -6160,8 +6160,17 @@ button.bg-dark:focus {
   background-color: transparent !important;
 }
 /*transparencia para a modal do sistema*/
-.bg-transparent-modal{
+.bg-transparent-modal-prompt{
   background: rgba(0, 0, 0, 0.98) !important;
+}
+.bg-transparent-modal-user{
+  background: #d1d1d1 !important;
+}
+.bg-transparent-modal-title-color-text{
+  color: #0056b3 !important;
+}
+.bg-transparent-modal-title-color-back-ground{
+  background: #1b1e21 !important;
 }
 
 .border {

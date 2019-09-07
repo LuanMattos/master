@@ -17,11 +17,14 @@ var un_unico = {
         // console.log(Contents());
 
 
-
         App.modal({
             url:self.Url("/master/index.php/unico/", "cadastro_unico/Cadastro_unico/index"),
             title:"Cadastro Único",
             callback:function(j){
+                $("#confirmar").on("click",function(){
+                    alert("fsf");
+                })
+
 
             }
         });

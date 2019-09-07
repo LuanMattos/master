@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/fakeLoader.js-master/dist/fakeLoader.min.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.css">
-<link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/vue.min.js">
 
 
 <body>
@@ -81,6 +80,11 @@
 
 
 </body>
+<!----------------------------------------------vue-------------------------------------------------------------->
+<!--<script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/js/libs/vue.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+
 <!----------------------------------------------bootstrap-------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
