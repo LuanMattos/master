@@ -1,11 +1,13 @@
 var App = {}
 
-App.url = function(modulo , controller_parametro){
-    console.log(window.location);
-    // /master/index.php/unico/Unico/index
-    // return "/master/index.php/" + window.origin + modulo + controller_parametro
-},
+App.url = function(modulo , controller,methods,params){
 
+    if(typeof(params) !== 'undefined'){
+            return   window.origin + "/master" + "/" + modulo + "/" +  controller + "/" + methods + "/" + params
+    }else{
+        return   window.origin + "/master" + "/" + modulo + "/" +  controller + "/" + methods
+    }
+},
 App.modal = function(options){
 
     if(typeof(options.width) == "undefined"){

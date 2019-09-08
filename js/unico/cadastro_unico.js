@@ -1,38 +1,36 @@
 var un_unico = {
 
-    Url: function (modulo, controller) {
-        App.url(modulo,controller);
-
+    Url: function (metodo,params) {
+        return App.url("unico","cadastro_unico/Cadastro_unico",metodo,params);
     },
 
     Render: function () {
         var self = this;
+
+        var Form = $("#form-cadastro-unico-container");
+        Form.find(".buscar").on("click",function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            let value = Form.find("#buscar").val();
+            self.Buscar(value);
+        })
 
     },
     Init: function () {
         var self = this;
 
         App.modal({
-        // /master/index.php/unico/Unico/index
-            url:self.Url("unico/", "cadastro_unico/Cadastro_unico/index"),
+            url:self.Url("index"),
             title:"Cadastro Único",
-            callback:function(j){
-                var Form = $("#form-cadastro-unico-container");
-                Form.find(".buscar").click(function(e){
-                    e.preventDefault();
-                    e.stopPropagation();
-                    let value = Form.find("#buscar").val();
-                    self.Buscar(value);
-                })
-
-
+            callback:function(div){
+                self.Render(div);
             }
         });
     },
     Buscar:function(value){
         let self = this;
         $.post(
-            self.Url("unico/", "cadastro_unico/Cadastro_unico/index"),
+            self.Url("index"),
             {
                 search:value
             },
