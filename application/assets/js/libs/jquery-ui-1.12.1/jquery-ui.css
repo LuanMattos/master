@@ -528,7 +528,6 @@ button.ui-button::-moz-focus-inner {
 	padding: .5em 1em;
 	background: none;
 	overflow: auto;
-	opacity: 0.5;
 	filter: alpha(opacity=0.65);
 	/*aqui*/
 }

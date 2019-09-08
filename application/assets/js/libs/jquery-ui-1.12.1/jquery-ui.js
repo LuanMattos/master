@@ -11969,9 +11969,9 @@ $.widget( "ui.dialog", {
 		buttons: [],
 		classes: {
 			// "ui-dialog": "bg-transparent-modal-prompt",
-			"ui-dialog": "bg-transparent-modal-user",
-			// "ui-dialog-titlebar": "ui-corner-all"
-			"ui-dialog-titlebar": "bg-transparent-modal-title-color-back-ground bg-transparent-modal-title-color-text"
+			// "ui-dialog": "bg-transparent-modal-user",
+			"ui-dialog-titlebar": "ui-corner-all",
+			"ui-dialog-titlebar": "default title-default-text"
 		},
 		closeOnEscape: true,
 		closeText: "Close",

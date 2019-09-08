@@ -39,8 +39,8 @@ App.modal = function(options){
             data: {
                 id: "AJAX ok"
             },
-            success:    function (j) {
-                var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'></div>").html(j.html);
+            success: function (j) {
+                var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'></div>").append(j.html);
 
                     $(div).dialog({
                         title: options.title,

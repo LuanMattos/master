@@ -6166,10 +6166,10 @@ button.bg-dark:focus {
 .bg-transparent-modal-user{
   background: #d1d1d1 !important;
 }
-.bg-transparent-modal-title-color-text{
+.title-default-text{
   color: #0056b3 !important;
 }
-.bg-transparent-modal-title-color-back-ground{
+.default{
   background: #1b1e21 !important;
 }
 

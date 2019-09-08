@@ -11,7 +11,6 @@ var un_unico = {
     },
     Init: function () {
         var self = this;
-        $('.container').removeClass('d-none');
 
         // console.log(App.modal());
         // console.log(Contents());
@@ -21,7 +20,7 @@ var un_unico = {
             url:self.Url("/master/index.php/unico/", "cadastro_unico/Cadastro_unico/index"),
             title:"Cadastro Único",
             callback:function(j){
-                $("#confirmar").on("click",function(){
+                $("#enviar").on("click",function(){
                     alert("fsf");
                 })
 

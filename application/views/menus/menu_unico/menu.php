@@ -2,7 +2,6 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.css">
 
-
 <body>
 <div id="full">
     <nav class="bg-dark navbar navbar-expand-lg">
@@ -63,9 +62,7 @@
         </div>
     </nav>
 </div>
-<div id="cadastro">
 
-</div>
 <div id="imagens">
     <?php $this->load->view('unico/cadastro_imagens/index'); ?>
 </div>
@@ -80,10 +77,6 @@
 
 
 </body>
-<!----------------------------------------------vue-------------------------------------------------------------->
-<!--<script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/js/libs/vue.min.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
-
 
 <!----------------------------------------------bootstrap-------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
