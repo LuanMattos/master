@@ -12,28 +12,34 @@ var un_unico = {
     Init: function () {
         var self = this;
 
-        // console.log(App.modal());
-        // console.log(Contents());
-
-
         App.modal({
             url:self.Url("/master/index.php/unico/", "cadastro_unico/Cadastro_unico/index"),
             title:"Cadastro Único",
             callback:function(j){
-                $("#enviar").on("click",function(){
-                    alert("fsf");
+                var Form = $("#form-cadastro-unico-container");
+                Form.find(".buscar").on("click",function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    let value = Form.find("#buscar").val();
+                    self.Buscar(value);
                 })
 
 
             }
         });
+    },
+    Buscar:function(value){
+        let self = this;
+        $.post(
+            self.Url("/master/index.php/unico/", "cadastro_unico/Cadastro_unico/buscar"),
+            {
+                search:value
+            },
+            function(j){
+                console.log(j);
 
-
-
-
-
-
-
+            },'json')
 
     }
+
 }

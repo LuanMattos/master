@@ -1,14 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed samerda');
-
+defined('BASEPATH') OR exit('No direct script access allowed ');
 class Cadastro_unico extends CI_Controller{
     public function __construct(){
         parent::__construct();
+
     }
 
     public function index(){
+
         $id     = $this->input->post('id',TRUE);
-        $data   = [
+            $data   = [
             0=>[
                 "nome"=>"Fulano Ciclano Beutrano",
                 "cpf"=>"022323332",
@@ -36,12 +37,19 @@ class Cadastro_unico extends CI_Controller{
                 ]
             ],
             1=>"Maria",
-            2=>"fulano"]
-        ;
+            2=>"fulano"];
 //        pach_x($data);
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response(compact("html","data"));
 
+
+    }
+    public function buscar(){
+        $datapost = $this->input->post("search",TRUE);
+        debug($datapost);
+        if(isset($datapost->search)){
+            debug($datapost->search);
+        }
     }
 
     public function logout(){
