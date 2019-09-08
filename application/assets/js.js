@@ -1,14 +1,10 @@
-function Contents() {
-    if (!Contents.instance) {
-        Contents.instance = this;
-    }
-
-    return Contents.instance;
-}
-
-
-
 var App = {}
+
+App.url = function(modulo , controller_parametro){
+    console.log(window.location);
+    // /master/index.php/unico/Unico/index
+    // return "/master/index.php/" + window.origin + modulo + controller_parametro
+},
 
 App.modal = function(options){
 
