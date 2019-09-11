@@ -494,14 +494,16 @@ button.ui-button::-moz-focus-inner {
 	left: 0;
 	padding: .2em;
 	outline: 0;
+	border-radius:5px 5px 0px 0px;
+
 }
 
 .ui-dialog .ui-dialog-titlebar {
 	padding: .4em 1em;
 	position: relative;
 	border:0px;
-	border-radius:0px 0px 0px 0px;
-	margin: -0.18889em;
+	border-radius:5px 5px 0px 0px;
+	margin: -0.33em;
 }
 .ui-dialog .ui-dialog-title {
 	float: left;

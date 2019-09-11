@@ -1,51 +1,59 @@
 <head>
-    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
+    <script type="text/javascript"
+            src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript"
+            src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
-</head>
-<body>
+    <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css">
 
-<div  class="col-4 mx-auto d-flex h-100 flex-column p-3">
-    <form method="POST" class="form-signin" id="formulario-login" action="<?= site_url('Logado/index')?>">
-            <div class="text-center mb-4">
+</head>
+<style>
+    .background-index {
+        filter: alpha(opacity=50);
+
+        background-image: url(<?= URL_RAIZ() ?>application/assets/js/libs/imagens/index_bg.png);
+        background-repeat: repeat;
+    }
+
+</style>
+<body class="background-index">
+
+<div class="col-4 mx-auto d-flex h-100 flex-column p-3 ">
+    <form method="POST" class="form-signin" id="formulario-login" action="<?= site_url('Logado/index') ?>">
+        <div class="text-center mb-4">
             <div class="form-label-group">
-                <img width="200" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
+                <img width="350" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
                 <h1 class="h3 mb-3">Área de acesso</h1>
             </div>
 
         </div>
-        <div class="form-label-group">
-            <div class="input-group">
-                <input type="text"
-                       name='login'
-                       id="login"
-                       class="form-control"
-                       placeholder="Login"
-                       autocomplete="off"
-                       autofocus
-                >
-                <input type="password"
-                       name='senha'
-                       id="senha"
-                       class="form-control"
-                       placeholder="Senha"
-                       autocomplete="off"
-                       autofocus
-                ></div>
-            </div>
-        <br>
-        <div class="form-label-group">
-            <div class="checkbox mb-3">
-                <span>
-<!--                <input type="checkbox" value="1">Relembrar Senha-->
-                </span>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Usuário</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="Login" name="login">
             </div>
         </div>
-        <button class="btn  bg-dark btn-block text-white" type="submit">Entrar</button>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Senha</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Senha" name="senha">
+
+                <div class=" row m-4">
+                    <button type="submit" class=" btn btn-block btn-primary"> Entrar &nbsp &nbsp<i class="fas fa-key"></i> </button>
+                </div>
+            </div>
+        </div>
+
     </form>
     <p class="text-danger">
-<?php if(isset($error_senha)){echo $error_senha;}else{echo " ";}?>
+        <?php if (isset($error_senha)) {
+            echo $error_senha;
+        } else {
+            echo " ";
+        } ?>
     </p>
 </div>
 </div>
 </body>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
+

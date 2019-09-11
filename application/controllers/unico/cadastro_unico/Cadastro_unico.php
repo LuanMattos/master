@@ -9,7 +9,6 @@ class Cadastro_unico extends CI_Controller{
 
     public function index(){
         $datapost = $this->input->post(NULL,TRUE);
-        debug_x($datapost);
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response(compact("html"));

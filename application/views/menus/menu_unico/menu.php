@@ -1,10 +1,23 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.css">
+<link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css">
+
+<body>
+<style>
+    .bg-default{
+        background-color: #005599;
+    }
+    *{
+        color:white;
+        text-decoration: none;
+    }
+
+</style>
 
 <body>
 <div id="full">
-    <nav class="bg-dark navbar navbar-expand-lg">
-        <a class="text-white" href="#">Home</a>
+    <nav class="bg-default navbar navbar-expand-lg">
+        <a class="text-white" href="#?>">Home</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -53,7 +66,7 @@
             <ul>
                 <li class="list-group">
                     <a href="<?= site_url('Logado/logout') ?>">
-                        <i class="glyphicon-fast-backward"></i>Sair
+                        <i class="fas fa-sign-out-alt"></i>Sair
                     </a>
                 </li>
             </ul>
@@ -67,16 +80,16 @@
 </div>
 
 
-<div class="text-center mb-5">
+<div class="text-center mb-5 mt-5">
     <div class="form-label-group">
-        <img width="200" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
+        <img class="rounded mx-auto d-block" width="550" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
     </div>
 
 </div>
 
-
 </body>
-
+<!--------------------------------------------------------------------------------------------------------------------->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
 <!----------------------------------------------bootstrap-------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>

@@ -1,123 +1,104 @@
 <!------------------------------------------------------------------------------------------------------------>
-<link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/fakeLoader.js-master/dist/fakeLoader.min.css">
-<!------------------------------------------------------------------------------------------------------------>
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 <!------------------------------------------------------------------------------------------------------------>
+<link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css">
 <body>
+<style>
+    .bg-default{
+        background-color: #005599;
+    }
+    *{
+        color:white;
+        text-decoration: none;
+    }
+
+</style>
 <div id="full">
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
+            <div class="bg-default p-4">
                 <h5 class="text-white h4 font-weight-bold">Menu</h5>
-                <span class="text-muted"></span>
+
                 <table class="table table-borderless">
-                    <tbody>
-                    <tr class="text-white font-weight-bold text-center text-white">
+                    <tr>
                         <td>
                             <a href="<?= site_url('unico/Unico/index') ?>">
-                                <img class='menu'
-                                     style="width: 50px;height: 50px"
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-database.svg">
-                                <br>Único
+                                Unificado
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img class='menu'
-                                     style="width: 50px;height: 50px"
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-sign-in.svg">
-                                <br>Arquivos
+                                Agendamentos
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img style="width: 50px;height: 50px"
-                                     class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-person-public.svg">
-                                <br>Redes sociais
+                                Agendamentos
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img style="width: 50px;height: 50px"
-                                     class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-finder.svg">
-                                <br>Engenharia social
+                                Profissionais
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img style="width: 50px;height: 50px"
-                                     class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-wrench-screwdriver.svg">
-                                <br>Lista de ferramentas
+                                Pacientes
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img style="width: 50px;height: 50px"
-                                     class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-book-3.svg">
-                                <br>Manuais
+                                Pronto Atendimento
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img style="width: 50px;height: 50px"
-                                     class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-document-copy.svg">
-                                <br>Anotações
+
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                <img style="width: 50px;height: 50px"
-                                     class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-wrench.svg">
-                                <br>Configurações
+
                             </a>
                         </td>
                         <td>
-                            <a href="<?= site_url('Logado/logout') ?>/">
-                                <img class='menu'
-                                     src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/svg/si-glyph-circle-error.svg">
-                                <br>Sair
+                            <a href="<?= site_url('Logado/logout') ?>">
+                                <i class="fas fa-sign-out-alt"></i>Sair
                             </a>
                         </td>
                     </tr>
 
-                    </tbody>
+
 
                 </table>
             </div>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-default">
             <button class="navbar-toggler"
                     type="button"
+                    style="border:none;"
                     data-toggle="collapse"
                     data-target="#navbarToggleExternalContent"
                     aria-controls="navbarToggleExternalContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
             >
-                <span class="navbar-toggler-icon"></span>
+
+                <span style="font-size: 35px;" class="far fa-compass"></span>
             </button>
         </nav>
     </div>
 
-    <div style="position:fixed; top:30%;left:35%;">
-        <img class="rounded mx-auto d-block " style="webkit-opacity:020;opacity:0.20;-moz-opacity: 0.20;
-     filter:alpha(opacity=65);" width="300" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png"/>
+    <div class="text-center mb-5 mt-5">
+        <div class="form-label-group">
+            <img class="rounded mx-auto d-block" width="550" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
+        </div>
     </div>
-
 </div>
-
 </body>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
 <!--------------------------------------------------------------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
 <!--------------------------------------------------------------------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/fakeLoader.js-master/js/fakeLoader.js"></script>
-<!--------------------------------------------------------------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
-<!--------------------------------------------------------------------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>js/logado.js"></script>
+
