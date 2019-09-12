@@ -11962,18 +11962,18 @@ var widgetsResizable = $.ui.resizable;
 
 
 $.widget( "ui.dialog", {
-	version: "1.12.1",
+	version: "x",
 	options: {
 		appendTo: "body",
 		autoOpen: true,
 		buttons: [],
 		classes: {
-			// "ui-dialog": "bg-transparent-modal-prompt",
+			"ui-button-icon ui-icon ui-icon-closethick":"text-white",
 			"ui-dialog": "bg-transparent-modal-user ",
-			"ui-dialog-titlebar": "default title-default-text"
+			"ui-dialog-titlebar": "default title-default-text",
 		},
 		closeOnEscape: true,
-		closeText: "Close",
+		closeText: "Sair",
 		draggable: true,
 		hide: null,
 		height: "auto",

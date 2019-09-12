@@ -6175,6 +6175,22 @@ button.bg-dark:focus {
 .default{
   background: #2167ba !important;
 }
+.title-default-text-danger{
+  color: white !important;
+  font-size:13px;
+  border-style:none;
+}
+.default-danger{
+  background: #859999 !important;
+}
+.title-default-text-missing{
+  color: white !important;
+  font-size:13px;
+  border-style:none;
+}
+.default-missing{
+  background: #43d241 !important;
+}
 
 .border {
   border: 1px solid #dee2e6 !important;

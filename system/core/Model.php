@@ -64,7 +64,8 @@ class CI_Model {
 	 *
 	 * @param	string	$key
 	 */
-
+	private $table_index;
+	private $table;
 	public function __get($key)
 	{
 		// Debugging note:
@@ -73,7 +74,18 @@ class CI_Model {
 		//	most likely a typo in your model code.
 		return get_instance()->$key;
 	}
-
+	public function set_table_index($table_index){
+	    $this->table_index = $table_index;
+    }
+    public function get_table_index(){
+	    return $this->table_index;
+    }
+    public function set_table($table){
+	    $this->table = $table;
+    }
+    public function get_table(){
+	    return $this->table;
+    }
 
     /** Responsável por validar os dados do formulário
      * @param $data
@@ -96,12 +108,28 @@ class CI_Model {
      * $table   = string                                --> tabela onde será inserido os dados
      * $data    = array('nome'=>'joao','senha'=>'123')  --> array associativo com as respectivas entidades
      */
-    public function save($data){
-
+    public function save($data = null,$where = NULL){
         if(is_array($data)){
+            if(array_key_exists($this->get_table_index(),$data)){
+//                unset($data[$this->get_table_index()]);
+
+                $table_index = $this->get_table_index();
+                $value_index = $data[$this->get_table_index()];
+
+                $save = $this->db->update($this->get_table(),$data,"$table_index = $value_index");
+//                $table, $data, $where
+                if(!$save){
+                    $this->db->error();
+                }
+            }else{
+                $save = $this->db->insert($this->get_table(),$data);
+                if(!$save){
+                    $this->db->error();
+                }
+            }
+
+
         }
-
-
     }
 
 }

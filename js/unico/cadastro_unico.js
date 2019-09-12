@@ -19,11 +19,13 @@ var un_unico = {
     Init: function () {
         var self = this;
 
+
         App.modal({
             url:self.Url("index"),
             title:"Cadastro Único",
             callback:function(div){
                 self.Render(div);
+
             }
         });
     },
