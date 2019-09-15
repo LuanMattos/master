@@ -20,7 +20,7 @@ class Un_cadastro_unificado_model extends CI_Model {
         parent::__construct();
         $this->set_table_index("codigo");
         $this->set_table("da_dados_globais");
-        //tabela apenas para teste
+        //tabela apenas para teste - original = un_cadastro_unificado
     }
 
 

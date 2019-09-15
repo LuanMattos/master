@@ -35,6 +35,9 @@
  * @since	Version 1.0.0
  * @filesource
  */
+
+use Illuminate\Http\Response;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
@@ -101,12 +104,45 @@ class CI_Model {
         }
 
     }
+    /**
+     * Responsável pela busca de dados através da condição Where
+     * Se não informada a condição Where retornal todos os dados
+     * @get_hwere
+     * Where = []
+    **/
+    public function getwhere($where = null,$result = "array",$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL){
+
+        $getWhere = $this->db->order_by($orderby,$direction)->get_where($this->get_table(), $where, $limit, $offset);
+
+        if($result === "object"){
+            $result =  $getWhere->result_object();
+            $num_rows['num_rows'] = $getWhere->num_rows();
+            $this->db->order_by($orderby);
+            return $result;
+
+        }elseif($result === "array"){
+            $result = $getWhere->result_array();
+            $num_rows['num_rows'] = $getWhere->num_rows();
+
+            return $result;
+        }
+    }
+    /**
+     * Função delete com condição Where
+    **/
+
+    public function deletewhere($where = null,$limit = 1,$reset_data = TRUE){
+
+        return $this->db->delete($this->get_table(),$where,$limit,$reset_data);
+
+    }
 
     /**
      * Função responsável por salvar no banco case tenha ID
      * Função responsável por atualizar no banco caso não receba ID
      * $table   = string                                --> tabela onde será inserido os dados
      * $data    = array('nome'=>'joao','senha'=>'123')  --> array associativo com as respectivas entidades
+     * Erro ainda a serrem melhorados
      */
     public function save($data = NULL){
 

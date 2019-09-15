@@ -111,6 +111,13 @@ if ( ! function_exists('debug')) {
         exit;
     }
 }
+if ( ! function_exists('debug_json')) {
+    function debug_json()
+    {
+        $data = func_get_args();
+        debug(json_encode($data, JSON_PRETTY_PRINT));
+    }
+}
 // ------------------------------------------------------------------------
 
 if ( ! function_exists('debug_x')) {

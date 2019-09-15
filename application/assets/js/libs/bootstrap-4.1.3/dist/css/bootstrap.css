@@ -8805,6 +8805,9 @@ button.bg-dark:focus {
 .text-center {
   text-align: center !important;
 }
+.cursor-pointer{
+  cursor:pointer;
+}
 
 @media (min-width: 576px) {
   .text-sm-left {

@@ -10,22 +10,11 @@ class Cadastro_unico extends CI_Controller{
 
     public function index(){
         $datapost = $this->input->post(NULL,TRUE);
-        $data = [
-            "codigo"=> 16,
-            "nome"=>"Lula da silva",
-            "email"=>"companheiro@preso.com.br",
-            "rg"=>"3472374237463287"
-        ];
-        $this->Un_cadastro_unificado_model->save($data);
 
-
-//        if(!$teste){
-//            $error = $this->Un_cadastro_unificado_model->get
-//        }
-
+        $data = $this->Un_cadastro_unificado_model->getwhere(NULL,"array","codigo","ASC");
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
-        $this->response(compact("html"));
+        $this->response(compact("html","data"));
     }
     public function salvar(){
 
@@ -38,6 +27,11 @@ class Cadastro_unico extends CI_Controller{
         if(isset($datapost->search)){
             debug($datapost->search);
         }
+    }
+    public function excluir(){
+        $codigo = reset(func_get_args());
+        $where = ['codigo'=>$codigo];
+        $this->Un_cadastro_unificado_model->deletewhere($where);
     }
 
     public function logout(){
