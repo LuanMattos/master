@@ -18,6 +18,7 @@ class Cadastro_unico extends CI_Controller{
         ];
         $this->Un_cadastro_unificado_model->save($data);
 
+
 //        if(!$teste){
 //            $error = $this->Un_cadastro_unificado_model->get
 //        }
@@ -25,9 +26,11 @@ class Cadastro_unico extends CI_Controller{
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response(compact("html"));
+    }
+    public function salvar(){
 
-
-
+        $html   = $this->load->view('unico/cadastro_unico/form',NULL,TRUE);
+        $this->response(compact("html"));
     }
     public function buscar(){
         $datapost = $this->input->post("search",TRUE);

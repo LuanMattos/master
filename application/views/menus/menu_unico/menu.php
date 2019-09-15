@@ -7,8 +7,7 @@
     .bg-default{
         background-color: #005599;
     }
-    *{
-        color:white;
+    a{
         text-decoration: none;
     }
 
@@ -26,7 +25,7 @@
                      <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link dropdown-toggle text-white"
                        href="#"
                        id="navbarDropdown"
                        role="button"
@@ -36,15 +35,15 @@
                     >
                         Cadastro
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" onclick="un_unico.Init()">Único</a>
+                    <div class="dropdown-menu"  aria-labelledby="navbarDropdown" >
+                        <a class="dropdown-item" href="#" onclick="cadastro_unico.Init()" >Único</a>
                         <a class="dropdown-item" href="#" onclick="cadastro_imagem.Init('div#imagens')">Imagens</a>
                         <div class="dropdown-divider">Documentos</div>
                         <a class="dropdown-item" href="#">Áudio/Vídeo</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"
+                    <a class="nav-link dropdown-toggle text-white"
                        href="#"
                        id="navbarDropdown"
                        role="button"
@@ -64,9 +63,9 @@
 
             </ul>
             <ul>
-                <li class="list-group">
-                    <a href="<?= site_url('Logado/logout') ?>">
-                        <i class="fas fa-sign-out-alt"></i>Sair
+                <li class="list-group text-white">
+                    <a href="<?= site_url('Logado/logout') ?>" class="text-white">
+                        <i class=" fas fa-sign-out-alt"></i>Sair
                     </a>
                 </li>
             </ul>
@@ -75,9 +74,7 @@
     </nav>
 </div>
 
-<div id="imagens">
-    <?php $this->load->view('unico/cadastro_imagens/index'); ?>
-</div>
+
 
 
 <div class="text-center mb-5 mt-5">
@@ -88,7 +85,8 @@
 </div>
 
 </body>
-<!--------------------------------------------------------------------------------------------------------------------->
+
+<!------------------------------------------------fontawesome------------------------------------------------------------------>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
 <!----------------------------------------------bootstrap-------------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
@@ -105,6 +103,7 @@
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_imagem.js"></script>
 <!---------------------------------------------cadastro-unico---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_unico.js"></script>
-<!---------------------------------------------cadastro-unico---------------------------------------------------------->
+<!---------------------------------------------assets-do-sistema---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
-
+<!----------------------------------------------------Vue-Js----------------------------------------------------------------->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.min.js"></script>

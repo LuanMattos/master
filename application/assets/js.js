@@ -95,7 +95,7 @@ App.url = function (modulo, controller, methods, params) {
             buttons: options.buttons,
             height: options.height,
             classes: {
-                "ui-dialog-titlebar": "title-default-text-danger default-danger"
+                "ui-dialog-titlebar": "title-default-text-danger default-danger text-white"
             },
             autoOpen: true,
             show: null,
@@ -122,37 +122,42 @@ App.url = function (modulo, controller, methods, params) {
             width: options.width,
             height: options.height,
             buttons: options.buttons,
+            vue:options.vue,
             callback: options.callback
 
         }
 
-        $(document).ready(function () {
 
-            $.ajax({
-                url: options.url,
-                type: 'POST',
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                async: true,
-                data: {
-                    id: "AJAX ok"
-                },
-                success: function (j) {
-                    var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'></div>").append(j.html);
+            $(document).ready(function () {
 
-                    $(div).dialog({
-                        title: options.title,
-                        width: options.width,
-                        height: options.height,
-                        autoOpen: true,
-                        buttons: [],
-                        open: options.callback
-                    });
+                $.ajax({
+                    url: options.url,
+                    type: 'POST',
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    async: true,
+                    data: {
+                        id: "AJAX ok"
+                    },
+                    success: function (j) {
 
-                },
+                        var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min' style='color:black;!important;'></div>").append(j.html);
 
+                        $(div).dialog({
+                            title: options.title,
+                            width: options.width,
+                            height: options.height,
+                            autoOpen: true,
+                            buttons: [],
+                            open: options.callback
+                        });
+
+                    },
+
+                });
             });
-        });
+
+
 
 
     }

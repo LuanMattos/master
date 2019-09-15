@@ -11968,7 +11968,6 @@ $.widget( "ui.dialog", {
 		autoOpen: true,
 		buttons: [],
 		classes: {
-			"ui-button-icon ui-icon ui-icon-closethick":"text-white",
 			"ui-dialog": "bg-transparent-modal-user ",
 			"ui-dialog-titlebar": "default title-default-text",
 		},

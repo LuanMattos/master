@@ -1,33 +1,88 @@
-var un_unico = {
+var cadastro_unico = {
 
     Url: function (metodo,params) {
         return App.url("unico","cadastro_unico/Cadastro_unico",metodo,params);
     },
 
-    Render: function () {
-        var self = this;
-
-        var Form = $("#form-cadastro-unico-container");
-        Form.find(".buscar").on("click",function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            let value = Form.find("#buscar").val();
-            self.Buscar(value);
-        })
-
-    },
     Init: function () {
         var self = this;
 
+                App.modal({
+                    url:self.Url("index"),
+                    title:"Cadastro Único",
+
+                    callback:function(content){
+                        var div = content.target;
+
+                               var vue_instance = new Vue({
+                                   el:div,
+                                   data:{
+                                       teste:"Olá Mundo",
+                                       testa:"TESTA "
+                                   },
+                                   methods:{
+                                       ola:function(){
+                                       }
+                                   },
+
+
+                               });
+
+
+                        $(".novo").on("click",function(){
+                            self.Form();
+                        });
+                        $(".buscar").on("click",function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                            let value = div.find("#buscar").val();
+                            self.Buscar(value);
+                        })
+
+
+
+
+
+
+
+
+                    }
+                });
+
+
+
+
+    },
+    Form:function(){
+      var self = this;
 
         App.modal({
-            url:self.Url("index"),
-            title:"Cadastro Único",
+            url:self.Url("salvar"),
+            title:"Novo - Unificado",
+            width:"950px",
             callback:function(div){
-                self.Render(div);
+                var Form = $("form-cadastro-unificado");
+                Form.find("#btn-salvar").on("click",function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    self.Salvar();
+                })
+
 
             }
         });
+
+    },
+    Salvar:function(){
+      var self = this;
+      $.ajax(
+          self.Url("acao_salvar"),
+          {
+              data:data
+          },
+          function(j) {
+
+          },'json')
     },
     Buscar:function(value){
         let self = this;

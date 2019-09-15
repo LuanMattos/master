@@ -108,27 +108,22 @@ class CI_Model {
      * $table   = string                                --> tabela onde será inserido os dados
      * $data    = array('nome'=>'joao','senha'=>'123')  --> array associativo com as respectivas entidades
      */
-    public function save($data = null,$where = NULL){
+    public function save($data = NULL){
+
         if(is_array($data)){
             if(array_key_exists($this->get_table_index(),$data)){
-//                unset($data[$this->get_table_index()]);
-
                 $table_index = $this->get_table_index();
                 $value_index = $data[$this->get_table_index()];
-
                 $save = $this->db->update($this->get_table(),$data,"$table_index = $value_index");
-//                $table, $data, $where
                 if(!$save){
-                    $this->db->error();
+                    return $this->db->error();
                 }
             }else{
                 $save = $this->db->insert($this->get_table(),$data);
                 if(!$save){
-                    $this->db->error();
+                    return $this->db->error();
                 }
             }
-
-
         }
     }
 

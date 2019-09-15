@@ -6168,9 +6168,10 @@ button.bg-dark:focus {
   background: #F8F8FF !important;
 }
 .title-default-text{
-  color: white !important;
   font-size:13px;
   border-style:none;
+  color: white;
+
 }
 .default{
   background: #2167ba !important;
