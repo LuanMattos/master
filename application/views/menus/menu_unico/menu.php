@@ -105,4 +105,5 @@
 <!---------------------------------------------assets-do-sistema---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <!----------------------------------------------------Vue-Js----------------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.min.js"></script>
+<!--<script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/js/libs/vue.min.js"></script>-->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>

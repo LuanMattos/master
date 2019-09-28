@@ -1,4 +1,4 @@
-<form action="<?= site_url("unico/cadastro_unico/Cadastro_unico/index") ?>" method="POST" id="form-cadastro-unico-container">
+<form id="form-cadastro-unico-container" action="<?= site_url("unico/cadastro_unico/Cadastro_unico/index") ?>" method="POST" >
      <div class="input-group">
             <div class="input-group-prepend">
                 <span class="input-group-text" >Buscar:</span>
@@ -13,7 +13,7 @@
         <table id=" tabela-geral-cadastro-unificado" class="rounded-top table table-striped table-hover table-bordered table-sm table-secondary small ">
             <thead>
                 <tr>
-                    <th class="col-sm-1 text-center">Código:</th>
+                    <th class="col-sm-0 text-center">Código:</th>
                     <th class="col-sm-3 text-center">Nome:</th>
                     <th class="col-sm-3 text-center">Endereço:</th>
                     <th class="col-sm-1 text-center">Contato:</th>
@@ -33,7 +33,7 @@
                     <td  class="text-center" @click="excluir(index,i.codigo)">
                         <i class="fas fa-times cursor-pointer" ></i>
                     </td>
-                    <td class="text-center" @click="editar(i)">
+                    <td class="text-center" @click="editar(i.codigo)">
                         <i class="fas fa-external-link-alt cursor-pointer"></i>
                     </td>
                     <td class="text-center" @click="imprimir()">

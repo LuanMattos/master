@@ -106,6 +106,9 @@ App.url = function (modulo, controller, methods, params) {
         });
 
     },
+    App.form_converter = function(){
+
+    },
 
     App.modal = function (options) {
 

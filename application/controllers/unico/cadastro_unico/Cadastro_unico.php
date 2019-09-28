@@ -11,19 +11,40 @@ class Cadastro_unico extends CI_Controller{
     public function index(){
         $datapost = $this->input->post(NULL,TRUE);
 
-        $data = $this->Un_cadastro_unificado_model->getwhere(NULL,"array","codigo","ASC");
+        $where = "codigo = codigo";
+        $data = $this->Un_cadastro_unificado_model->getwhere($where,"array","codigo","ASC");
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response(compact("html","data"));
     }
     public function salvar(){
+        $codigo     = reset(func_get_args());
+        $where = [];
+        if(!empty($codigo)){
+            $where = ["codigo"=>$codigo];
+        }
+//        $data = $this->db->get_where('da_dados_globais', $where , $limit = NULL, $offset = NULL)->result_array();
+
+//        debug($data);
+        $data   = $this->Un_cadastro_unificado_model->getWhere($where);
+
+        if(count($data) > 0){
+            $data   = reset($data);
+        }
+
 
         $html   = $this->load->view('unico/cadastro_unico/form',NULL,TRUE);
-        $this->response(compact("html"));
+        $this->response(compact("html","data"));
+    }
+    public function acao_salvar(){
+        $data = $this->input->post("data",TRUE);
+        $save = $this->Un_cadastro_unificado_model->save($data);
+
+
     }
     public function buscar(){
         $datapost = $this->input->post("search",TRUE);
-        debug($datapost);
+
         if(isset($datapost->search)){
             debug($datapost->search);
         }

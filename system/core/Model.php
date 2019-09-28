@@ -112,6 +112,9 @@ class CI_Model {
     **/
     public function getwhere($where = null,$result = "array",$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL){
 
+        if(empty($where) || $where == NULL){
+            $where = "1=3";
+        }
         $getWhere = $this->db->order_by($orderby,$direction)->get_where($this->get_table(), $where, $limit, $offset);
 
         if($result === "object"){
@@ -126,6 +129,7 @@ class CI_Model {
 
             return $result;
         }
+
     }
     /**
      * Função delete com condição Where
@@ -153,11 +157,15 @@ class CI_Model {
                 $save = $this->db->update($this->get_table(),$data,"$table_index = $value_index");
                 if(!$save){
                     return $this->db->error();
+                }else{
+                    return true;
                 }
             }else{
                 $save = $this->db->insert($this->get_table(),$data);
                 if(!$save){
                     return $this->db->error();
+                }else{
+                    return true;
                 }
             }
         }
