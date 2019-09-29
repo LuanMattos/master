@@ -45,8 +45,21 @@ class CI_Controller
         return self::$instance;
     }
 
-    public function response($data = array()){
+    public function response($type="",$data = NULL){
+
+        if($type === "success"){
+            $info = ["info"=>1];
+        }elseif($type === "error"){
+            $info = ["info"=>0];
+        }
+        if(!$data){
+            $data = NULL;
+            return $this->output->set_output(json_encode($info));
+        }
+        array_push($data,$info);
         return $this->output->set_output(json_encode($data));
+
+
     }
 
 

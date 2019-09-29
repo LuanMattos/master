@@ -28,11 +28,8 @@ var cadastro_unico = {
                                         "Sim": function (event) {
                                             $.ajax(
                                                 cadastro_unico.Url("excluir", codigo),
-                                                {
-                                                    // data:el
-                                                },
+                                                {},
                                                 function (j) {
-
                                                 }, 'json')
                                             vue_instance.$delete(vue_instance.$root.data, el);
                                             $(this).dialog("close");
@@ -59,8 +56,6 @@ var cadastro_unico = {
                             let value = div.find("#buscar").val();
                             self.Buscar(value);
                         })
-
-
                     }
                 });
 
@@ -107,11 +102,6 @@ var cadastro_unico = {
 
                             },
                             methods: {
-                                salvar: function () {
-                                    var data = this.data
-
-
-                                },
                                 closemodal: function () {
                                     var self_modal = modal;
                                     self_modal.dialog("close");
@@ -151,6 +141,9 @@ var cadastro_unico = {
                 data: data
             },
             function (j) {
+                if(j.info){
+                    App.close_modal();
+                }
 
             }, 'json')
 

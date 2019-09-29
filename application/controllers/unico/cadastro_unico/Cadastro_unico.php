@@ -1,4 +1,6 @@
 <?php
+
+
 defined('BASEPATH') OR exit('No direct script access allowed ');
 class Cadastro_unico extends CI_Controller{
 
@@ -15,7 +17,7 @@ class Cadastro_unico extends CI_Controller{
         $data = $this->Un_cadastro_unificado_model->getwhere($where,"array","codigo","ASC");
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
-        $this->response(compact("html","data"));
+        $this->response("success",compact("html","data"));
     }
     public function salvar(){
         $codigo     = reset(func_get_args());
@@ -34,11 +36,12 @@ class Cadastro_unico extends CI_Controller{
 
 
         $html   = $this->load->view('unico/cadastro_unico/form',NULL,TRUE);
-        $this->response(compact("html","data"));
+        $this->response("success",compact("html","data"));
     }
     public function acao_salvar(){
         $data = $this->input->post("data",TRUE);
         $save = $this->Un_cadastro_unificado_model->save($data);
+        $this->response("success");
 
 
     }

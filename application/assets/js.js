@@ -109,6 +109,9 @@ App.url = function (modulo, controller, methods, params) {
     App.form_converter = function(){
 
     },
+    App.close_modal = function(){
+        $(".ui-icon-closethick:visible").last().trigger("click");
+    },
 
     App.modal = function (options) {
 
