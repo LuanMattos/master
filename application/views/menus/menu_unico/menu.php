@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.css">
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css">
+<link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/pagination/dist/pagination.css">
 
 <body>
 <style>
@@ -85,6 +86,7 @@
 
 </body>
 
+
 <!------------------------------------------------fontawesome------------------------------------------------------------------>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
 <!----------------------------------------------bootstrap-------------------------------------------------------------->
@@ -107,3 +109,5 @@
 <!----------------------------------------------------Vue-Js----------------------------------------------------------------->
 <!--<script type="text/javascript" src="--><?//= URL_RAIZ() ?><!--application/assets/js/libs/vue.min.js"></script>-->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
+<!----------------------------------------pagination--------------------------------------------------------------------->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/pagination/dist/pagination.js"></script>

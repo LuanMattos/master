@@ -1,20 +1,50 @@
 <?php
-
-
 defined('BASEPATH') OR exit('No direct script access allowed ');
 class Cadastro_unico extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
+        $this->load->library('pagination');
         $this->load->model("unificado/Un_cadastro_unificado_model");
 
     }
 
     public function index(){
-        $datapost = $this->input->post(NULL,TRUE);
+        $datapost = (object)$this->input->post(NULL,TRUE);
+        $where = NULL;
 
-        $where = "codigo = codigo";
-        $data = $this->Un_cadastro_unificado_model->getwhere($where,"array","codigo","ASC");
+
+
+
+        if(isset($datapost->search)){
+            $datapost->search = addslashes($datapost->search);
+            $where['nome ILIKE '] = "%$datapost->search%";
+        }
+
+
+
+
+
+        $data = $this->Un_cadastro_unificado_model->getwhere($where);
+        $count_result = $this->Un_cadastro_unificado_model->count_result_table();
+
+//        <!--<div class="container">-->
+//<!--    <nav aria-label="Page navigation example">-->
+//<!--        <ul class="pagination">-->
+//<!--            <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+//<!--            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+//<!--            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+//<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+//<!--            <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+//<!--        </ul>-->
+//<!--    </nav>-->
+//<!--</div>-->
+
+
+
+
+
+
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response("success",compact("html","data"));

@@ -16,6 +16,15 @@ class SI_Controller extends CI_Controller{
     public function menu(){
         return    $this->load->view('menus/menu_unico/menu');
     }
+//    public function paginate($configs){
+//        $configs = ["per_page"=>$pe_page];
+//
+//
+//        $config['total_rows'] = $row;
+//        $config['per_page'] = $pe_page;
+//
+//        $this->pagination->initialize($config);
+//    }
 
 
 }

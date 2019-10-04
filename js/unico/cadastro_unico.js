@@ -17,10 +17,13 @@ var cadastro_unico = {
                     callback: function (content) {
                         var div = content.target;
 
+
                         var vue_instance = new Vue({
                             el: div,
                             data: {
-                                data: j.data
+                                data: j.data,
+                                search: "",
+                                links: j.data.links
                             },
                             methods: {
                                 excluir: function (el, codigo) {
@@ -39,23 +42,57 @@ var cadastro_unico = {
                                         }
                                     });
                                 },
+                                busca: function () {
+
+                                    $.post(
+                                        cadastro_unico.Url("index"),
+                                        {
+                                            search: this.search
+                                        },
+                                        function (j) {
+                                            vue_instance.data = j.data;
+                                        }, 'json')
+
+                                },
                                 editar: function (codigo) {
                                     cadastro_unico.Form(codigo);
                                 }
-
                             },
+
 
                         });
 
+
+
+                            $('#demo').pagination({
+                                dataSource: [1, 2, 3, 4, 5, 6, 7, 15],
+                                pageSize: 5,
+                                showNavigator: true,
+                                formatNavigator: '',
+                                position: 'top',
+                                beforePageOnClick:function(event){
+                                  event.preventDefault();
+                                },
+                                beforeNextOnClick:function(event){
+                                  event.preventDefault();
+                                },
+                                beforePreviousOnClick:function(event){
+                                  event.preventDefault();
+                                },
+                                className: 'paginationjs-theme-blue',
+                                callback: function (data, pagination) {
+
+
+                                    // template method of yourself
+                                    var html = template(data);
+                                    dataContainer.html(html);
+                                }
+                            });
                         $(".novo").on("click", function () {
                             self.Form();
                         });
-                        $(".buscar").on("click", function (e) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            let value = div.find("#buscar").val();
-                            self.Buscar(value);
-                        })
+
+
                     }
                 });
 
@@ -91,13 +128,13 @@ var cadastro_unico = {
                         var vue_instance_form = new Vue({
                             el: div,
                             data: {
-                                dados:{
-                                    codigo:j.data.codigo,
-                                    nome:j.data.nome || "",
-                                    cpf:j.data.cpf || "",
-                                    rg:j.data.rg || "",
-                                    orgaoemissor:j.data.orgaoemissor || "",
-                                    email:j.data.email || "",
+                                dados: {
+                                    codigo: j.data.codigo,
+                                    nome: j.data.nome || "",
+                                    cpf: j.data.cpf || "",
+                                    rg: j.data.rg || "",
+                                    orgaoemissor: j.data.orgaoemissor || "",
+                                    email: j.data.email || "",
                                 }
 
                             },
@@ -112,8 +149,7 @@ var cadastro_unico = {
                         });
 
 
-
-                        $(".btn-salvar").click(function(event){
+                        $(".btn-salvar").click(function (event) {
                             event.preventDefault();
                             event.stopPropagation();
 
@@ -141,29 +177,14 @@ var cadastro_unico = {
                 data: data
             },
             function (j) {
-                if(j.info){
+                if (j.info) {
                     App.close_modal();
                 }
 
             }, 'json')
 
 
-
-
     },
 
-    Buscar: function (value) {
-        let self = this;
-
-        $.post(
-            self.Url("index"),
-            {
-                search: value
-            },
-            function (j) {
-
-            }, 'json')
-
-    }
 
 }

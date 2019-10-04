@@ -112,24 +112,24 @@ class CI_Model {
     **/
     public function getwhere($where = null,$result = "array",$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL){
 
-        if(empty($where) || $where == NULL){
-            $where = "1=3";
-        }
         $getWhere = $this->db->order_by($orderby,$direction)->get_where($this->get_table(), $where, $limit, $offset);
 
         if($result === "object"){
             $result =  $getWhere->result_object();
-            $num_rows['num_rows'] = $getWhere->num_rows();
+//            $num_rows['num_rows'] = $getWhere->num_rows();
             $this->db->order_by($orderby);
             return $result;
 
         }elseif($result === "array"){
             $result = $getWhere->result_array();
-            $num_rows['num_rows'] = $getWhere->num_rows();
+//            $num_rows['num_rows'] = $getWhere->num_rows();
 
             return $result;
         }
 
+    }
+    public function count_result_table($reset = TRUE){
+        return $this->db->count_all_results($this->get_table(),$reset);
     }
     /**
      * Função delete com condição Where
