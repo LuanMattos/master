@@ -11969,7 +11969,7 @@ $.widget( "ui.dialog", {
 		buttons: [],
 		classes: {
 			"ui-dialog": "bg-transparent-modal-user ",
-			"ui-dialog-titlebar": "default title-default-text",
+			"ui-dialog-titlebar": "default"
 		},
 		closeOnEscape: true,
 		closeText: "Sair",
@@ -12329,7 +12329,7 @@ $.widget( "ui.dialog", {
 
 		this.uiDialogTitlebar = $( "<div>" );
 		this._addClass( this.uiDialogTitlebar,
-			"ui-dialog-titlebar", "ui-widget-header ui-helper-clearfix" );
+			"ui-dialog-titlebar", " ui-helper-clearfix" );
 		this._on( this.uiDialogTitlebar, {
 			mousedown: function( event ) {
 

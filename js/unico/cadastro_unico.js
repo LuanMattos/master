@@ -17,7 +17,6 @@ var cadastro_unico = {
                     callback: function (content) {
                         var div = content.target;
 
-
                         var vue_instance = new Vue({
                             el: div,
                             data: {
@@ -62,35 +61,37 @@ var cadastro_unico = {
 
                         });
 
-
-
-                            $('#demo').pagination({
-                                dataSource: [1, 2, 3, 4, 5, 6, 7, 15],
-                                pageSize: 5,
-                                showNavigator: true,
-                                formatNavigator: '',
-                                position: 'top',
-                                beforePageOnClick:function(event){
-                                  event.preventDefault();
-                                },
-                                beforeNextOnClick:function(event){
-                                  event.preventDefault();
-                                },
-                                beforePreviousOnClick:function(event){
-                                  event.preventDefault();
-                                },
-                                className: 'paginationjs-theme-blue',
-                                callback: function (data, pagination) {
-
-
-                                    // template method of yourself
-                                    var html = template(data);
-                                    dataContainer.html(html);
-                                }
-                            });
-                        $(".novo").on("click", function () {
+                        $(".novo").click(function () {
                             self.Form();
                         });
+
+
+
+                            // $('#demo').pagination({
+                            //     dataSource: [1, 2, 3, 4, 5, 6, 7, 15],
+                            //     pageSize: 5,
+                            //     showNavigator: true,
+                            //     formatNavigator: '',
+                            //     position: 'top',
+                            //     beforePageOnClick:function(event){
+                            //       event.preventDefault();
+                            //     },
+                            //     beforeNextOnClick:function(event){
+                            //       event.preventDefault();
+                            //     },
+                            //     beforePreviousOnClick:function(event){
+                            //       event.preventDefault();
+                            //     },
+                            //     className: 'paginationjs-theme-blue',
+                            //     callback: function (data, pagination) {
+                            //
+                            //
+                            //         // template method of yourself
+                            //         var html = template(data);
+                            //         dataContainer.html(html);
+                            //     }
+                            // });
+
 
 
                     }
@@ -115,13 +116,12 @@ var cadastro_unico = {
             {},
             function (j) {
                 App.modal({
-                    url: self.Url("salvar", codigo),
                     title: title,
                     width: "950px",
+                    vue:j.html,
                     callback: function (content) {
                         var modal = $(this);
                         var dialog = content;
-                        var Form = $("#form-cadastro-unificado");
                         var div = content.target;
 
 
@@ -147,7 +147,10 @@ var cadastro_unico = {
 
                             }
                         });
+                        var Form = $("#form-cadastro-unificado");
 
+
+                        // $("#tab-cadastro-unico").tab();
 
                         $(".btn-salvar").click(function (event) {
                             event.preventDefault();
@@ -165,7 +168,6 @@ var cadastro_unico = {
 
     },
 
-
     Salvar: function (vue_instance) {
         var self = this;
         var url = self.Url("acao_salvar");
@@ -178,7 +180,11 @@ var cadastro_unico = {
             },
             function (j) {
                 if (j.info) {
+                    $(".buscar").click();
                     App.close_modal();
+                }
+                if(!j.info){
+                    App.error(j);
                 }
 
             }, 'json')

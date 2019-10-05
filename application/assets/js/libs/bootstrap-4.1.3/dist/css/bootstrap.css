@@ -6168,14 +6168,13 @@ button.bg-dark:focus {
 .bg-transparent-modal-user{
   background: #F8F8FF !important;
 }
-.title-default-text{
+
+.default{
   font-size:13px;
   border-style:none;
   color: white;
-
-}
-.default{
-  background: #2167ba !important;
+  background: #4682B4 !important;
+  z-index:100;
 }
 .title-default-text-danger{
   color: white !important;

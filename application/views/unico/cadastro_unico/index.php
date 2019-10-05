@@ -22,7 +22,7 @@
         <th class="col-sm-0 text-center">Código:</th>
         <th class="col-sm-3 text-center">Nome:</th>
         <th class="col-sm-3 text-center">Endereço:</th>
-        <th class="col-sm-1 text-center">Contato:</th>
+        <th class="col-sm-1 text-center">Email:</th>
         <th class="col-sm-2 text-center">Cidade:</th>
         <th colspan="3" class="text-center">
             <i class="fas fa-cog"></i>

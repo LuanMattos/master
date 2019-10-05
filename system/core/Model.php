@@ -110,7 +110,7 @@ class CI_Model {
      * @get_hwere
      * Where = []
     **/
-    public function getwhere($where = null,$result = "array",$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL){
+    public function getwhere($where = null,$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL,$result = "array"){
 
         $getWhere = $this->db->order_by($orderby,$direction)->get_where($this->get_table(), $where, $limit, $offset);
 

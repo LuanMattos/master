@@ -115,12 +115,8 @@ App.url = function (modulo, controller, methods, params) {
 
     App.modal = function (options) {
 
-        if (typeof (options.width) == "undefined") {
-            options.width = 1000;
-        }
-        if (typeof (options.height) == "undefined") {
-            options.height = 500;
-        }
+
+
 
         var options = {
             url: options.url,
@@ -129,8 +125,36 @@ App.url = function (modulo, controller, methods, params) {
             height: options.height,
             buttons: options.buttons,
             vue:options.vue,
-            callback: options.callback
+            beforeclose:options.beforeclose,
+            callback: options.callback,
 
+        }
+
+        if (typeof (options.width) == "undefined") {
+            options.width = 1000;
+        }
+        if (typeof (options.height) == "undefined") {
+            options.height = 500;
+        }
+
+        if (typeof (options.vue) != "undefined") {
+            var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'  class='mt-1'></div>").append(options.vue);
+            div.addClass("mt-2");
+
+
+            $(div).dialog({
+                title: options.title,
+                width: options.width,
+                height: options.height,
+                autoOpen: true,
+                buttons: [],
+                beforeClose:options.beforeclose || function(target){
+                var modal = $(target.currentTarget) ;
+                modal.remove();
+            },
+                open: options.callback
+            });
+            return false
         }
 
 
@@ -148,6 +172,8 @@ App.url = function (modulo, controller, methods, params) {
                     success: function (j) {
 
                         var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min' style='color:black;!important;'></div>").append(j.html);
+                        div.addClass("mt-2");
+
 
                         $(div).dialog({
                             title: options.title,
