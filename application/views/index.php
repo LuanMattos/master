@@ -11,18 +11,21 @@
     .background-index {
         filter: alpha(opacity=50);
 
-        background-image: url(<?= URL_RAIZ() ?>application/assets/js/libs/imagens/index_bg.png);
-        background-repeat: repeat;
+        background-image: url(<?= URL_RAIZ() ?>application/assets/js/libs/imagens/fundo.png);
+        background-size: 100%;
+        background-position:50% ;
+        background-color: #151a1b;
+        background-repeat: no-repeat;
     }
 
 </style>
 <body class="background-index">
 
-<div class="col-4 mx-auto d-flex h-100 flex-column p-3 ">
+<div class="col-4 mx-auto d-flex h-100 flex-column p-3 " style="margin-top:15%;color:white;">
     <form method="POST" class="form-signin" id="formulario-login" action="<?= site_url('Logado/index') ?>">
         <div class="text-center mb-4">
             <div class="form-label-group">
-                <img width="350" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
+                <div width="350"></div>
                 <h1 class="h3 mb-3">Área de acesso</h1>
             </div>
 
