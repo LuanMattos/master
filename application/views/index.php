@@ -8,20 +8,20 @@
 
 </head>
 <style>
-    .background-index {
-        filter: alpha(opacity=50);
-
+    .background-index :before{
+        filter: alpha(opacity=100);
         background-image: url(<?= URL_RAIZ() ?>application/assets/js/libs/imagens/fundo.png);
         background-size: 100%;
         background-position:50% ;
-        background-color: #151a1b;
         background-repeat: no-repeat;
+
     }
 
-</style>
-<body class="background-index">
 
-<div class="col-4 mx-auto d-flex h-100 flex-column p-3 " style="margin-top:15%;color:white;">
+</style>
+<body class="background-index" >
+
+<div class="col-4 mx-auto d-flex h-100 flex-column p-3  "  style="margin-top:15%;color:white;">
     <form method="POST" class="form-signin" id="formulario-login" action="<?= site_url('Logado/index') ?>">
         <div class="text-center mb-4">
             <div class="form-label-group">
