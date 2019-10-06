@@ -1,3 +1,8 @@
+processos git:
+
+
+git branch -D <nome do branch>
+git push <nome do origin> <nome do branch> --delete
 ---------------------------LINUX-----------------------------------------------------------------------------------------
 VER PROCESSOS DO SO:
 	ps -ef | grep chrome 
