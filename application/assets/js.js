@@ -110,13 +110,11 @@ App.url = function (modulo, controller, methods, params) {
 
     },
     App.close_modal = function(){
-        $(".ui-icon-closethick:visible").last().trigger("click");
+
+        $(".ui-icon-closethick:visible").last().click();
     },
 
     App.modal = function (options) {
-
-
-
 
         var options = {
             url: options.url,
@@ -141,22 +139,21 @@ App.url = function (modulo, controller, methods, params) {
             var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'  class='mt-1'></div>").append(options.vue);
             div.addClass("mt-2");
 
-
             $(div).dialog({
                 title: options.title,
                 width: options.width,
                 height: options.height,
                 autoOpen: true,
                 buttons: [],
-                beforeClose:options.beforeclose || function(target){
+                beforeClose:function(target){
                 var modal = $(target.currentTarget) ;
+                $(".ui-dialog").last().remove();
                 modal.remove();
             },
                 open: options.callback
             });
             return false
         }
-
 
             $(document).ready(function () {
 
@@ -181,6 +178,11 @@ App.url = function (modulo, controller, methods, params) {
                             height: options.height,
                             autoOpen: true,
                             buttons: [],
+                            beforeClose:function(target){
+                                var modal = $(target.currentTarget) ;
+                                $(".ui-dialog").remove();
+                                modal.remove();
+                            },
                             open: options.callback
                         });
 

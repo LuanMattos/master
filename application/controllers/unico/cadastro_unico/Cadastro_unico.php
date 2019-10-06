@@ -58,6 +58,7 @@ class Cadastro_unico extends CI_Controller{
     public function acao_salvar(){
         $data = $this->input->post("data",TRUE);
         $save = $this->Un_cadastro_unificado_model->save($data);
+//        debug($this->db->last_query());
         if(!$save){
             $error["msg"] = "Erro ao salvar o registro";
             $this->response("error",$error);
