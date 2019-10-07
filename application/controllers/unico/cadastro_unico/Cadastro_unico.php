@@ -21,17 +21,6 @@ class Cadastro_unico extends CI_Controller{
         $data = $this->Un_cadastro_unificado_model->getwhere($where,"codigo");
         $count_result = $this->Un_cadastro_unificado_model->count_result_table();
 
-//        <!--<div class="container">-->
-//<!--    <nav aria-label="Page navigation example">-->
-//<!--        <ul class="pagination">-->
-//<!--            <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
-//<!--            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-//<!--            <li class="page-item"><a class="page-link" href="#">2</a></li>-->
-//<!--            <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-//<!--            <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
-//<!--        </ul>-->
-//<!--    </nav>-->
-//<!--</div>-->
 
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response("success",compact("html","data"));

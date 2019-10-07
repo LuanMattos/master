@@ -16,7 +16,7 @@
 <body>
 <div id="full">
     <nav class="bg-default navbar navbar-expand-lg">
-        <a class="text-white" href="#?>">Home</a>
+        <a class="text-white" href="<?= site_url('Logado/index') ?>">Home</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">

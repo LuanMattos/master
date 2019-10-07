@@ -23,17 +23,17 @@
                     <tr>
                         <td>
                             <a href="<?= site_url('unico/Unico/index') ?>">
-                                Unificado
+                                Dados pessoais
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                Agendamentos
+                                Documentos
                             </a>
                         </td>
                         <td>
                             <a href="#">
-                                Agendamentos
+                                Fotografias
                             </a>
                         </td>
                         <td>

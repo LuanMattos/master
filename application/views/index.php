@@ -8,9 +8,8 @@
 
 </head>
 <style>
-    .background-index :before{
-        filter: alpha(opacity=100);
-        background-image: url(<?= URL_RAIZ() ?>application/assets/js/libs/imagens/fundo.png);
+    .background-index {
+        background-image: url(<?= URL_RAIZ() ?>application/assets/js/libs/imagens/teste.png);
         background-size: 100%;
         background-position:50% ;
         background-repeat: no-repeat;

@@ -10,6 +10,10 @@ class Logado extends CI_Controller {
     }
     public function index(){
         $data = $this->input->post(NULL,TRUE);
+        if($this->session->get_userdata()){
+            $this->load->view('logado');
+            return true;
+        }
         $user = $this->Usuarios_model->login($data['login']);
 //        var_dump(password_hash("saidaqui", PASSWORD_DEFAULT));//criptografa a sessão
         if (!empty($data) && !empty($user)) {
