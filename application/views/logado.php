@@ -4,11 +4,12 @@
 <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css">
 <body>
 <style>
-    .bg-default{
+    .bg-default {
         background-color: #005599;
     }
-    *{
-        color:white;
+
+    * {
+        color: white;
         text-decoration: none;
     }
 
@@ -19,58 +20,33 @@
             <div class="bg-default p-4">
                 <h5 class="text-white h4 font-weight-bold">Menu</h5>
 
-                <table class="table table-borderless">
-                    <tr>
-                        <td>
-                            <a href="<?= site_url('unico/Unico/index') ?>">
-                                Dados pessoais
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                Documentos
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                Fotografias
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                Profissionais
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                Pacientes
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                Pronto Atendimento
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
+                <div class="row">
+                    <div class="col-2">
+                        <a href="<?= site_url('unico/Unico/index') ?>">
+                            Documentos pessoais
+                        </a>
+                    </div>
+                    <div class="col-1">
+                        <a href="#">
+                            Mídias
+                        </a>
+                    </div>
+                    <div class="col-7">
+                        <a href="<?= site_url('estudos/Estudos/index') ?>">
+                            Estudos
+                        </a>
+                    </div>
 
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<?= site_url('Logado/logout') ?>">
-                                <i class="fas fa-sign-out-alt"></i>Sair
-                            </a>
-                        </td>
-                    </tr>
+                    <div class="-pull-right">
+                        <a href="<?= site_url('Logado/logout') ?>">
+                            <i class="fas fa-sign-out-alt"></i>Sair
+                        </a>
+                    </div>
+                </div>
 
 
 
-                </table>
+
             </div>
         </div>
         <nav class="navbar navbar-dark bg-default">
@@ -91,14 +67,18 @@
 
     <div class="text-center mb-5 mt-5">
         <div class="form-label-group">
-            <img class="rounded mx-auto d-block" width="550" src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
+            <img class="rounded mx-auto d-block" width="550"
+                 src="<?= URL_RAIZ() ?>application/assets/js/libs/imagens/look.png">
         </div>
     </div>
 </div>
 </body>
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
+<script type="text/javascript"
+        src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
 <!--------------------------------------------------------------------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript"
+        src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
 <!--------------------------------------------------------------------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
+<script type="text/javascript"
+        src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
 

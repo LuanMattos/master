@@ -36,7 +36,7 @@
                         Cadastro
                     </a>
                     <div class="dropdown-menu"  aria-labelledby="navbarDropdown" >
-                        <a class="dropdown-item" href="#" onclick="cadastro_unico.Init()" >Único</a>
+                        <a class="dropdown-item" href="#" onclick="cadastro_unico.Init()" >Pentest</a>
                         <div class="dropdown-divider">Documentos</div>
                     </div>
                 </li>
@@ -49,10 +49,10 @@
                        aria-haspopup="true"
                        aria-expanded="false"
                     >
-                        Relatórios
+                        Redes
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Quantidade</a>
+                        <a class="dropdown-item" href="#">Teste</a>
                         <a class="dropdown-item" href="#">Em breve</a>
                         <div class="dropdown-divider">Em breve</div>
                         <a class="dropdown-item" href="#">Em breve</a>
