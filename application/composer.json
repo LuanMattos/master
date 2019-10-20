@@ -1,0 +1,7 @@
+{
+  "description"   :   "Sistema de dados" ,
+  "name"   :   "System/App" ,
+  "require" :   {
+    "php" :   ">=5.3"
+  }
+}

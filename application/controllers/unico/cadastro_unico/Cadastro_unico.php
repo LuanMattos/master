@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed ');
-class Cadastro_unico extends CI_Controller{
+
+class Cadastro_unico extends UN_Controller {
 
     public function __construct(){
         parent::__construct();
         $this->load->library('pagination');
         $this->load->model("unificado/Un_cadastro_unificado_model");
+
 
     }
 

@@ -110,7 +110,9 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+//Carregamento de classes cores
+$config['enable_hooks'] = TRUE;
+//$config['enable_hooks'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -304,6 +306,7 @@ $config['error_views_path'] = '';
 |
 */
 $config['cache_path'] = '';
+$config['composer_autoload'] = 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -531,3 +534,16 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+//substituido por HOOKS
+//function   my_own_controllers ( $class )   {
+//    if   ( strpos ( $class ,   'CI_' )   !==   0 )
+//    {
+//        if   ( is_readable ( APPPATH   .   'core/'   .   $class   .   '.php' ) )
+//        {
+//            require_once ( APPPATH   .   'core/'   .   $class   .   '.php' ) ;
+//        }
+//    }
+//}
+//
+//spl_autoload_register ( 'my_own_controllers' ) ;
