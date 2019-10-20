@@ -1,12 +1,18 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed ');
+namespace database\ddl;
 
+//defined('BASEPATH') OR exit('No direct script access allowed ');
 
-class ddl extends  CI_Controller
+class ddl
 {
+    public  function index(){
+        echo "teste";
+    }
     public function start(){
 
         $this->db->trans_start();
+
+        $this->db->create_table("da_dados_globais",TRUE);
         $this->db->query("alter table da_dados_globais add column IF NOT EXISTS numero_residencia int");
         $this->db->query("alter table da_dados_globais add column IF NOT EXISTS celular varchar(30)");
         $this->db->query("alter table da_dados_globais add column IF NOT EXISTS telresidencial varchar(30)");
