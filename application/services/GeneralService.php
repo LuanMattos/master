@@ -1,14 +1,14 @@
 <?php
-namespace services;
+namespace Service;
 
+class GeneralService extends \CI_Controller {
 
-class services{
     public  function __construct(){
 
     }
     public function index(){
         echo "classe geral de servicos";
-}
+    }
 
 
 }

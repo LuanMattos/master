@@ -6,5 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'services\\' => array($baseDir . '/services'),
+    'UnicoService\\' => array($baseDir . '/services/modules'),
+    'Service\\' => array($baseDir . '/services'),
+    'ServiceZenvia\\' => array($baseDir . '/services'),
+    'ServiceSms\\' => array($baseDir . '/services'),
 );

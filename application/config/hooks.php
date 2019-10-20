@@ -17,4 +17,4 @@ $hook['pre_system'][] =  [
    'function'   =>   'load_app_controllers' ,
    'filename'   =>   'App_controllers.php' ,
    'filepath'   =>   'hooks'
- ] ;
+ ];

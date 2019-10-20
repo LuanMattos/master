@@ -1,19 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed ');
-use services\services as servico;
+
+
 class Cadastro_unico extends UN_Controller {
 
     public function __construct(){
         parent::__construct();
         $this->load->library('pagination');
         $this->load->model("unificado/Un_cadastro_unificado_model");
-
-
     }
 
     public function index(){
-        $servico = new servico();
-        $servico->index();
 
         $datapost = (object)$this->input->post(NULL,TRUE);
         $where = NULL;

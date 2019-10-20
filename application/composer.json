@@ -6,7 +6,10 @@
   },
   "autoload": {
     "psr-4": {
-      "services\\": "services"
+      "Service\\": "services",
+      "UnicoService\\": "services/modules",
+      "ServiceSms\\": "services",
+      "ServiceZenvia\\": "services"
     }
   }
 }

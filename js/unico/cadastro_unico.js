@@ -6,17 +6,15 @@ var cadastro_unico = {
 
     Init: function () {
         var self = this;
-
         $.post(
             self.Url("index"),
             {},
             function (j) {
                 App.modal({
-                    url: self.Url("index"),
+                    // url: self.Url("index"),
                     title: "Cadastro Único",
                     callback: function (content) {
                         var div = content.target;
-
                         var vue_instance = new Vue({
                             el: div,
                             data: {
