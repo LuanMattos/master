@@ -1,9 +1,6 @@
 <?php
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once(APPPATH . "services/services.php");
-
-use services\services;
 
 class Unico extends UN_Controller {
     public function __construct(){
@@ -11,9 +8,6 @@ class Unico extends UN_Controller {
     }
 
     public function index(){
-        $teste = new services();
-        $teste->index();
-
     }
 
     public function logout(){

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed ');
-
+use services\services as servico;
 class Cadastro_unico extends UN_Controller {
 
     public function __construct(){
@@ -12,6 +12,9 @@ class Cadastro_unico extends UN_Controller {
     }
 
     public function index(){
+        $servico = new servico();
+        $servico->index();
+
         $datapost = (object)$this->input->post(NULL,TRUE);
         $where = NULL;
 
