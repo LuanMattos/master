@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed ');
-
+use ServiceSms\ServiceSms as sms;
 
 class Cadastro_unico extends UN_Controller {
 
@@ -11,6 +11,8 @@ class Cadastro_unico extends UN_Controller {
     }
 
     public function index(){
+        $teste = new sms();
+        $teste->index();
 
         $datapost = (object)$this->input->post(NULL,TRUE);
         $where = NULL;

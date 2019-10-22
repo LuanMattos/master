@@ -11,8 +11,8 @@ var cadastro_unico = {
             {},
             function (j) {
                 App.modal({
-                    // url: self.Url("index"),
                     title: "Cadastro Único",
+                    vue:j.html,
                     callback: function (content) {
                         var div = content.target;
                         var vue_instance = new Vue({

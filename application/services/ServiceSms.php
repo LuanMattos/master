@@ -7,7 +7,7 @@ class ServiceSms extends  zenvia{
 
     public function index(){
         $this->teste();
-        echo "SMS";
+//        echo "SMS";
     }
 
 
