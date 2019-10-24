@@ -20,12 +20,14 @@ class Usuarios_model extends CI_Model{
     public function __construct()
     {
         parent::__construct();
+        $this->set_table_index("codigo");
+        $this->set_table("usuarios");
     }
 
     public function login($usuario)
     {
         $results = FALSE;
-        $user = $this->db->get_where('usuarios', array('usuario' => $usuario));
+        $user = $this->db->get_where('usuarios', array('login' => $usuario));
         if ($user->num_rows() > 0) {
 
             $results = $user->result_array();

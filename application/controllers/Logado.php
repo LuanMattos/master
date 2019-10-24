@@ -1,36 +1,52 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Logado extends CI_Controller {
-    public function __construct(){
+class Logado extends CI_Controller
+{
+    public function __construct()
+    {
         parent::__construct();
         $this->load->model("Usuarios_model");
         $this->output->enable_profiler(FALSE);
 
     }
-    public function index(){
-        $data = $this->input->post(NULL,TRUE);
-        if($this->session->get_userdata()){
-            $this->load->view('logado');
+
+    public function index()
+    {
+        $data = $this->input->post(NULL, TRUE);
+
+        if (!empty($data['login']) && !empty($data['senha'])) {
+            $user = $this->Usuarios_model->login($data['login']);
+        } else {
+            $data['error_senha'] = "Usuário/senha incorreto(s)";
+            $this->load->view('index', $data);
             return true;
         }
-        $user = $this->Usuarios_model->login($data['login']);
-//        var_dump(password_hash("saidaqui", PASSWORD_DEFAULT));//criptografa a sessão
+
+//        var_dump(password_hash("admin", PASSWORD_DEFAULT));//criptografa a sessão
         if (!empty($data) && !empty($user)) {
-            foreach ($user as $line) {}
-            if ($line['usuario'] === $data['login']) {
-                if (password_verify($data['senha'], $line['senha']) == true) {
-                    $this->session->set_userdata($line['usuario'], 1);
-                    $this->load->view('logado');
+            foreach ($user as $line) {
+
+                if ($line['login'] === $data['login']) {
+                    if (password_verify($data['senha'], $line['senha']) == true) {
+                        $this->session->set_userdata($line['login'], 1);
+                        $this->load->view('logado');
+                    } else {
+                        debug("bbb");
+
+                        $data['error_senha'] = "Usuário/senha incorreto(s)";
+                        $this->load->view('index', $data);
+                    }
                 } else {
+                    debug("ccc");
+
                     $data['error_senha'] = "Usuário/senha incorreto(s)";
                     $this->load->view('index', $data);
                 }
-            } else {
-                $data['error_senha'] = "Usuário/senha incorreto(s)";
-                $this->load->view('index', $data);
             }
         } else {
+//            debug("ultimo");
+
             $data['error_senha'] = "Usuário/senha incorreto(s)";
             $this->load->view('index', $data);
         }
@@ -38,7 +54,8 @@ class Logado extends CI_Controller {
     }
 
 
-    public function logout(){
+    public function logout()
+    {
 //        $this->session->unset_userdata();
         $this->session->sess_destroy();
         redirect();

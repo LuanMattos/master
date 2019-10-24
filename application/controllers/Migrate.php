@@ -21,7 +21,7 @@ class Migrate extends CI_Controller{
 
         $this->db->trans_start();
 
-        $this->db->query("create table da_dados_globais (
+        $this->db->query("create table IF NOT EXISTS da_dados_globais (
                                     codigo              serial NOT NULL,
                                     nome                varchar(300),
                                     cpf                 varchar(300),
@@ -49,6 +49,24 @@ class Migrate extends CI_Controller{
                                     nomemae             varchar(300),
                                     primary key (codigo)
                     )");
+        $this->db->query("CREATE TABLE usuarios(
+                                codigo       serial NOT NULL,
+                                login        varchar(500),
+                                senha        varchar(1000),
+                                ultimoacesso timestamp,
+                                created_at   timestamp default now(),
+                                updated_at   timestamptz default now(),
+                                primary key (codigo)
+                                )");
+        $this->db->query("CREATE OR REPLACE FUNCTION trigger_set_timestamp() RETURNS TRIGGER AS $$ BEGIN NEW.updated_at = NOW();
+                                RETURN NEW;
+                                END;
+                                $$ LANGUAGE plpgsql");
+        $this->db->query("CREATE TRIGGER set_timestamp
+                                BEFORE UPDATE ON usuarios
+                                FOR EACH ROW
+                                EXECUTE PROCEDURE trigger_set_timestamp()");
+        $this->db->query("ALTER TABLE usuarios ADD COLUMN __ci_last_regenerate numeric(500)");
 
         $transaction = $this->db->trans_complete();
         if(!$transaction){
