@@ -1,11 +1,8 @@
 <head>
-    <script type="text/javascript"
-            src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript"
-            src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
-    <link rel="stylesheet"
-          href="<?= site_url("application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css") ?>">
+    <link rel="stylesheet" href="<?= site_url("application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css") ?>">
     <link href="<?= site_url("application/assets/css/tailwindcss.css") ?>" rel="stylesheet">
 
 </head>
@@ -18,27 +15,26 @@
 </style>
 
 <body class="bg">
+<div id="geral-div-container">
+    <div class="row xl:mt-24">
+        <div class="col" id="formulario-login">
+            <div class="w-full max-w-xs ml-10">
+                <form method="POST" class=" w-full max-w-sm"
+                      action="<?= site_url('Logado/index') ?>">
+                    <div class="container p-4">
+                        <p class="font-mono text-base text-gray-800 text-left text-white">
+                            Entrar
+                        </p>
 
-<div class="row mt-32">
-    <div class="col">
-        <div class="w-full max-w-xs ">
-            <form method="POST" class=" w-full max-w-sm " id="formulario-login"
-                  action="<?= site_url('Logado/index') ?>">
-                <div class="container p-4">
-                    <p class="font-mono text-base text-gray-800 text-left text-white">
-                        Conecte-se
-
-                    </p>
-
-                </div>
-                <div class="md:flex md:items-center mb-6">
-                    <div class="md:w-1/3">
-                        <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
-                               for="inline-full-name">
-                        </label>
                     </div>
-                    <div class="md:w-2/1">
-                        <input class="bg-gray-200
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-full-name">
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class=" bg-gray-200
                                     appearance-none
                                      border-2
                                       border-gray-200
@@ -52,20 +48,22 @@
                                                focus:border-gray-400
                                                xl:rounded-0
 "
-                               id="inline-full-name"
-                               type="text"
-                               placeholder="Login"
-                        >
+                                   id="inline-full-name"
+                                   type="text"
+                                   name="login"
+                                   placeholder="Login"
+                            >
+                        </div>
                     </div>
-                </div>
-                <div class="md:flex md:items-center mb-6">
-                    <div class="md:w-1/3">
-                        <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-username">
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-username">
 
-                        </label>
-                    </div>
-                    <div class="md:w-2/1">
-                        <input class="bg-gray-200
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="bg-gray-200
                                     appearance-none
                                      border-2
                                       border-gray-200
@@ -79,56 +77,266 @@
                                                focus:border-gray-400
                                                xl:rounded-0
 "
-                               id="inline-username"
-                               type="password"
-                               placeholder="Senha">
-                    </div>
-                </div>
+                                   id="inline-username"
+                                   type="password"
+                                   name="senha"
+                                   placeholder="Senha"
+                            >
 
-                <div class="md:flex md:items-center mb-6">
-                    <div class="md:w-1/3"></div>
-                    <label class="md:w-2/3 block text-gray-500 font-bold">
-                        <input class="mr-2 leading-tight cursor-pointer" type="checkbox">
-                        <span class="text-sm">Manter conectado</span>
-                    </label>
-                </div>
-                <div class="md:flex md:items-center">
-                    <div class="md:w-1/3"></div>
-                    <div class="md:w-2/1">
-                        <button class="shadow bg-gray-300 hover:bg-gray-100 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2 w-56 xl:rounded-0"
-                                type="button">
-                            Acessar
-                        </button>
+                        </div>
                     </div>
-                </div>
-                <br>
-                <div class="md:flex md:items-center">
-                    <div class="md:w-1/3"></div>
-                    <div class="md:w-2/1">
-                        <button class="shadow bg-gray-300 hover:bg-gray-100 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2 w-56 rounded-0"
-                                type="button">
-                            Começar
-                        </button>
-                    </div>
-                </div>
 
-            </form>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3"></div>
+                        <label class="md:w-2/3 block text-gray-500 font-bold">
+                            <input class="mr-2 leading-tight cursor-pointer" type="checkbox" name="conectado">
+                            <span class="text-sm">Manter conectado</span>
+                        </label>
+                    </div>
+                    <div class="md:flex md:items-center">
+                        <div class="md:w-1/3"></div>
+                        <div class="md:w-2/1">
+                            <input class="shadow bg-gray-300 hover:bg-gray-100 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2 w-56 xl:rounded-0 cursor-pointer"
+                                   value="Acessar"
+                                   type="submit">
+
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="md:flex md:items-center">
+                        <div class="md:w-1/3"></div>
+                        <div class="md:w-2/1">
+                            <button class="shadow bg-gray-300 hover:bg-gray-100 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2 w-56 rounded-0"
+                                    type="button"
+                                    id="comecar"
+                            >
+                                Começar
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ml-24">
+                        <p class="text-danger">
+                            <?php if (isset($error_senha)) {
+                                echo $error_senha;
+                            } else {
+                                echo " ";
+                            } ?>
+                        </p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="col" id="formulario-cadastro">
+            <div class="w-full max-w-xs ml-10">
+                <form method="POST"
+                      class="w-full max-w-sm"
+                      action="<?= site_url('Logado/cadastro') ?>">
+                    <div class="container">
+                        <p class="font-mono text-base text-gray-800 text-left text-white">
+                            Cadastre-se
+                        </p>
+                        <br>
+                        <div class="container cursor-pointer" style="font-size:30px;color:white" id="back">
+                            <i class="fas fa-arrow-left" title="Voltar"></i>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-full-name">
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   id="inline-full-name"
+                                   type="text"
+                                   name="email"
+                                   placeholder="E-mail"
+
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.email}}</span>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-username">
+
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   id="inline-username"
+                                   autocomplete="false"
+                                   type="password"
+                                   name="senhacadastro"
+                                   placeholder="Senha"
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.senhacadastro}}</span>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-username">
+
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   id="inline-username"
+                                   autocomplete="false"
+                                   type="password"
+                                   name="repsenha"
+                                   placeholder="Rep. Senha"
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.repsenha}}</span>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-username">
+
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class=" bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   id="inline-username"
+                                   autocomplete="false"
+                                   type="date"
+                                   name="datanasc"
+                                   title="Data de nascimento, deve ser de maior (de acordo com a lei em seu país)"
+                                   placeholder="Data Nasc."
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.datanasc}}</span>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-username">
+
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="phone_br
+                                    bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   id="inline-username"
+                                   autocomplete="false"
+                                   type="tel"
+                                   name="telcel"
+                                   placeholder="(XX)XXXXX-XXXX"
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.telcel}}</span>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="md:flex md:items-center">
+                        <div class="md:w-1/3"></div>
+                        <div class="md:w-2/1">
+                            <input class="cursor-pointer shadow bg-gray-300 hover:bg-gray-100 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2 w-64 rounded-0"
+                                   type="submit"
+                                   value="Pronto"
+                                   id="pronto"
+                            >
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <div class="img-home">
+                <img src="<?= URL_RAIZ() . 'application/assets/images/svg/home.svg' ?>" style="width: 450px">
+            </div>
         </div>
     </div>
-    <div class="col">
-        <div class="img-home">
-            <img src="<?= URL_RAIZ() . 'application/assets/images/svg/home.svg' ?>" style="width: 450px">
-        </div>
-    </div>
-    <p class="text-danger">
-        <?php if (isset($error_senha)) {
-            echo $error_senha;
-        } else {
-            echo " ";
-        } ?>
-    </p>
-
+</div>
 </body>
-<script type="text/javascript"
-        src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
-
+<script type="text/javascript" src="<?= URL_RAIZ() ?>js/index.js"></script>
+<!-----------------------------------------jquery-default-sistema------------------------------------------------------>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-3.4.1/jquery.js"></script>
+<!------------------------------------------jquery-ui-p/-modal--------------------------------------------------------->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js"></script>
+<!----------------------------------------------jquery-ui-------------------------------------------------------------->
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
