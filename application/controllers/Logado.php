@@ -116,6 +116,10 @@ class Logado extends CI_Controller
         $data = (object)$this->input->post("data",TRUE);
         $error = [];
 
+        if(!filter_var($data->email, FILTER_VALIDATE_EMAIL)){
+            $error['email'] = "E-mail inválido!";
+        }
+
         if(empty($data->email)){
             $error['email'] = " Preencha o campo e-mail!";
         }
@@ -131,18 +135,30 @@ class Logado extends CI_Controller
         if(empty($data->telcel)){
             $error['telcel'] = "Preencha o campo data telefone!";
         }
+        if(!empty($data->senhacadastro)){
+            if(strlen($data->senhacadastro) < 8){
+                $error['senhacadastro'] = "Senha com no mínimo 8 caracteres!";
+            }
+        }
+        if(!empty($data->repsenha)){
+            if(strlen($data->repsenha) < 8){
+                $error['repsenha'] = "Senha com no mínimo 8 caracteres!";
+            }
+        }
 
         if($data->senhacadastro !== $data->repsenha){
              $error['igualdadepass'] = "As senhas não correspondem!";
-
             $this->response("success",compact("error"));
         }
+
 
         if(count($error) > 0){
 
             $this->response("success",compact("error"));
         }
         $argo_pass = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
+
+
 
         $data = [
             "email"     =>$data->email,
@@ -151,6 +167,7 @@ class Logado extends CI_Controller
             "datanasc"  =>$data->datanasc,
             "telcel"    =>"{$data->telcel}"
         ];
+
 
         $this->Usuarios_model->save($data);
 
