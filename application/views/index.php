@@ -111,6 +111,7 @@
                                     type="button"
                                     id="comecar"
                             >
+
                                 Começar
                             </button>
                         </div>
@@ -129,7 +130,7 @@
                 </form>
             </div>
         </div>
-        <div class="col" id="formulario-cadastro">
+        <div class="col hide" id="formulario-cadastro">
             <div class="w-full max-w-xs ml-10">
                 <form method="POST"
                       class="w-full max-w-sm"
@@ -150,7 +151,7 @@
                             </label>
                         </div>
                         <div class="md:w-2/1">
-                            <input class="bg-gray-200
+                            <input class="email bg-gray-200
                                     appearance-none
                                      border-2
                                       border-gray-200
@@ -167,6 +168,7 @@
                                    id="inline-full-name"
                                    type="text"
                                    name="email"
+                                   v-model="form.email"
                                    placeholder="E-mail"
 
                             >
@@ -199,11 +201,13 @@
                                    id="inline-username"
                                    autocomplete="false"
                                    type="password"
+                                   v-model="form.senhacadastro"
                                    name="senhacadastro"
                                    placeholder="Senha"
                             >
                             <br>
                             <span class=' font-mono text-red-600 text-xs'>{{error.senhacadastro}}</span>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.igualdadepass}}</span>
                         </div>
                     </div>
                     <div class="md:flex md:items-center mb-2">
@@ -232,6 +236,7 @@
                                    autocomplete="false"
                                    type="password"
                                    name="repsenha"
+                                   v-model="form.repsenha"
                                    placeholder="Rep. Senha"
                             >
                             <br>
@@ -264,6 +269,7 @@
                                    autocomplete="false"
                                    type="date"
                                    name="datanasc"
+                                   v-model="form.datanasc"
                                    title="Data de nascimento, deve ser de maior (de acordo com a lei em seu país)"
                                    placeholder="Data Nasc."
                             >
@@ -298,6 +304,7 @@
                                    autocomplete="false"
                                    type="tel"
                                    name="telcel"
+                                   v-model="form.telcel"
                                    placeholder="(XX)XXXXX-XXXX"
                             >
                             <br>

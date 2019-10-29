@@ -83,17 +83,15 @@ if ( ! function_exists('date_to_br')) {
      * @param	string
      * @return	bool	TRUE if the current version is $version or higher
      */
-    function date_to_br($date_timestamp){
-        echo $date_timestamp;
-
-
-
-
-
-
-
+    function date_to_br($date_timestamp = ""){
+        if(!empty($date_timestamp)){
+            return date('d/m/Y', strtotime($date_timestamp));
+        }else{
+            return "";
+        }
     }
 }
+
 // ------------------------------------------------------------------------
 
 if ( ! function_exists('debug')) {

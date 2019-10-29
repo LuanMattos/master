@@ -2,6 +2,14 @@ var App = {}
 
 App.url = function (modulo, controller, methods, params) {
 
+    if (modulo === '') {
+        if(typeof (params) !== 'undefined'){
+            return window.origin + "/master" + "/"  + controller + "/" + methods + "/" + params
+        }
+        return window.origin + "/master" + "/"  + controller + "/" + methods
+    }
+
+
     if (typeof (params) !== 'undefined') {
         return window.origin + "/master" + "/" + modulo + "/" + controller + "/" + methods + "/" + params
     } else {

@@ -3,44 +3,54 @@ var index = {
         return App.url("", "Logado", metodo, params);
     }
 }
-
-$(function(){
+$("#formulario-cadastro").hide();
+$(function () {
 
     var vue_instance = new Vue({
-        el:"#geral-div-container",
-        data:{
-            error:""
+        el: "#geral-div-container",
+        data: {
+            error: "",
+            form: {
+                email: "",
+                senhacadastro: "",
+                repsenha: "",
+                datanasc: "",
+                telcel: ""
+            }
         }
     })
 
     var bg = $("#geral-div-container");
 
-    bg.find("#pronto").click(function(event){
+    bg.find("#pronto").on("click", function (event) {
+        console.log("ntreo");
+        $.post(
+            index.Url("cadastro"),
+            {
+                data: vue_instance.form
+            },
+            function (j) {
+                console.log(j);
+                vue_instance.error = j.error;
+            }, 'json');
         event.preventDefault();
         event.stopPropagation();
 
-        $.post(
-           index.Url("cadastro"),
-            {},
-            function(j){
-               vue_instance.error = j.error;
-            },'json');
-
     });
 
-    bg.find("#formulario-cadastro").hide();
 
-    bg.find("#comecar").click(function(){
+    bg.find("#comecar").click(function () {
 
-        $("#formulario-cadastro").slideToggle();
+        bg.find("#formulario-cadastro").slideToggle();
         bg.find("#formulario-login").hide();
     });
 
-    bg.find("#back").click(function(){
+    bg.find("#back").click(function () {
         bg.find("#formulario-cadastro").hide();
-        $("#formulario-login").slideToggle();
-    })
-
-
+        bg.find("#formulario-login").slideToggle();
+    });
 })
+
+
+
 
