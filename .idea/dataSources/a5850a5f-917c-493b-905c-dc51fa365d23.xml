@@ -8,7 +8,7 @@
       <ObjectId>13744</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>938</IntrospectionStateNumber>
+      <IntrospectionStateNumber>949</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|24582|24584|1
 sequence|table|24620|24622|1
@@ -69,21 +69,21 @@ sequence|table|24620|24622|1
       <ObjectId>13448</ObjectId>
       <StateNumber>365</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>939</IntrospectionStateNumber>
+      <IntrospectionStateNumber>950</IntrospectionStateNumber>
     </schema>
     <schema id="13" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
       <Comment>system catalog schema</Comment>
       <StateNumber>358</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>940</IntrospectionStateNumber>
+      <IntrospectionStateNumber>951</IntrospectionStateNumber>
     </schema>
     <schema id="14" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <StateNumber>359</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>941</IntrospectionStateNumber>
+      <IntrospectionStateNumber>952</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="15" parent="2" name="btree">
@@ -57485,8 +57485,8 @@ sequence|table|24620|24622|1
     <routine id="5416" parent="14" name="trigger_set_timestamp">
       <ObjectId>24603</ObjectId>
       <Owner>postgres</Owner>
-      <SourceTextLength>113</SourceTextLength>
-      <StateNumber>927</StateNumber>
+      <SourceTextLength>144</SourceTextLength>
+      <StateNumber>947</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ResultsDefinition>trigger</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
@@ -103542,8 +103542,8 @@ umserver</ColNames>
       <UnderlyingIndexName>usuarios_pkey</UnderlyingIndexName>
     </key>
     <trigger id="16050" parent="5415" name="set_timestamp">
-      <ObjectId>24638</ObjectId>
-      <StateNumber>937</StateNumber>
+      <ObjectId>24639</ObjectId>
+      <StateNumber>947</StateNumber>
       <Turn>before-row</Turn>
       <Events>U</Events>
       <FireMode>origin</FireMode>
