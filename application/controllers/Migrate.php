@@ -31,7 +31,7 @@ class Migrate extends CI_Controller{
                                 updated_at   timestamptz default now(),
                                 primary key (codigo)
                                 )");
-        $this->db->query("CREATE OR REPLACE FUNCTION if not exists trigger_set_timestamp() RETURNS TRIGGER AS $$ BEGIN NEW.updated_at = NOW();
+        $this->db->query("CREATE OR REPLACE FUNCTION  trigger_set_timestamp() RETURNS TRIGGER AS $$ BEGIN NEW.updated_at = NOW();
                                 RETURN NEW;
                                 END;
                                 $$ LANGUAGE plpgsql");
