@@ -4,9 +4,9 @@ App.url = function (modulo, controller, methods, params) {
 
     if (modulo === '') {
         if(typeof (params) !== 'undefined'){
-            return window.origin + "/master" + "/"  + controller + "/" + methods + "/" + params
+            return window.origin +  "/"  + controller + "/" + methods + "/" + params
         }
-        return window.origin + "/master" + "/"  + controller + "/" + methods
+        return window.origin +  "/"  + controller + "/" + methods
     }
 
 
