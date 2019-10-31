@@ -113,8 +113,8 @@ class Logado extends CI_Controller
 
     }
     public function cadastro(){
-        $data = (object)$this->input->post("data",TRUE);
-        $error = [];
+        $data   = (object)$this->input->post("data",TRUE);
+        $error  = [];
 
         if(!filter_var($data->email, FILTER_VALIDATE_EMAIL)){
             $error['email'] = "E-mail inválido!";
@@ -133,7 +133,7 @@ class Logado extends CI_Controller
             $error['datanasc'] = "Preencha o campo data nascimento!";
         }
         if(empty($data->telcel)){
-            $error['telcel'] = "Preencha o campo data telefone!";
+            $error['telcel'] = "Preencha o campo  telefone!";
         }
         if(!empty($data->senhacadastro)){
             if(strlen($data->senhacadastro) < 8){
@@ -150,15 +150,24 @@ class Logado extends CI_Controller
              $error['igualdadepass'] = "As senhas não correspondem!";
             $this->response("success",compact("error"));
         }
+        $validate_login = $this->Usuarios_model->getwhere(["login"=>$data->email]);
 
+        if(count($validate_login)){
+            $validate_login         = reset($validate_login);
+            $error['email']         = "Usuário " . $validate_login['login'] ." já está cadastrado!";
+        }
+        $validate_tel = $this->Usuarios_model->getwhere(["telcel"=>$data->telcel]);
+
+        if(count($validate_tel)){
+            $validate_tel           = reset($validate_tel);
+            $error['telcel']         = "Telefone " . $validate_tel['telcel'] ." já está cadastrado!";
+        }
 
         if(count($error) > 0){
 
             $this->response("success",compact("error"));
         }
         $argo_pass = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
-
-
 
         $data = [
             "email"     =>$data->email,

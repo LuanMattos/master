@@ -1,5 +1,8 @@
 Instalação servidor:
+sudo apt install php-pgsql
+
 sudo apt install argon2 libargon2-0 libargon2-0-dev
+
 
 
 $ cd /etc/apache2/mods-available

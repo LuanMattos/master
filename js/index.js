@@ -3,8 +3,10 @@ var index = {
         return App.url("", "Logado", metodo, params);
     }
 }
+
 $("#formulario-cadastro").hide();
 $(function () {
+
 
     var vue_instance = new Vue({
         el: "#geral-div-container",
@@ -23,7 +25,8 @@ $(function () {
     var bg = $("#geral-div-container");
 
     bg.find("#pronto").on("click", function (event) {
-        console.log("ntreo");
+        event.preventDefault();
+        event.stopPropagation();
         $.post(
             index.Url("cadastro"),
             {
@@ -33,8 +36,7 @@ $(function () {
                 console.log(j);
                 vue_instance.error = j.error;
             }, 'json');
-        event.preventDefault();
-        event.stopPropagation();
+
 
     });
 
