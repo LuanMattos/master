@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Logado extends CI_Controller
+class Logado extends SI_Controller
 {
 
     public function __construct()
@@ -14,8 +14,8 @@ class Logado extends CI_Controller
     }
 
     public function index(){
-
         $data       = $this->input->post(NULL, TRUE);
+
         error_reporting(0);
         ini_set("display_errors",0);
 
@@ -36,9 +36,7 @@ class Logado extends CI_Controller
                         $this->session->sess_destroy();
                         redirect();
                     }elseif($row['logado'] === 't'){
-
-                        $this->load->view('logado');
-                        return true;
+                        redirect("Logado/Logged");
                     }
                 }
             endif;
@@ -90,8 +88,8 @@ class Logado extends CI_Controller
                             ];
                         }
                         $this->Usuarios_model->save($data);
+                        redirect("Logado/Logged");
 
-                        $this->load->view('logado');
                     } else {
 
                         $this->session->sess_destroy();
@@ -110,6 +108,10 @@ class Logado extends CI_Controller
             $data['error_senha'] = "Usuário/senha incorreto(s)";
             $this->load->view('index', $data);
         }
+
+    }
+    public function logged(){
+        $this->load->view('logado');
 
     }
     public function cadastro(){
@@ -180,23 +182,12 @@ class Logado extends CI_Controller
 
         $this->Usuarios_model->save($data);
 
-//        Array
-//        (
-//            [email] => fsdfs
-//            [senhacadastro] => sdfsdf
-//            [repsenha] => fsdfs
-//            [datanasc] => 2019-12-12
-//            [telcel] => (518) 1818-1818
-//        )
-
     }
 
 
     public function logout()
     {
-//        $this->session->unset_userdata();
         $sessao_atual       = $this->session->get_userdata()['__ci_last_regenerate'];
-
 
         $where              = ['__ci_last_regenerate'=>$sessao_atual];
         $data               = $this->Usuarios_model->getWhere($where);

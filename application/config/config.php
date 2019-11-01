@@ -10,6 +10,7 @@ $config['sess_table_name']		= 'ci_sessions';
 $config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update'] 	= 300;
+$config['encryption_key']       = '$argon2i$v=19$m=65536,t=4,p=1$ek1lVDhZdUx2RUs5U0VYTw$uOrHYACaxNoP5t4+ZAngaYPRpWcbUwIoFHI2bE1qsgc';
 
 /*
 |--------------------------------------------------------------------------

@@ -1,11 +1,11 @@
 $(document).ready(function () {
-    $('#form-geral-logado-index').submit(function (e) {
+    $('form').submit(function (e) {
         e.preventDefault();
     });
+    $("#nav-user").hide();
 
-    $('#formulario-geral-cadastro').submit(function (e) {
-        e.preventDefault();
-    });
-
+    $("#avatar-nav").click(function(){
+    $("#nav-user").slideToggle();
+})
 
 });
