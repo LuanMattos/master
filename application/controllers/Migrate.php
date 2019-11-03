@@ -40,12 +40,12 @@ class Migrate extends CI_Controller{
                                 BEFORE UPDATE ON usuarios
                                 FOR EACH ROW
                                 EXECUTE PROCEDURE trigger_set_timestamp()");
-        pg_query("ALTER TABLE usuarios ADD COLUMN if not exists  __ci_last_regenerate numeric(500)");
-        pg_query("ALTER TABLE usuarios ADD COLUMN if not exists logado boolean");
-        pg_query("ALTER TABLE usuarios ADD COLUMN if not exists session_coo varchar(10000)");
-        pg_query("ALTER TABLE usuarios add column if not exists email varchar(1000)");
-        pg_query("ALTER TABLE usuarios add column if not exists datanasc date");
-        pg_query("ALTER TABLE usuarios add column if not exists telcel varchar(1000)");
+        pg_query("ALTER TABLE usuarios ADD COLUMN IF NOT EXISTS  __ci_last_regenerate numeric(500)");
+        pg_query("ALTER TABLE usuarios ADD COLUMN IF NOT EXISTS logado boolean");
+        pg_query("ALTER TABLE usuarios ADD COLUMN IF NOT EXISTS session_coo varchar(10000)");
+        pg_query("ALTER TABLE usuarios add column IF NOT EXISTS email varchar(1000)");
+        pg_query("ALTER TABLE usuarios add column IF NOT EXISTS datanasc date");
+        pg_query("ALTER TABLE usuarios add column IF NOT EXISTS telcel varchar(1000)");
 
         $transaction = $this->db->trans_complete();
         if(!$transaction){
