@@ -1,11 +1,10 @@
 <head>
-    <script type="text/javascript"
-            src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
-    <script type="text/javascript"
-            src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/js/bootstrap.js"></script>
     <link rel="stylesheet" href="<?= URL_RAIZ() ?>application/assets/js/libs/bootstrap-4.1.3/dist/css/bootstrap.css">
-    <link rel="stylesheet"
-          href="<?= site_url("application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css") ?>">
+    <link rel="stylesheet" href="<?= site_url("application/assets/js/libs/icons/fontawesome-free-5.10.2-web/css/all.css") ?>">
     <link href="<?= site_url("application/assets/css/tailwindcss.css") ?>" rel="stylesheet">
 
 </head>
@@ -23,29 +22,27 @@
 
             </div>
             <div class="float-right mr-6">
-                <i class="fas fa-bell text-2xl text-white cursor-pointer ml-6" id="icone-notificacao"></i>
+
+                <div class="dropdown">
+                    <button class="dropdown"
+                            data-toggle="dropdown"
+                            id="dropdownMenuButton"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                     <i class="fas fa-bell text-2xl text-white cursor-pointer ml-6 "></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Aqui uma notificacao</a>
+                        <a class="dropdown-item" href="#">Mostrar Mais</a>
+                    </div>
+                </div>
+
                 <i class="fas fa-comments text-2xl text-white cursor-pointer ml-6" id="icone-msg"></i>
                 <i class="fas fa-sort-down text-2xl text-white cursor-pointer ml-6" id="icone-opcoes"></i>
             </div>
-            <!--            <a href="#" class="inline-flex-->
-            <!--                                text-sm-->
-            <!--                                 px-3-->
-            <!--                                  py-2-->
-            <!--                                   leading-none-->
-            <!--                                     text-black-->
-            <!--                                      border-white-->
-            <!--                                      bg-gray-700-->
-            <!--                                       hover:border-transparent-->
-            <!--                                         hover:bg-gray-700-->
-            <!--                                           lg:mt-2-->
-            <!--                                           lg:mb-2-->
-            <!--                                           lg:mr-2-->
-            <!--">-->
-
             <div>
 
             </div>
-            <!--            </a>-->
         </div>
     </nav>
     <div class="float-right mt-1 py-2 w-64 bg-white rounded-lg shadow-xl hidden" id="opcoes-user">
@@ -60,11 +57,7 @@
         <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-black">Mostrar Mais</a>
     </div>
 
-    <div class="float-right mt-2 mr-8 py-2 w-1/4 bg-white rounded-lg shadow-xl hidden" id="nav-notificacao">
-        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-black"><p>Aqui uma notificacao</p>
-        </a>
-        <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 hover:text-black">Mostrar Mais</a>
-    </div>
+
 </div>
 <div id="corpo" style="width: 100%; height: 100%;">
     <div class="bg-gray-300 h-75 bg-no-repeat bg-cover  bg-center cursor-pointer"
@@ -85,15 +78,14 @@
         </div>
     </div>
 </div>
+
 </body>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/home/home.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-3.4.1/jquery.js"></script>
-<script type="text/javascript"
-        src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
-<script type="text/javascript"
-        src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
