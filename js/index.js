@@ -1,6 +1,6 @@
 var index = {
     Url: function (metodo, params) {
-        return App.url("", "Logado", metodo, params);
+        return App.url("", "Home", metodo, params);
     }
 }
 

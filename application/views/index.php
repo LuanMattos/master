@@ -21,7 +21,7 @@
             <div class="w-full max-w-xs ml-10">
                 <form method="POST" class=" w-full max-w-sm"
                       id="form-geral-logado-index"
-                      action="<?= site_url('Logado/index') ?>">
+                      action="<?= site_url('Home/index') ?>">
                     <div class="container p-4">
                         <p class="font-mono text-base text-gray-800 text-left text-white">
                             Entrar
@@ -136,7 +136,7 @@
                 <form method="POST"
                       class="w-full max-w-sm"
                       id="formulario-geral-cadastro"
-                      action="<?= site_url('Logado/cadastro') ?>">
+                      action="<?= site_url('Home/cadastro') ?>">
                     <div class="container">
                         <p class="font-mono text-base text-gray-800 text-left text-white">
                             Cadastre-se
