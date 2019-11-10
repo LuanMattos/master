@@ -101,15 +101,14 @@
     </div>
 </div>
 
+
 </body>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/home/home.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-3.4.1/jquery.js"></script>
-<script type="text/javascript"
-        src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
-<script type="text/javascript"
-        src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/icons/fontawesome-free-5.10.2-web/js/all.js"></script>

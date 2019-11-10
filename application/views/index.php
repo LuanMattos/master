@@ -9,7 +9,7 @@
 <style>
     .bg {
         background-color: #3e3e3f;
-        background-image: url(<?= site_url('application/assets/images/svg/graph-paper/texture.svg')  ?>);
+        /*background-image: url(*/<?//= site_url('application/assets/images/svg/graph-paper/texture.svg')  ?>/*);*/
     }
 
 </style>

@@ -18,4 +18,8 @@ a2enmod rewrite
 
 reiniciar apache
 
+instalar curl para php:
+
+sudo apt-get install curl
+
 patrick.mattos@acad.ftec.com.br

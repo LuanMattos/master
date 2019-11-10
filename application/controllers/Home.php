@@ -111,6 +111,8 @@ class Home extends SI_Controller
 
     }
     public function logged(){
+//        $sms = new ServiceSms\ServiceSms();
+
         $this->load->view('home');
 
     }

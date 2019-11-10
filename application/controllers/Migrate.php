@@ -46,6 +46,22 @@ class Migrate extends CI_Controller{
         $this->db->query("ALTER TABLE usuarios add column IF NOT EXISTS email varchar(1000)");
         $this->db->query("ALTER TABLE usuarios add column IF NOT EXISTS datanasc date");
         $this->db->query("ALTER TABLE usuarios add column IF NOT EXISTS telcel varchar(1000)");
+        /** SMS **/
+        $this->db->query("CREATE TABLE if not exists sms_fila (
+                                                            codigo          serial not null,
+                                                            msg             varchar(1000),
+                                                            destinatario    numeric(13),
+                                                            date_to_send    timestamp default now(),
+                                                            date_send       timestamp,
+                                                            response        varchar(1000),
+                                                            created_at      timestamp default  now()
+                            )");
+        $this->db->query("CREATE TABLE if not exists provider_sms(
+                                                            codigo serial not null,
+                                                            conta varchar(500),
+                                                            senha varchar(1000)
+                                                        )");
+        $this->db->query("ALTER TABLE provider_sms add column if not exists provedor varchar(500)");
 
         $transaction = $this->db->trans_complete();
         if(!$transaction){

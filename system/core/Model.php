@@ -110,7 +110,7 @@ class CI_Model {
      * @get_hwere
      * Where = []
     **/
-    public function getwhere($where = null,$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL,$result = "array"){
+    public function getWhere($where = null,$orderby=NULL,$direction = NULL,$limit = NULL,$offset = NULL,$result = "array"){
 
         $getWhere = $this->db->order_by($orderby,$direction)->get_where($this->get_table(), $where, $limit, $offset);
 
@@ -127,6 +127,15 @@ class CI_Model {
             return $result;
         }
 
+    }
+    /**
+     * Função para retornar todos os registros de uma tabela
+     * $param $select = se for vazio retornara todas as entidades
+     **/
+    public function all($select = "*"){
+
+        $all = $this->db->select($select)->from($this->get_table());
+        return $all->get()->result_array();
     }
     public function count_result_table($reset = TRUE){
         return $this->db->count_all_results($this->get_table(),$reset);

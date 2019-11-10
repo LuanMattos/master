@@ -65,8 +65,9 @@ die('This file is used for development purposes only.');
  * @property CI_Utf8             $utf8                                Provides support for UTF-8 environments
  * @property Ispconfig           $ispconfig                           This class enables you to use the ISPConfig 3 Remote API
  * @property Boleto              $boleto                              Boleto Class
- * @property Un_cadastro_unificado_model                $Un_cadastro_unificado_model                                Un_cadastro_unificado_model
- * @property Usuarios_model                             $Usuarios_model                                             Usuarios_model
+ * @property Usuarios_model      $Usuarios_model                      Usuarios_model
+ * @property Provider_sms_model        $Provider_sms_model                  Provedor SMS
+ * @property Sms_fila_model            $Sms_fila_model                      Fila de SMS
  */
 class CI_Controller {
 
