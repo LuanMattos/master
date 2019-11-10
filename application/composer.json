@@ -9,7 +9,8 @@
       "Service\\": "services",
       "UnicoService\\": "services/modules",
       "ServiceSms\\": "services",
-      "ServiceZenvia\\": "services"
+      "ServiceZenvia\\": "services",
+      "ServiceMigrateHome\\": "services/migrates/home"
     }
   }
 }

@@ -6,43 +6,40 @@ use Zenvia\Model\SmsFacade;
 
 class ServiceZenvia extends GeneralService {
 
-    public function __construct(){
 
-    }
+    public function startFacade($param,$sms,$direct = FALSE){
 
-    public function startFacade($param,$sms){
-
-        $senha = base64_encode($param['alias'] . ":" . $param['password']);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, "https://api-rest.zenvia.com/services/send-sms-multiple");
+        $auth   = base64_encode($param['alias'] . ":" . $param['password']);
+        $ch     = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $param['webServiceUrl']);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_HEADER, FALSE);
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS,$this->json_msg($sms));
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "Content-Type: application/json",
-            "Authorization: Basic $senha",
+            "Authorization: Basic $auth",
             "Accept: application/json"
         ));
         $response = curl_exec($ch);
-//        debug($response);
-        $this->setResponseDb($response,$sms);
+        $response = $this->setResponseDb($response,$sms,$direct);
         curl_close($ch);
+        return $response;
 
 
     }
-    public function setResponseDb($response,$sms){
+    public function setResponseDb($response,$sms,$direct = FALSE){
         $this->load->model("sms/Sms_fila_model");
         $Sms_fila_model = $this->Sms_fila_model;
-        $data = json_decode($response);
+        $data           = json_decode($response);
 
         foreach($data->sendSmsMultiResponse->sendSmsResponseList as $row){
-            if($row->statusDescription === "Ok"){
+            if(!$direct){
+                if($row->statusDescription === "Ok"){
                 $data_sms = [
                     "codigo"    => $sms['codigo'],
                     "date_send" => date("Y-m-d H:i:s")
                 ];
-
             }else{
                 $data_sms = [
                     "codigo"    => $sms['codigo'],
@@ -50,17 +47,23 @@ class ServiceZenvia extends GeneralService {
                 ];
 
             }
-            $Sms_fila_model->save($data_sms);
+                $Sms_fila_model->save($data_sms);
+            }else{
+
+                if($row->statusDescription === "Ok") {
+                    return true;
+                }
+            }
         }
 
     }
     public  function json_msg($param){
 
-        $param = (object)$param;
-        $json = '{';
-        $json .= '"sendSmsMultiRequest":{"aggregateId":1750,"sendSmsRequestList":[';
-        $json .= $this->json($param);
-        $json .= ']}}';
+        $param  = (object)$param;
+        $json   = '{';
+        $json   .= '"sendSmsMultiRequest":{"aggregateId":1750,"sendSmsRequestList":[';
+        $json   .= $this->json($param);
+        $json   .= ']}}';
 
         return $json;
     }
@@ -69,7 +72,7 @@ class ServiceZenvia extends GeneralService {
             "from"  => '',
             "to"    => "{$row->destinatario}",
             "msg"   => $row->msg,
-            "id"    => $row->codigo
+            "id"    => isset($row->codigo)?$row->codigo:NULL
         ];
         return json_encode($json);
 

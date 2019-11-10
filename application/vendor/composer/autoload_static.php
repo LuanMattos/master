@@ -16,6 +16,7 @@ class ComposerStaticInitb943c46219488dafaf89f7e969c8c84e
             'Service\\' => 8,
             'ServiceZenvia\\' => 14,
             'ServiceSms\\' => 11,
+            'ServiceMigrateHome\\' => 19,
         ),
     );
 
@@ -35,6 +36,10 @@ class ComposerStaticInitb943c46219488dafaf89f7e969c8c84e
         'ServiceSms\\' => 
         array (
             0 => __DIR__ . '/../..' . '/services',
+        ),
+        'ServiceMigrateHome\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/services/migrates/home',
         ),
     );
 

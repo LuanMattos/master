@@ -111,10 +111,7 @@ class Home extends SI_Controller
 
     }
     public function logged(){
-//        $sms = new ServiceSms\ServiceSms();
-
         $this->load->view('home');
-
     }
     public function cadastro(){
         $data   = (object)$this->input->post("data",TRUE);
@@ -174,12 +171,28 @@ class Home extends SI_Controller
         $argo_pass = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
 
         $data = [
-            "email"     =>$data->email,
-            "login"     =>$data->email,
-            "senha"     =>$argo_pass,
-            "datanasc"  =>$data->datanasc,
-            "telcel"    =>"{$data->telcel}"
+            "email"     => $data->email,
+            "login"     => $data->email,
+            "senha"     => $argo_pass,
+            "datanasc"  => $data->datanasc,
+            "telcel"    => "{$data->telcel}"
         ];
+
+        $sms                = new \ServiceSms\ServiceSms();
+        $numero_validado    = $sms->validaTelefoneBr($data['telcel']);
+        $error['telcel']    = "O número de telefone é inválido";
+
+        if(!$numero_validado){
+            $this->response("success",$error['telcel']);
+        }
+
+        $dataSms = [
+            "msg"           => "",
+            "destinatario"  => "$numero_validado",
+            "date_to_send"  => date("Y-m-d H:i:s")
+        ];
+        $sms->processesDirect($dataSms);
+
 
 
         $this->Usuarios_model->save($data);

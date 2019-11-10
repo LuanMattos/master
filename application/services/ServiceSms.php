@@ -2,6 +2,7 @@
 namespace ServiceSms;
 use ServiceZenvia;
 use Service\GeneralService;
+
 class ServiceSms extends  GeneralService{
 
     protected   $provider;
@@ -12,8 +13,12 @@ class ServiceSms extends  GeneralService{
     public function __construct(){
         $this->setProvider();
         $this->provider;
-        $this->processesRow();
+
     }
+    /**
+     * Add SMS na fila
+     * $param   codigo  msg  destinatario  date_to_send  date_send  created_at  response
+     */
     public function addToRow(Array $param = []){
         $this->load->model("sms/Sms_fila_model");
         $sms_fila_model = $this->Sms_fila_model;
@@ -25,7 +30,7 @@ class ServiceSms extends  GeneralService{
         $sms_fila_model->save($param);
     }
     /**
-     * Processa as filas de sms
+     * Processa todas as filas de sms
     */
     public function processesRow(){
         $this->load->model("sms/Sms_fila_model");
@@ -43,7 +48,39 @@ class ServiceSms extends  GeneralService{
         }
 
     }
+    public function validaTelefoneBr($tel){
+        $search = ["(",")",".","-"," ","X","*","!","@","'","´",","];
 
+        $numer  = str_replace($search,"",$tel);
+        if(strlen($tel) < 13 || strlen($tel) > 13){
+            $this->error = ["msg"=>"Verifique o tamanho do número de telefone"];
+            return false;
+            exit();
+        }
+        return $numer;
+    }
+    /**
+     * Processa Linha antes de inserir no banco
+     * $param   codigo  msg  destinatario  date_to_send  date_send  created_at  response
+     */
+    public function processesDirect($param){
+
+        $this->load->model("sms/Sms_fila_model");
+        if(empty($this->provider['alias']) || empty($this->provider['password'])){
+            $this->error = ['msg'=>"Provedor de SMS não configurado corretamente!"];
+            exit();
+        }
+        $param      = (object)$param;
+        $response   = $this->provedor->startFacade($this->provider,$param,TRUE);
+        if($response){
+            $param              = (array)$param;
+            $param["date_send"] = date("Y-m-d H:i:s");
+            $this->Sms_fila_model->save($param);
+        }
+    }
+    /**
+     * Seta o provedor configurado no banco
+     */
     public function setProvider(String $provider_name = NULL){
         $this->load->model("sms/Provider_sms_model");
         if(empty($provider_name) || is_null($provider_name)){
