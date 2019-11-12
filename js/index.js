@@ -17,7 +17,9 @@ $(function () {
                 senhacadastro: "",
                 repsenha: "",
                 datanasc: "",
-                telcel: ""
+                telcel: "",
+                nome:"",
+                sobrenome:""
             }
         }
     })
@@ -27,14 +29,21 @@ $(function () {
     bg.find("#pronto").on("click", function (event) {
         event.preventDefault();
         event.stopPropagation();
+        vue_instance.form.telcel = $("#cadastro-phone").val()
         $.post(
             index.Url("cadastro"),
             {
-                data: vue_instance.form
+                data: vue_instance.form,
+
             },
             function (j) {
-                console.log(j);
-                vue_instance.error = j.error;
+                if(!j.info){
+                    vue_instance.error = j.error;
+                }
+                if(j.info){
+                    window.location.replace("verification/Verification/index");
+                }
+
             }, 'json');
 
 

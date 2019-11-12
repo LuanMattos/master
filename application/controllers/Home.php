@@ -1,15 +1,16 @@
 <?php
+use Modules\Account\RestoreAccount\RestoreAccount as RestoreAccount;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Home extends SI_Controller
 {
 
-    public function __construct()
-    {
+    public function __construct(){
         parent::__construct();
         $this->load->model("Usuarios_model");
         $this->output->enable_profiler(FALSE);
         $this->load->helper("cookie");
+        $this->load->helper("url");
 
     }
 
@@ -114,7 +115,10 @@ class Home extends SI_Controller
         $this->load->view('home');
     }
     public function cadastro(){
-        $data   = (object)$this->input->post("data",TRUE);
+        $data           = (object)$this->input->post("data",TRUE);
+        $sms            = new \ServiceSms\ServiceSms();
+        $RestoreAccount = new RestoreAccount();
+
         $error  = [];
 
         if(!filter_var($data->email, FILTER_VALIDATE_EMAIL)){
@@ -136,6 +140,12 @@ class Home extends SI_Controller
         if(empty($data->telcel)){
             $error['telcel'] = "Preencha o campo  telefone!";
         }
+        $numero_validado    = $sms->validaTelefoneBr($data->telcel);
+
+        if(!$numero_validado){
+            $error['telcel'] = "Número de telefone deve conter 11 caractéres!";
+        }
+
         if(!empty($data->senhacadastro)){
             if(strlen($data->senhacadastro) < 8){
                 $error['senhacadastro'] = "Senha com no mínimo 8 caracteres!";
@@ -146,10 +156,17 @@ class Home extends SI_Controller
                 $error['repsenha'] = "Senha com no mínimo 8 caracteres!";
             }
         }
+        if(empty($data->nome) || !preg_match('/^[a-zA-Z0-9]+/', $data->nome)){
+            $error['nome'] = "Erro,o campo nome está vazio ou com coracteres especiais como acentos.";
+        }
+        if(empty($data->sobrenome) || !preg_match('/^[a-zA-Z0-9]+/', $data->sobrenome)){
+            $error['sobrenome'] = "Erro,o campo sobrenome está vazio ou com coracteres especiais como acentos.";
+        }
+
 
         if($data->senhacadastro !== $data->repsenha){
              $error['igualdadepass'] = "As senhas não correspondem!";
-            $this->response("success",compact("error"));
+            $this->response("error",compact("error"));
         }
         $validate_login = $this->Usuarios_model->getwhere(["login"=>$data->email]);
 
@@ -166,42 +183,47 @@ class Home extends SI_Controller
 
         if(count($error) > 0){
 
-            $this->response("success",compact("error"));
+            $this->response("error",compact("error"));
         }
         $argo_pass = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
+        $numero_validado    = $sms->validaTelefoneBr($data->telcel);
 
         $data = [
             "email"     => $data->email,
             "login"     => $data->email,
             "senha"     => $argo_pass,
             "datanasc"  => $data->datanasc,
-            "telcel"    => "{$data->telcel}"
+            "telcel"    => "{$numero_validado}",
+            "nome"      => $this->clear_car($data->nome),
+            "sobrenome" => $this->clear_car($data->sobrenome)
         ];
 
-        $sms                = new \ServiceSms\ServiceSms();
-        $numero_validado    = $sms->validaTelefoneBr($data['telcel']);
         $error['telcel']    = "O número de telefone é inválido";
 
         if(!$numero_validado){
-            $this->response("success",$error['telcel']);
+            $this->response("error",$error['telcel']);
         }
+        $codigo_verificacao = $RestoreAccount->gerarCodigoValidacao();
 
         $dataSms = [
-            "msg"           => "",
-            "destinatario"  => "$numero_validado",
+            "msg"           => $codigo_verificacao . " é o seu código de verificação atos",
+            "destinatario"  => 55 . "$numero_validado",
             "date_to_send"  => date("Y-m-d H:i:s")
         ];
         $sms->processesDirect($dataSms);
 
+        $save = $this->Usuarios_model->save($data);
+        $this->response("success");
 
-
-        $this->Usuarios_model->save($data);
 
     }
+    public function redirect(){
+//        $this->load->view("verification/index");
 
-
-    public function logout()
-    {
+        redirect("verification/Verification/index");
+//        header("Location: ".site_url("verification/Verification/index"));
+    }
+    public function logout(){
         $sessao_atual       = $this->session->get_userdata()['__ci_last_regenerate'];
 
         $where              = ['__ci_last_regenerate'=>$sessao_atual];

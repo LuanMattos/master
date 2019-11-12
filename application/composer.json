@@ -10,7 +10,7 @@
       "UnicoService\\": "services/modules",
       "ServiceSms\\": "services",
       "ServiceZenvia\\": "services",
-      "ServiceMigrateHome\\": "services/migrates/home"
+      "Modules\\Account\\RestoreAccount\\": "services/modules/account"
     }
   }
 }

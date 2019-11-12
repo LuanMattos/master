@@ -181,6 +181,68 @@
                     <div class="md:flex md:items-center mb-2">
                         <div class="md:w-1/3">
                             <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-full-name">
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   type="text"
+                                   name="nome"
+                                   v-model="form.nome"
+                                   placeholder="Nome"
+
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.nome}}</span>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
+                                   for="inline-full-name">
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                            <input class="bg-gray-200
+                                    appearance-none
+                                     border-2
+                                      border-gray-200
+                                        w-64
+                                         py-2
+                                          px-5
+                                           text-gray-700
+                                            leading-tight
+                                             focus:outline-none
+                                              focus:bg-white
+                                               focus:border-gray-400
+                                               xl:rounded-0
+"
+                                   type="text"
+                                   name="sobrenome"
+                                   v-model="form.sobrenome"
+                                   placeholder="Sobrenome"
+
+                            >
+                            <br>
+                            <span class=' font-mono text-red-600 text-xs'>{{error.sobrenome}}</span>
+                        </div>
+                    </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-right mb-1 md:mb-0 pr-4"
                                    for="inline-username">
 
                             </label>
@@ -287,7 +349,9 @@
                             </label>
                         </div>
                         <div class="md:w-2/1">
-                            <input class="phone_br
+                            <input
+                                    class="
+                                    phone_br
                                     bg-gray-200
                                     appearance-none
                                      border-2
@@ -301,14 +365,15 @@
                                               focus:bg-white
                                                focus:border-gray-400
                                                xl:rounded-0
+
 "
-                                   id="inline-username"
+                                   id="cadastro-phone"
                                    autocomplete="false"
-                                   type="tel"
+                                   type="text"
                                    name="telcel"
-                                   v-model="form.telcel"
-                                   placeholder="(XX)XXXXX-XXXX"
+
                             >
+
                             <br>
                             <span class=' font-mono text-red-600 text-xs'>{{error.telcel}}</span>
                         </div>

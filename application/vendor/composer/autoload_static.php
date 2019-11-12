@@ -16,7 +16,10 @@ class ComposerStaticInitb943c46219488dafaf89f7e969c8c84e
             'Service\\' => 8,
             'ServiceZenvia\\' => 14,
             'ServiceSms\\' => 11,
-            'ServiceMigrateHome\\' => 19,
+        ),
+        'M' => 
+        array (
+            'Modules\\Account\\RestoreAccount\\' => 31,
         ),
     );
 
@@ -37,9 +40,9 @@ class ComposerStaticInitb943c46219488dafaf89f7e969c8c84e
         array (
             0 => __DIR__ . '/../..' . '/services',
         ),
-        'ServiceMigrateHome\\' => 
+        'Modules\\Account\\RestoreAccount\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/services/migrates/home',
+            0 => __DIR__ . '/../..' . '/services/modules/account',
         ),
     );
 

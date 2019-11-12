@@ -52,7 +52,7 @@ class ServiceSms extends  GeneralService{
         $search = ["(",")",".","-"," ","X","*","!","@","'","´",","];
 
         $numer  = str_replace($search,"",$tel);
-        if(strlen($tel) < 13 || strlen($tel) > 13){
+        if(strlen($numer) < 11 || strlen($numer) > 11){
             $this->error = ["msg"=>"Verifique o tamanho do número de telefone"];
             return false;
             exit();
@@ -64,7 +64,6 @@ class ServiceSms extends  GeneralService{
      * $param   codigo  msg  destinatario  date_to_send  date_send  created_at  response
      */
     public function processesDirect($param){
-
         $this->load->model("sms/Sms_fila_model");
         if(empty($this->provider['alias']) || empty($this->provider['password'])){
             $this->error = ['msg'=>"Provedor de SMS não configurado corretamente!"];
@@ -72,6 +71,7 @@ class ServiceSms extends  GeneralService{
         }
         $param      = (object)$param;
         $response   = $this->provedor->startFacade($this->provider,$param,TRUE);
+
         if($response){
             $param              = (array)$param;
             $param["date_send"] = date("Y-m-d H:i:s");

@@ -24,7 +24,6 @@ class Migrate extends CI_Controller{
                                 codigo       serial NOT NULL,
                                 login        varchar(500),
                                 senha        varchar(1000),
-                                ultimoacesso timestamp,
                                 created_at   timestamp default now(),
                                 updated_at   timestamptz default now(),
                                 primary key (codigo)
@@ -5942,6 +5941,24 @@ INSERT INTO cidade (id, nome, estado) VALUES
 
         $this->db->query("ALTER  TABLE pais add column if not exists  ddi int");
         $this->db->query("update  pais set ddi = 55 where id = 1");
+
+        /**Account**/
+        $this->db->query("create table if not exists account_home(
+                                                        codigo bigserial,
+                                                        code_verification varchar(1000),
+                                                        code_restore      varchar(1000),
+                                                        created_at   timestamp default now(),
+                                                        updated_at   timestamptz default now()
+                                                    )");
+        $this->db->query("alter table account_home drop constraint if exists usuarios_pkey");
+        $this->db->query("alter table account_home add column if not exists codusuarios bigint constraint  usuarios_pkey references usuarios");
+        $this->db->query("DROP TRIGGER if exists  set_timestamp ON account_home");
+        $this->db->query("CREATE    TRIGGER set_timestamp
+                                        BEFORE UPDATE ON account_home
+                                        FOR EACH ROW
+                                        EXECUTE PROCEDURE trigger_set_timestamp()");
+        $this->db->query("alter table usuarios add column if not exists nome varchar(1000)");
+        $this->db->query("alter table usuarios add column if not exists sobrenome varchar(1000)");
 
         $transaction = $this->db->trans_complete();
 

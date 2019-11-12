@@ -3,10 +3,17 @@ $(document).ready(function(){
     $('.time').mask('00:00:00');
     $('.date_time').mask('00/00/0000 00:00:00');
     $('.cep').mask('00000-000');
+    // var options =  {
+    //     onChange: function(value) {
+    //         $('.phone_br').attr("maxlength",16);
+    //
+    //     }};
+
+    $('.crazy_cep').mask('00000-000');
     $('.phone').mask('0000-0000');
     $('.phone_with_ddd').mask('(00) 0000-0000');
     $('.phone_us').mask('(000) 000-0000');
-    $('.phone_br').mask('(000) 0000-0000');
+    $('.phone_br').mask('(00) 0000-00000');
     $('.cpf').mask('000.000.000-00', {reverse: true});
     $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
     $('.money').mask('000.000.000.000.000,00', {reverse: true});

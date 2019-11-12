@@ -10,5 +10,5 @@ return array(
     'Service\\' => array($baseDir . '/services'),
     'ServiceZenvia\\' => array($baseDir . '/services'),
     'ServiceSms\\' => array($baseDir . '/services'),
-    'ServiceMigrateHome\\' => array($baseDir . '/services/migrates/home'),
+    'Modules\\Account\\RestoreAccount\\' => array($baseDir . '/services/modules/account'),
 );

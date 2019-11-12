@@ -14,6 +14,14 @@ class SI_Controller extends CI_Controller{
 
 
     }
+    /**
+     * deixa apenas letras evitando SQL-inject 1
+    **/
+    public function clear_car($value){
+        $value_a = preg_replace('/[^[:alpha:]_]/', '',$value);
+        return addslashes($value_a);
+
+    }
     public function menu(){
         $url        = $_SERVER["REQUEST_URI"];
         $explode    = explode("/",$url);
