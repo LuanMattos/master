@@ -52,7 +52,7 @@ class ServiceSms extends  GeneralService{
         $search = ["(",")",".","-"," ","X","*","!","@","'","´",","];
 
         $numer  = str_replace($search,"",$tel);
-        if(strlen($numer) < 11 || strlen($numer) > 11){
+        if(strlen($numer) < 13 || strlen($numer) > 13){
             $this->error = ["msg"=>"Verifique o tamanho do número de telefone"];
             return false;
             exit();
