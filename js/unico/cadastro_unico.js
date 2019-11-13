@@ -115,6 +115,7 @@ var cadastro_unico = {
             self.Url("salvar", codigo),
             {},
             function (j) {
+                console.log(self.Url("salvar"))
                 App.modal({
                     title: title,
                     width: "950px",

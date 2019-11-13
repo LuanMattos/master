@@ -33,7 +33,7 @@
     <tr class="table-light" v-for="(i,index) in data">
         <td class="text-right">{{i.codigo}}</td>
         <td>{{i.nome}}</td>
-        <td>{{i.rua}}</td>
+        <td>{{i.endereco}}</td>
         <td>{{i.email}}</td>
         <td>{{i.cidade}}</td>
         <td class="text-center" @click="excluir(index,i.codigo)">

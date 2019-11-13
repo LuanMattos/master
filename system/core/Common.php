@@ -34,7 +34,7 @@ if ( ! function_exists('URL_RAIZ')) {
      */
     function URL_RAIZ(){
         return "http" . (isset($_SERVER['HTTPS']) ?
-                (($_SERVER['HTTPS']=="on") ? "s" : "") : "") . "://" . "$_SERVER[HTTP_HOST]/master/";
+                (($_SERVER['HTTPS']=="on") ? "s" : "") : "") . "://" . "$_SERVER[HTTP_HOST]/";
     }
 }
 // ------------------------------------------------------------------------

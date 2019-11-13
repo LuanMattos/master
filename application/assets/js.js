@@ -3,9 +3,9 @@ var App = {}
 App.url = function (modulo, controller, methods, params) {
 
     if (typeof (params) !== 'undefined') {
-        return window.origin + "/master" + "/" + modulo + "/" + controller + "/" + methods + "/" + params
+        return window.origin   + "/" + modulo + "/" + controller + "/" + methods + "/" + params
     } else {
-        return window.origin + "/master" + "/" + modulo + "/" + controller + "/" + methods
+        return window.origin + "/" + modulo + "/" + controller + "/" + methods
     }
 },
     App.alerta = function (text, buttons) {
