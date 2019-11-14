@@ -49,7 +49,6 @@ $(function () {
 
     });
 
-
     bg.find("#comecar").click(function () {
 
         bg.find("#formulario-cadastro").slideToggle();

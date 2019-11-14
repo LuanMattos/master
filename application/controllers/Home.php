@@ -216,12 +216,6 @@ class Home extends SI_Controller
 
 
     }
-    public function redirect(){
-//        $this->load->view("verification/index");
-
-        redirect("verification/Verification/index");
-//        header("Location: ".site_url("verification/Verification/index"));
-    }
     public function logout(){
         $sessao_atual       = $this->session->get_userdata()['__ci_last_regenerate'];
 
