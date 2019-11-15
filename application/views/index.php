@@ -135,7 +135,7 @@
         </div>
         <div class="col hide" id="formulario-cadastro">
             <div class="w-full max-w-xs ml-10">
-                <form method="POST"
+                <div method="POST"
                       class="w-full max-w-sm"
                       id="formulario-geral-cadastro"
                       action="<?= site_url('Home/cadastro') ?>">
@@ -353,8 +353,6 @@
 
                             </label>
                         </div>
-                            <br>
-                            <span class=' font-mono text-red-600 text-xs'>{{error.telcel}}</span>
                         </div>
                     <br>
 
@@ -364,14 +362,17 @@
                                 <select class="block border-2  bg-gray-200  border-gray-200 text-gray-700 py-2 px-3 pr-8 rounded-0 focus:outline-none focus:bg-white border-gray-500  hover:border-white"
                                         id="grid-state"
                                         style="margin-left:60px"
+                                        v-model="form.telcodpais"
                                 >
                                     <option>55</option>
                                     <option>1</option>
                                     <option>2</option>
                                 </select>
-                            </div>
-                        </div>
 
+                            </div>
+
+                        </div>
+                        <br>
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                             <div class="md:w-2/2">
 
@@ -401,6 +402,18 @@
                             </div>
                         </div>
                     </div>
+                    <div class="md:flex md:items-center mb-2">
+                        <div class="md:w-1/3">
+                            <label class="block text-white font-bold md:text-left mb-1 md:mb-0 pr-4"
+                                   for="inline-username">
+
+                            </label>
+                        </div>
+                        <div class="md:w-2/1">
+                        <span class=' font-mono text-red-600 text-xs'>{{error.telcel}}</span>
+                        </div>
+                    </div>
+                </div>
 
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/3"></div>

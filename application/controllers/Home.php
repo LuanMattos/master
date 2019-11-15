@@ -119,8 +119,12 @@ class Home extends SI_Controller
         $sms            = new \ServiceSms\ServiceSms();
         $RestoreAccount = new RestoreAccount();
 
+
         $error  = [];
 
+        if(empty($data->telcodpais)){
+            $error['telcel'] = "Preencha o código de telefone de seu país!";
+        }
         if(!filter_var($data->email, FILTER_VALIDATE_EMAIL)){
             $error['email'] = "E-mail inválido!";
         }
@@ -143,7 +147,7 @@ class Home extends SI_Controller
         $numero_validado    = $sms->validaTelefoneBr($data->telcel);
 
         if(!$numero_validado){
-            $error['telcel'] = "Número de telefone deve conter 11 caractéres!";
+            $error['telcel'] = "Número de telefone inválido!";
         }
 
         if(!empty($data->senhacadastro)){
@@ -156,13 +160,11 @@ class Home extends SI_Controller
                 $error['repsenha'] = "Senha com no mínimo 8 caracteres!";
             }
         }
-        if(empty($data->nome) || !preg_match('/^[a-zA-Z0-9]+/', $data->nome)){
-            $error['nome'] = "Erro,o campo nome está vazio ou com coracteres especiais como acentos.";
+        $pre_snome = preg_match('/[^[:alpha:]_]/', $data->sobrenome);
+        $pre_nome  = preg_match('/[^[:alpha:]_]/', $data->nome);
+        if(empty($data->sobrenome) || !empty($pre_snome) || empty($data->nome) || !empty($pre_nome)){
+            $error['sobrenome'] = "Nome e/ou sobrenome inválido(s)!";
         }
-        if(empty($data->sobrenome) || !preg_match('/^[a-zA-Z0-9]+/', $data->sobrenome)){
-            $error['sobrenome'] = "Erro,o campo sobrenome está vazio ou com coracteres especiais como acentos.";
-        }
-
 
         if($data->senhacadastro !== $data->repsenha){
              $error['igualdadepass'] = "As senhas não correspondem!";
@@ -206,10 +208,11 @@ class Home extends SI_Controller
         $codigo_verificacao = $RestoreAccount->gerarCodigoValidacao();
         $dataSms = [
             "msg"           => $codigo_verificacao . " é o seu código de verificação atos",
-            "destinatario"  => 55 . "$numero_validado",
+            "destinatario"  => "$data->telcodpais" . "$numero_validado",
             "date_to_send"  => date("Y-m-d H:i:s")
         ];
-        $sms->processesDirect($dataSms);
+        debug($dataSms);
+//        $sms->processesDirect($dataSms);
 
         $save = $this->Usuarios_model->save($data);
         $this->response("success");
