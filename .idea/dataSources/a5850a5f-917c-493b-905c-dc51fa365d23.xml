@@ -19,15 +19,15 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>2059</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|24620|24622|1
-sequence|table|25682|25676|1
+      <Relations>sequence|table|25682|25676|1
+sequence|table|24620|24622|1
+sequence|table|24582|24584|1
 sequence|table|25536|25538|1
 sequence|table|28740|28742|1
 sequence|table|25547|25549|1
 sequence|table|28710|28712|1
 sequence|table|28718|28720|1
 sequence|table|28728|28730|1
-sequence|table|24582|24584|1
 </Relations>
     </database>
     <role id="5" parent="1" name="msf">

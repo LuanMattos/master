@@ -204,12 +204,12 @@ class Home extends SI_Controller
             $this->response("error",$error['telcel']);
         }
         $codigo_verificacao = $RestoreAccount->gerarCodigoValidacao();
-//        $dataSms = [
-//            "msg"           => $codigo_verificacao . " é o seu código de verificação atos",
-//            "destinatario"  => 55 . "$numero_validado",
-//            "date_to_send"  => date("Y-m-d H:i:s")
-//        ];
-//        $sms->processesDirect($dataSms);
+        $dataSms = [
+            "msg"           => $codigo_verificacao . " é o seu código de verificação atos",
+            "destinatario"  => 55 . "$numero_validado",
+            "date_to_send"  => date("Y-m-d H:i:s")
+        ];
+        $sms->processesDirect($dataSms);
 
         $save = $this->Usuarios_model->save($data);
         $this->response("success");
