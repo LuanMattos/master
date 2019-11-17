@@ -8,6 +8,7 @@ class Home extends SI_Controller
     public function __construct(){
         parent::__construct();
         $this->load->model("Usuarios_model");
+        $this->load->model("account/home/Account_home_model");
         $this->output->enable_profiler(FALSE);
         $this->load->helper("cookie");
         $this->load->helper("url");
@@ -22,8 +23,6 @@ class Home extends SI_Controller
 
         session_start();
 
-        $_SESSION['validate_login'] = $_SESSION['validate_login'] +1;
-        $attempt                    = $_SESSION['validate_login'];
         $sessao_atual               = $this->session->get_userdata()['__ci_last_regenerate'];
 
         $where          = ['__ci_last_regenerate'=>$sessao_atual];
@@ -44,21 +43,10 @@ class Home extends SI_Controller
 
         }
 
-        if (!empty($data['login']) && !empty($data['senha'])) {
+        if (isset($data['login'])) {
             $user = $this->Usuarios_model->login($data['login']);
         } else {
-            $data['error_senha'] = "Usuário/senha incorreto(s) ";
-
-            if($attempt > 1){
-                $data['error_senha'] .= " <p style='color:white'><a href='#'>esqueceu credenciais?</a></p>";
-            }
-            if($attempt > 12){
-                $data['error_senha'] = "Acesso bloqueado por 30 minutos! tente novamente mais tarde ou <a href='#' class='text-white'>redefina suas credenciais</a></p>";
-                $this->session->sess_destroy();
-            }
-
-            $this->load->view('index', $data);
-            return true;
+            redirect("Home/back");
         }
 
 //        var_dump(password_hash("admin", PASSWORD_DEFAULT));//criptografa a sessão
@@ -93,23 +81,29 @@ class Home extends SI_Controller
 
                     } else {
 
-                        $this->session->sess_destroy();
-                        $data['error_senha'] = "Usuário/senha incorreto(s)";
-                        $this->load->view('index', $data);
+                        $this->session->set_userdata(["toError"=>1]);
+
+                        redirect("Home/back");
                     }
                 } else {
-
-                    $this->session->sess_destroy();
-                    $data['error_senha'] = "Usuário/senha incorreto(s)";
-                    $this->load->view('index', $data);
+                    $this->session->set_userdata(["toError"=>1]);
+                    redirect("Home/back");
                 }
             }
         } else {
-            $this->session->sess_destroy();
-            $data['error_senha'] = "Usuário/senha incorreto(s)";
-            $this->load->view('index', $data);
+            redirect("Home/back");
         }
 
+    }
+    public function back(){
+        $data = [];
+        $error = $this->session->get_userdata();
+        if(isset($error['toError'])){
+            $data['error_senha'] = "Usuário/senha incorreto(s)";
+        }
+        $this->session->sess_destroy();
+
+        $this->load->view('index',$data);
     }
     public function logged(){
         $this->load->view('home');
@@ -118,7 +112,6 @@ class Home extends SI_Controller
         $data           = (object)$this->input->post("data",TRUE);
         $sms            = new \ServiceSms\ServiceSms();
         $RestoreAccount = new RestoreAccount();
-
 
         $error  = [];
 
@@ -144,7 +137,7 @@ class Home extends SI_Controller
         if(empty($data->telcel)){
             $error['telcel'] = "Preencha o campo  telefone!";
         }
-        $numero_validado    = $sms->validaTelefoneBr($data->telcel);
+        $numero_validado    = $sms->validaTelefoneBr($data->telcodpais . $data->telcel);
 
         if(!$numero_validado){
             $error['telcel'] = "Número de telefone inválido!";
@@ -170,54 +163,68 @@ class Home extends SI_Controller
              $error['igualdadepass'] = "As senhas não correspondem!";
             $this->response("error",compact("error"));
         }
+
         $validate_login = $this->Usuarios_model->getwhere(["login"=>$data->email]);
 
         if(count($validate_login)){
             $validate_login         = reset($validate_login);
             $error['email']         = "Usuário " . $validate_login['login'] ." já está cadastrado!";
         }
-        $validate_tel = $this->Usuarios_model->getwhere(["telcel"=>$data->telcel]);
 
-        if(count($validate_tel)){
-            $validate_tel           = reset($validate_tel);
-            $error['telcel']         = "Telefone " . $validate_tel['telcel'] ." já está cadastrado!";
+        $numero_validado    = $sms->validaTelefoneBr($data->telcodpais . $data->telcel);
+        $verifica_tel_repet = $this->Usuarios_model->getwhere(["telcel"=>$numero_validado]);
+
+        if(count($verifica_tel_repet)){
+            $verifica_tel_repet           = reset($verifica_tel_repet);
+            $error['telcel']         = "Telefone " . $verifica_tel_repet['telcel'] ." já está cadastrado!";
         }
 
         if(count($error) > 0){
-
             $this->response("error",compact("error"));
         }
-        $argo_pass = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
-        $numero_validado    = $sms->validaTelefoneBr($data->telcel);
+
+        $argo_pass                  = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
+        $sessao_atual               = $this->session->get_userdata()['__ci_last_regenerate'];
 
         $data = [
-            "email"     => $data->email,
-            "login"     => $data->email,
-            "senha"     => $argo_pass,
-            "datanasc"  => $data->datanasc,
-            "telcel"    => "{$numero_validado}",
-            "nome"      => $this->clear_car($data->nome),
-            "sobrenome" => $this->clear_car($data->sobrenome)
+            "email"                 => $data->email,
+            "login"                 => $data->email,
+            "senha"                 => $argo_pass,
+            "datanasc"              => $data->datanasc,
+            "telcel"                => "{$numero_validado}",
+            "nome"                  => $this->clear_car($data->nome),
+            "sobrenome"             => $this->clear_car($data->sobrenome),
+            "email_hash"            => $this->encript_atos($data->email),
+            'session_coo'           => $_COOKIE['ci_session'],
+            '__ci_last_regenerate'  => $sessao_atual
         ];
 
         $error['telcel']    = "O número de telefone é inválido";
 
         if(!$numero_validado){
-            $this->response("error",$error['telcel']);
+            $this->response("error",compact("error"));
         }
         $codigo_verificacao = $RestoreAccount->gerarCodigoValidacao();
+
+
         $dataSms = [
             "msg"           => $codigo_verificacao . " é o seu código de verificação atos",
-            "destinatario"  => "$data->telcodpais" . "$numero_validado",
+            "destinatario"  => "$numero_validado",
             "date_to_send"  => date("Y-m-d H:i:s")
         ];
-        debug($dataSms);
 //        $sms->processesDirect($dataSms);
 
-        $save = $this->Usuarios_model->save($data);
+        $save = $this->Usuarios_model->save($data,["codigo","email_hash"]);
+        if($save){
+            $data_account = [
+              "code_verification" => $codigo_verificacao,
+              "codusuarios"       => $save['codigo']
+
+            ];
+            $this->Account_home_model->save($data_account);
+        }
+        $this->session->set_userdata(["verification_user"=>$save['email_hash']], 1);
         $this->response("success");
-
-
     }
     public function logout(){
         $sessao_atual       = $this->session->get_userdata()['__ci_last_regenerate'];

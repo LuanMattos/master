@@ -5,6 +5,13 @@ var index = {
 }
 
 $("#formulario-cadastro").hide();
+
+$("#formulario-cadastro").on("submit",function(event){
+   event.preventDefault();
+});
+$("#form-geral-logado-index").on("submit",function(event){
+   event.preventDefault();
+});
 $(function () {
 
 

@@ -157,7 +157,7 @@ class CI_Model {
      * $data    = array('nome'=>'joao','senha'=>'123')  --> array associativo com as respectivas entidades
      * Erro ainda a serrem melhorados
      */
-    public function save($data = NULL){
+    public function save($data = NULL,$return = ""){
 
         if(is_array($data)){
             if(array_key_exists($this->get_table_index(),$data)){
@@ -166,17 +166,29 @@ class CI_Model {
                 $save = $this->db->update($this->get_table(),$data,"$table_index = $value_index");
                 if(!$save){
                     return $this->db->error();
-                }else{
-                    return true;
                 }
             }else{
                 $save = $this->db->insert($this->get_table(),$data);
+
                 if(!$save){
                     return $this->db->error();
-                }else{
-                    return true;
                 }
             }
+
+            if(!empty($return)){
+
+                $last_id        = $this->db->insert_id();
+
+                $data_return    = $this->db->select($return)->from($this->get_table())
+                                           ->where([$this->get_table_index()=>$last_id]);
+                $data_r = $data_return->get()->result_array();
+                if(count($data_r)){
+                    $data_r = reset($data_r);
+                    return $data_r;
+                }
+                return $data_r;
+            }
+            return true;
         }
     }
 

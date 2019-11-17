@@ -16,35 +16,40 @@
 
 </style>
 
-<body class="bg ">
-<div class="col">
-    <div class="img-home">
-        <img src="<?= URL_RAIZ() . 'application/assets/images/svg/home.svg' ?>" style="width: 450px">
-    </div>
-</div>
-<div class="font-thin text-base text-gray-800 text-left text-white w-75 ">
-    <p class="text-left ml-10 text-lg mb-4">Para prosseguir, precisamos validar sua conta, preencha com o código de verificação que você recebeu em seu e-mail e/ou telefone</p>
-</div>
-<div class="row d-flex  justify-content-center">
-    <div class="col-md-6">
-        <div class="w-75">
-            <input type="text"
-                   class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-0 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                   placeholder="Código de verificação"
-            >
+<body class="bg">
+<div id="general-verification-container">
+    <div class="col">
+        <div class="img-home">
+            <img src="<?= URL_RAIZ() . 'application/assets/images/svg/home.svg' ?>" style="width: 450px">
         </div>
     </div>
-</div>
-<div class="row d-flex  justify-content-center">
-    <div class="col-md-6">
-        <div class="w-75">
+    <div class="font-thin text-base text-gray-800 text-left text-white w-75 ">
+        <p class="text-left ml-10 text-lg mb-4">Para prosseguir, precisamos validar sua conta, preencha com o código de
+            verificação que você recebeu em seu e-mail e/ou telefone</p>
+    </div>
+    <div class="row d-flex  justify-content-center">
+        <div class="col-md-6">
+            <div class="w-75">
+                <input type="text"
+                       class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-0 py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                       placeholder="Código de verificação"
+                       v-model="form.codevalidation"
+                >
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex  justify-content-center">
+        <div class="col-md-6">
+            <div class="w-75">
                 <button class="shadow bg-gray-300 hover:bg-gray-100 focus:shadow-outline focus:outline-none text-gray-700 font-bold py-2 w-100 rounded-0"
                         type="button"
                         id="comecar"
                 >
-
                     Enviar
                 </button>
+                <br>
+                <span class=' font-mono text-red-600 text-xs'>{{form.error.codigov}}</span>
+            </div>
         </div>
     </div>
 </div>

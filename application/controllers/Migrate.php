@@ -5957,8 +5957,10 @@ INSERT INTO cidade (id, nome, estado) VALUES
                                         BEFORE UPDATE ON account_home
                                         FOR EACH ROW
                                         EXECUTE PROCEDURE trigger_set_timestamp()");
-        $this->db->query("alter table usuarios add column if not exists nome varchar(1000)");
-        $this->db->query("alter table usuarios add column if not exists sobrenome varchar(1000)");
+        $this->db->query("alter table usuarios        add column if not exists nome       varchar(1000)");
+        $this->db->query("alter table usuarios        add column if not exists sobrenome  varchar(1000)");
+        $this->db->query("alter table usuarios        add column if not exists email_hash varchar(1000)");
+        $this->db->query("alter table account_home    add column if not exists verification_ok boolean");
 
         $transaction = $this->db->trans_complete();
 

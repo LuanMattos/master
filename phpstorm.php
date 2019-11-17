@@ -68,6 +68,8 @@ die('This file is used for development purposes only.');
  * @property Usuarios_model      $Usuarios_model                      Usuarios_model
  * @property Provider_sms_model        $Provider_sms_model                  Provedor SMS
  * @property Sms_fila_model            $Sms_fila_model                      Fila de SMS
+ * @property Account_home_model        $Account_home_model                  Model referente a configurações de nova conta ou recuperacao de senha
+ *
  */
 class CI_Controller {
 
