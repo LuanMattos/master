@@ -6,12 +6,6 @@ var index = {
 
 $("#formulario-cadastro").hide();
 
-$("#formulario-cadastro").on("submit",function(event){
-   event.preventDefault();
-});
-$("#form-geral-logado-index").on("submit",function(event){
-   event.preventDefault();
-});
 $(function () {
 
 
@@ -50,7 +44,7 @@ $(function () {
                     vue_instance.error = j.error;
                 }
                 if(j.info){
-                    window.location.replace("verification/Verification/index");
+                    window.location.href = App.url("verification","Verification","index");
                 }
 
             }, 'json');

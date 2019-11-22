@@ -46,6 +46,7 @@ class Home extends SI_Controller
         if (isset($data['login'])) {
             $user = $this->Usuarios_model->login($data['login']);
         } else {
+            $this->session->sess_destroy();
             redirect("Home/back");
         }
 
@@ -55,7 +56,6 @@ class Home extends SI_Controller
 
                 if ($line['login'] === $data['login']) {
                     if (password_verify($data['senha'], $line['senha']) == true) {
-                        $this->session->set_userdata($line['login'], 1);
 
                         if(isset($data['conectado'])){
                             set_cookie("session_coo",$sessao_atual,PHP_INT_MAX);
@@ -77,20 +77,23 @@ class Home extends SI_Controller
                             ];
                         }
                         $this->Usuarios_model->save($data);
+                        $this->session->set_userdata(["logado"=>1]);
                         redirect("Home/Logged");
 
                     } else {
-
+                        $this->session->sess_destroy();
                         $this->session->set_userdata(["toError"=>1]);
 
                         redirect("Home/back");
                     }
                 } else {
+                    $this->session->sess_destroy();
                     $this->session->set_userdata(["toError"=>1]);
                     redirect("Home/back");
                 }
             }
         } else {
+            $this->session->sess_destroy();
             redirect("Home/back");
         }
 
@@ -98,15 +101,24 @@ class Home extends SI_Controller
     public function back(){
         $data = [];
         $error = $this->session->get_userdata();
+
         if(isset($error['toError'])){
-            $data['error_senha'] = "Usuário/senha incorreto(s)";
+            if($error['toError']):
+                $data['error_senha'] = "Usuário/senha incorreto(s)";
+            endif;
         }
         $this->session->sess_destroy();
 
         $this->load->view('index',$data);
     }
     public function logged(){
-        $this->load->view('home');
+        $data_s = $this->session->get_userdata();
+        if(!isset($data_s['logado'])){
+            $this->session->sess_destroy();
+            redirect("Home/index");
+        }else{
+            $this->load->view('home');
+        }
     }
     public function cadastro(){
         $data           = (object)$this->input->post("data",TRUE);
@@ -184,8 +196,6 @@ class Home extends SI_Controller
         }
 
         $argo_pass                  = password_hash($data->senhacadastro,PASSWORD_ARGON2I);
-        $sessao_atual               = $this->session->get_userdata()['__ci_last_regenerate'];
-
         $data = [
             "email"                 => $data->email,
             "login"                 => $data->email,
@@ -194,9 +204,7 @@ class Home extends SI_Controller
             "telcel"                => "{$numero_validado}",
             "nome"                  => $this->clear_car($data->nome),
             "sobrenome"             => $this->clear_car($data->sobrenome),
-            "email_hash"            => $this->encript_atos($data->email),
-            'session_coo'           => $_COOKIE['ci_session'],
-            '__ci_last_regenerate'  => $sessao_atual
+            "email_hash"            => $this->encript_atos($data->email)
         ];
 
         $error['telcel']    = "O número de telefone é inválido";
@@ -247,9 +255,14 @@ class Home extends SI_Controller
 
         }
 
-
         $this->session->sess_destroy();
         redirect();
+    }
+    public function get_galeria(){
+        $datapost = $this->input->post(NULL,TRUE);
+
+        $html = $this->load->view("home/modal_galeria",FALSE,TRUE);
+        $this->response("sucess",compact("html"));
     }
 
 }
