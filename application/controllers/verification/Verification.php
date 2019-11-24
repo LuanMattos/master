@@ -12,6 +12,16 @@ class Verification extends SI_Controller
 
 
     }
+    public function logged(){
+        $this->session->set_userdata(["logado"=>TRUE]);
+        $data_s = $this->session->get_userdata();
+        if(!isset($data_s['logado'])){
+            $this->session->sess_destroy();
+            redirect("Home/index");
+        }else{
+            $this->load->view('home');
+        }
+    }
     public function index(){
         $this->load->view("verification/index");
     }
@@ -19,6 +29,7 @@ class Verification extends SI_Controller
         $datapost        = $this->input->post("data",TRUE);
         $session         = $this->session->get_userdata();
         $verify          = $this->Usuarios_model->getWhere(["email_hash"=>"{$session['verification_user']}"]);
+
         if(count($verify)){
             $verify = reset($verify);
         }
@@ -29,6 +40,7 @@ class Verification extends SI_Controller
         }
 
         if($verificationCode['code_verification'] === $datapost){
+            $this->db->update("account_home",["verification_ok"=>TRUE],["code_verification"=>$datapost],1);
             $this->response("success");
         }else{
             $error['codigov'] = "Código de verificação inválido";

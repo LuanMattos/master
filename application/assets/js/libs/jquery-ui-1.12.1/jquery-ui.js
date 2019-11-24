@@ -11968,8 +11968,6 @@ $.widget( "ui.dialog", {
 		autoOpen: true,
 		buttons: [],
 		classes: {
-			"ui-dialog": "bg-transparent-modal-user ",
-			"ui-dialog-titlebar": "default"
 		},
 		closeOnEscape: true,
 		closeText: "Sair",

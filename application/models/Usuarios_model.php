@@ -24,8 +24,7 @@ class Usuarios_model extends CI_Model{
         $this->set_table("usuarios");
     }
 
-    public function login($usuario)
-    {
+    public function login($usuario){
         $results = FALSE;
         $user = $this->db->get_where('usuarios', array('login' => $usuario));
         if ($user->num_rows() > 0) {
@@ -34,6 +33,11 @@ class Usuarios_model extends CI_Model{
         }
         return $results;
 
+    }
+    public function validate_login($login){
+        return $this->db->query("SELECT ah.verification_ok as verification, us.email_hash as email_hash FROM usuarios us
+                                    LEFT JOIN account_home ah on us.codigo = ah.codusuarios
+                                WHERE login = '$login'; ")->result_array();
     }
 
 }

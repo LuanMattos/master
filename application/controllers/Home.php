@@ -23,7 +23,19 @@ class Home extends SI_Controller
 
         session_start();
 
-        $sessao_atual               = $this->session->get_userdata()['__ci_last_regenerate'];
+        //verifica se usuario ja confirmou cadastro atraves do codigo de validacao
+        if(isset($data['login'])){
+            if(!empty($data['login']))
+            $validate_login = reset($this->Usuarios_model->validate_login($data['login']));
+
+                if($validate_login['verification'] === 'f' || empty($validate_login['verification'])):
+                    $this->session->set_userdata(['verification_user'=>$validate_login['email_hash']]);
+                    redirect("verification/Verification/index");
+                endif;
+        }
+
+
+        $sessao_atual   = $this->session->get_userdata()['__ci_last_regenerate'];
 
         $where          = ['__ci_last_regenerate'=>$sessao_atual];
         $session_db     = $this->Usuarios_model->getWhere($where);
@@ -60,19 +72,19 @@ class Home extends SI_Controller
                         if(isset($data['conectado'])){
                             set_cookie("session_coo",$sessao_atual,PHP_INT_MAX);
                             $data = [
-                                "codigo"=>$line['codigo'],
-                                "__ci_last_regenerate"=>$sessao_atual,
-                                "logado"=>"t",
-                                'session_coo'=>$_COOKIE['ci_session']
+                                "codigo"                => $line['codigo'],
+                                "__ci_last_regenerate"  => $sessao_atual,
+                                "logado"                => "t",
+                                'session_coo'           => $_COOKIE['ci_session']
 
                             ];
 
                         }else{
                             $data = [
-                                "codigo"=>$line['codigo'],
-                                "__ci_last_regenerate"=>$sessao_atual,
-                                "logado"=>"f",
-                                'session_coo'=>''
+                                "codigo"                => $line['codigo'],
+                                "__ci_last_regenerate"  => $sessao_atual,
+                                "logado"                => "f",
+                                'session_coo'           => ''
 
                             ];
                         }
@@ -262,7 +274,7 @@ class Home extends SI_Controller
         $datapost = $this->input->post(NULL,TRUE);
 
         $html = $this->load->view("home/modal_galeria",FALSE,TRUE);
-        $this->response("sucess",compact("html"));
+        $this->response("success",compact("html"));
     }
 
 }

@@ -11,8 +11,10 @@
     <link href="<?= site_url("application/assets/css/tailwindcss.css") ?>" rel="stylesheet">
 
 </head>
-<body style="width: 100%;height: 100%" class="text-sm">
+<body style="width: 100%;height: 100%" class="text-sm bg-gray-400">
 modal-galeria
+sdflçskdklfjsdkf
+
 </body>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery-3.4.1/jquery.js"></script>

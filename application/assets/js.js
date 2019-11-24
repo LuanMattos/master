@@ -122,7 +122,7 @@ App.url = function (modulo, controller, methods, params) {
         $(".ui-icon-closethick:visible").last().click();
     },
 
-    App.modal = function (options) {
+    App.modal_galeria = function (options) {
 
         var options = {
             url: options.url,
@@ -144,7 +144,7 @@ App.url = function (modulo, controller, methods, params) {
         }
 
         if (typeof (options.vue) != "undefined") {
-            var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'  class='mt-1'></div>").append(options.vue);
+            var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'  ></div>").append(options.vue);
             div.addClass("mt-2");
 
             $(div).dialog({

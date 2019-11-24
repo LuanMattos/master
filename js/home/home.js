@@ -1,13 +1,9 @@
 var home = {
     Url: function (metodo, params) {
         return App.url("", "Home", metodo, params);
-    },
-    modal:function(){
-        App.modal();
     }
 
-
-}
+};
 
     new Vue({
             el:"#div-geral",
@@ -16,20 +12,26 @@ var home = {
             },
             methods:{
                 editarf_perfil:function(){
-                    home.modal({
-                        url:home.Url("get_galeria"),
-                        title: "Galeria",
-                        buttons: options.buttons,
-                        vue:j.html,
-                        // beforeclose:options.beforeclose,
-                        callback: function(j){
+                    $.post(
 
-                        }
-                    });
+                        home.Url("get_galeria"),
+                        {
+
+                        },function(j) {
+                            App.modal_galeria({
+                                url: home.Url("get_galeria"),
+                                title: "Galeria de fotos",
+                                width: "600px",
+                                height: "2000px",
+                                vue: j.html,
+                                callback: function () {
+
+                                },
+                            });
+                        },'json');
+
 
                 }
              }
-    })
-$(function(){
+    });
 
-})
