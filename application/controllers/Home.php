@@ -23,18 +23,6 @@ class Home extends SI_Controller
 
         session_start();
 
-        //verifica se usuario ja confirmou cadastro atraves do codigo de validacao
-        if(isset($data['login'])){
-            if(!empty($data['login']))
-            $validate_login = reset($this->Usuarios_model->validate_login($data['login']));
-
-                if($validate_login['verification'] === 'f' || empty($validate_login['verification'])):
-                    $this->session->set_userdata(['verification_user'=>$validate_login['email_hash']]);
-                    redirect("verification/Verification/index");
-                endif;
-        }
-
-
         $sessao_atual   = $this->session->get_userdata()['__ci_last_regenerate'];
 
         $where          = ['__ci_last_regenerate'=>$sessao_atual];
@@ -48,6 +36,9 @@ class Home extends SI_Controller
                         $this->session->sess_destroy();
                         redirect();
                     }elseif($row['logado'] === 't'){
+
+                        $this->valida_login_code_confirmation($data);
+
                         redirect("Home/Logged");
                     }
                 }
@@ -88,9 +79,15 @@ class Home extends SI_Controller
 
                             ];
                         }
+
                         $this->Usuarios_model->save($data);
-                        $this->session->set_userdata(["logado"=>1]);
-                        redirect("Home/Logged");
+                        $data = $this->Usuarios_model->getWhere(["codigo"=>$data['codigo']]);
+                        $this->valida_login_code_confirmation($data);
+
+                        if(count($data)){
+                            $this->session->set_userdata(["logado"=>1,"login"=>$data[0]['login']]);
+                            redirect("Home/logged");
+                        }
 
                     } else {
                         $this->session->sess_destroy();
@@ -110,6 +107,25 @@ class Home extends SI_Controller
         }
 
     }
+    public function valida_login_code_confirmation($data){
+        if(is_array($data)) {
+                $data = reset($data);
+            //verifica se usuario ja confirmou cadastro atraves do codigo de validacao
+            if (isset($data['login'])) {
+                if (empty($data['login']) || empty($data['senha'])) {
+                    redirect();
+                }
+                if (!empty($data['login']))
+                    $validate_login = reset($this->Usuarios_model->validate_login($data['login']));
+
+                if ($validate_login['verification'] === 'f' || empty($validate_login['verification'])):
+                    $this->session->set_userdata(['verification_user' => $validate_login['email_hash']]);
+                    redirect("verification/Verification/index");
+                endif;
+            }
+        }
+    }
+
     public function back(){
         $data = [];
         $error = $this->session->get_userdata();
@@ -125,11 +141,16 @@ class Home extends SI_Controller
     }
     public function logged(){
         $data_s = $this->session->get_userdata();
+//        debug($data_s);
+
         if(!isset($data_s['logado'])){
             $this->session->sess_destroy();
             redirect("Home/index");
         }else{
-            $this->load->view('home');
+            if(!empty($data_s)){
+                $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
+                $this->load->view('home',$data);
+            }
         }
     }
     public function cadastro(){
