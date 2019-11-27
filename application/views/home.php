@@ -24,216 +24,8 @@
 </head>
 
 <body>
-<!-- Header Start -->
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-                <nav class="navbar navbar-expand-lg navbar-light bg-dark1 justify-content-sm-start">
-                    <a class="order-1 order-lg-0 ml-lg-0 ml-3 mr-auto " href="index.html">
-                        <a class="text-white" href="<?= site_url('Home/Logged') ?>"><b>atos</b></a>
-                    <button class="navbar-toggler align-self-start" type="button">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu" id="navbarSupportedContent">
-                        <ul class="navbar-nav align-self-stretch">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="<?= site_url('Home/Logged') ?>">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="discussions.html">Discussões</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="weather.html">Weather</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
-                                    Páginas
-                                </a>
-                                <div class="dropdown-menu pages-dropdown">
-                                    <a class="link-item" href="login.html">Login</a>
-                                    <a class="link-item" href="register.html">Register</a>
-                                    <a class="link-item" href="error_404.html">Error 404</a>
-                                    <a class="link-item" href="categories.html">Categories</a>
-                                    <a class="link-item" href="select_seats.html">Select Seats</a>
-                                    <a class="link-item" href="find_friends.html">Find Friends</a>
-                                    <a class="link-item" href="user_dashboard_activity.html">User Detail View</a>
-                                    <a class="link-item" href="checkout.html">Checkout</a>
-                                    <a class="link-item" href="confirmed_order.html">Confirmed Order</a>
-                                    <a class="link-item" href="about.html">About</a>
-                                    <a class="link-item" href="contact_us.html">Contact</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="our_blog.html">Blog</a>
-                            </li>
-                        </ul>
-                        <a href="add_new_event.html" class="add-event"><i class="fas fa-plus"></i></a>
-                    </div>
-                    <ul class="group-icons">
-                        <li><a href="search_result.html" class="icon-set"><i class="fas fa-search"></i></a></li>
-                        <li class="dropdown">
-                            <a href="#" class="icon-set dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
-                                <i class="fas fa-user-plus"></i>
-                            </a>
-                            <div class="dropdown-menu user-request-dropdown dropdown-menu-right">
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="user-title">Jassica William</a>
-                                        </div>
-                                        <button class="accept-btn">Aceitar</button>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="user-title">Rock Smith</a>
-                                        </div>
-                                        <button class="accept-btn">Aceitar</button>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                            </a>
-                                            <a href="#" class="user-title">Joy Doe</a>
-                                        </div>
-                                        <button class="accept-btn">Aceitar</button>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <a href="my_dashboard_all_requests.html" class="view-all">Visualizar todos convites</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="icon-set dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
-                                <i class="fas fa-comment-dots"></i>
-                            </a>
-                            <div class="dropdown-menu message-dropdown dropdown-menu-right">
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                                <div class="user-title1">Jassica William </div>
-                                                <span>Hey How are you John Doe...</span>
-                                            </a>
-                                        </div>
-                                        <div class="time5">2 min ago</div>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                                <div class="user-title1">Rock Smith </div>
-                                                <span>Interesting Event! I will join this...</span>
-                                            </a>
-                                        </div>
-                                        <div class="time5">5 min ago</div>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                                <div class="user-title1">Joy Doe </div>
-                                                <span>Hey Sir! What about you...</span>
-                                            </a>
-                                        </div>
-                                        <div class="time5">10 min ago</div>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <a href="my_dashboard_messages.html" class="view-all">Visualizar todas mensagens</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="icon-set dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
-                                <i class="fas fa-bell"></i>
-                            </a>
-                            <div class="dropdown-menu notification-dropdown dropdown-menu-right">
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                                <div class="user-title1">Jassica William </div>
-                                                <span>comment on your video.</span>
-                                            </a>
-                                        </div>
-                                        <div class="time5">2 min ago</div>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                                <div class="user-title1">Rock Smith</div>
-                                                <span>your order is accepted.</span>
-                                            </a>
-                                        </div>
-                                        <div class="time5">5 min ago</div>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <div class="request-users">
-                                        <div class="user-request-dt">
-                                            <a href="#">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/user-dp-1.jpg" alt="">
-                                                <div class="user-title1">Joy Doe </div>
-                                                <span>your bill slip sent on your email.</span>
-                                            </a>
-                                        </div>
-                                        <div class="time5">10 min ago</div>
-                                    </div>
-                                </div>
-                                <div class="user-request-list">
-                                    <a href="my_dashboard_all_notifications.html" class="view-all">Visualizar todas notificações</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="account order-1 dropdown">
-                        <a href="#" class="account-link dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
-                            <div class="user-dp">
-                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/dp.jpg" alt=""></div>
-                            <span>Olá Luan</span>
-                            <i class="fas fa-angle-down"></i>
-                        </a>
-                        <div class="dropdown-menu account-dropdown dropdown-menu-right">
-                            <a class="link-item" href="my_dashboard_activity.html">Perfil</a>
-                            <a class="link-item" href="my_dashboard_messages.html">Mensagens</a>
-                            <a class="link-item" href="my_dashboard_booked_events.html">Eventos reservados</a>
-                            <a class="link-item" href="my_dashboard_credits.html">Credito <span class="right-cm">$100</span></a>
-                            <a class="link-item" href="invite.html">Convite</a>
-                            <a class="link-item" href="my_dashboard_setting_info.html">Configurações</a>
-                            <a class="link-item" href="<?= site_url('Home/logout') ?>">Sair</a>
-                        </div>
-                    </div>
-                </nav>
-                <div class="overlay"></div>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- Header End -->
-<!-- Body Start -->
-<main>
+<?= $this->load->view("menu/menu") ?>
+<main class="dashboard-mp">
     <div class="main-section">
         <div class="container">
             <div class="row">
@@ -247,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="user-main-details">
-                                    <h4>John Doe</h4>
+                                    <h4><?= isset($nome)?$nome:""; ?></h4>
                                     <span>
                                         <i class="fas fa-map-marker-alt"></i>India
                                     </span>
@@ -267,7 +59,7 @@
                                     </li>
                                 </ul>
                                 <div class="profile-link">
-                                    <a href="my_dashboard_activity.html">Visualizar perfil</a>
+                                    <a href="<?= site_url('Home/dashboard_activity') ?>">Visualizar perfil</a>
                                 </div>
                             </div>
                         </div>
@@ -390,28 +182,28 @@
                                                 <div class="main-photo">
                                                     <div class="photo-overlay"></div>
                                                     <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/center/post-img-1.jpg" alt="">
-                                                    <div class="post-buttons">
-                                                        <div class="left-buttons">
-                                                            <ul class="main-btns">
-                                                                <li>
-                                                                    <button class="main-btn-link" onclick="window.location.href = '#';">Buy Ticket</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="main-btn-link btn-hide" onclick="window.location.href = '#';">May Be</button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="right-buttons">
-                                                            <ul class="main-btns">
-                                                                <li>
-                                                                    <button class="main-btn-link btn-hide" onclick="window.location.href = '#';">450 Seats</button>
-                                                                </li>
-                                                                <li>
-                                                                    <button class="main-btn-link btn-hide" onclick="window.location.href = '#';">Can't Go</button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+<!--                                                    <div class="post-buttons">-->
+<!--                                                        <div class="left-buttons">-->
+<!--                                                            <ul class="main-btns">-->
+<!--                                                                <li>-->
+<!--                                                                    <button class="main-btn-link" onclick="window.location.href = '#';">Buy Ticket</button>-->
+<!--                                                                </li>-->
+<!--                                                                <li>-->
+<!--                                                                    <button class="main-btn-link btn-hide" onclick="window.location.href = '#';">May Be</button>-->
+<!--                                                                </li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                        <div class="right-buttons">-->
+<!--                                                            <ul class="main-btns">-->
+<!--                                                                <li>-->
+<!--                                                                    <button class="main-btn-link btn-hide" onclick="window.location.href = '#';">450 Seats</button>-->
+<!--                                                                </li>-->
+<!--                                                                <li>-->
+<!--                                                                    <button class="main-btn-link btn-hide" onclick="window.location.href = '#';">Can't Go</button>-->
+<!--                                                                </li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
                                                 </div>
                                             </div>
                                             <div class="event-city-dt">

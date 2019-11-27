@@ -7,6 +7,7 @@ class SI_Controller extends CI_Controller{
     public function __construct(){
         parent::__construct();
 
+
     }
     /**
      * deixa apenas letras evitando SQL-inject 1

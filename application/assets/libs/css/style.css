@@ -324,7 +324,7 @@ input[type="email"]::-ms-input-placeholder { /* Microsoft Edge */
 } 
 
 input:focus {
-	border: 1px solid #ff7555;
+	border: 1px solid #7e95fd;
 }
 
 textarea:focus {
@@ -1948,11 +1948,11 @@ footer {
 }
 
 .ftr-1 a {
-    color: #ff7555;
+    color: #6b84fd;
 }
 
 .ftr-1 a:hover {
-    color: #f55f3d !important;
+    color: #6b84fd !important;
 }
 
 .footer-right {
@@ -1976,7 +1976,7 @@ footer {
 }
 
 .footer-left a:hover {
-    color: #ff7555 !important;
+    color: #7e95fd !important;
 }
 
 /* === Discussion Page ===*/
@@ -2009,11 +2009,11 @@ footer {
 }
 
 .title-bar-text .breadcrumb-item a:hover {
-    color: #ff7555 !important;
+    color: #6b84fd !important;
 }
 
 .title-bar-text .breadcrumb-item.active {
-    color: #ff7555;
+    color: #6b84fd;
 	font-size: 16px;
 	font-family: "Roboto";
 	font-weight: 400;
@@ -2707,7 +2707,7 @@ footer {
 }
 
 .title-discussion-input {
-    border: 1px solid #585858;
+    border: 1px solid #f1fdf8;
 	background: #313131;
 	border-radius: 3px;
     min-height: 40px;
@@ -4208,16 +4208,16 @@ footer {
 }
 
 .datepicker--cell.-current- {
-    color: #ff7555 !important;
+    color: #6b84fd !important;
 }
 
 .datepicker--cell.-selected-, .datepicker--cell.-selected-.-current- {
     color: #fff;
-    background: #ff7555 !important;
+    background: #7e95fd !important;
 }
 
 .datepicker--day-name {
-    color: #ff7555 !important;
+    color: #7e95fd !important;
 }
 
 .datepicker {
@@ -4434,7 +4434,6 @@ footer {
 }
 
 .lg-left {
-	background-image: url(../images/login-register/bg.jpg);
 	height: 646px;
 	width: 100%;
 	padding: 30px;
@@ -4609,27 +4608,27 @@ footer {
 }
 
 .rgstr-dt-txt a {
-	color: #fff;
+	color: #fcfdf7;
 }
 
 .rgstr-dt-txt a:hover {
-	color: #ff7555 !important;
+	color: #7e95fd !important;
 }
 
 .login-link {
 	font-size: 14px;
 	font-weight: 400;
-	color: #aeaeae;
+	color: #f1fdf8;
 	line-height: 24px;
 	margin-top: 25px;
 }
 
 .login-link a {
-	color: #ff7555;
+	color: #00abef;
 }
 
 .login-link a:hover {
-	color: #f55f3d !important;
+	color: #5d73fd !important;
 }
 
 
@@ -7253,7 +7252,7 @@ footer {
 }
 
 .social-acc1 a:hover {
-    color: #ff7555 !important;
+    color: #6b84fd !important;
 }
 
 .social-acc1 .facebook {
@@ -7302,9 +7301,9 @@ footer {
 
 .copy-link-btn {
     font-size: 14px;
-    color: #fff;
+    color: #f9ffff;
     font-weight: 400;
-    background: #ff7555;
+    background: #707cfd;
     border: 0;
     margin: 0;	
 	width: 20%;
@@ -7315,7 +7314,7 @@ footer {
 }
 
 .copy-link-btn:hover {
-    background: #f55f3d;
+    background: #6b84fd;
 }
 
 .Share--links {

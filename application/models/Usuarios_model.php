@@ -35,9 +35,11 @@ class Usuarios_model extends CI_Model{
 
     }
     public function validate_login($login){
-        return $this->db->query("SELECT ah.verification_ok as verification, us.email_hash as email_hash FROM usuarios us
+        return $this->db->query("SELECT ah.verification_ok as verification,
+                                            us.email_hash as email_hash 
+                                      FROM usuarios us
                                     LEFT JOIN account_home ah on us.codigo = ah.codusuarios
-                                WHERE login = '$login'; ")->result_array();
+                                WHERE login = '$login' ")->result_array();
     }
 
 }

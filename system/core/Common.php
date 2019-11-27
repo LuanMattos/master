@@ -60,22 +60,7 @@ if ( ! function_exists('is_php'))
 		return $_is_php[$version];
 	}
 }
-if (!function_exists('set_val'))
-{
-    /**
-     * determina se isset do objeto
-     *
-     * @param	string
-     * @return	bool
-     */
 
-    function set_val(){
-
-
-    }
-}
-
-// ------------------------------------------------------------------------
 if ( ! function_exists('date_to_br')) {
     /**
      * Converte valores de data no formato time stamp para o padrão brasileiro
@@ -89,6 +74,17 @@ if ( ! function_exists('date_to_br')) {
         }else{
             return "";
         }
+    }
+}
+//-----------------------------------------------------------------------
+if ( ! function_exists('set_val')) {
+    error_reporting(0);
+    function set_val($c)
+    {
+        if(isset($c)){
+            return $c;
+        }
+        return false;
     }
 }
 

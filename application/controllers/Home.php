@@ -141,7 +141,6 @@ class Home extends SI_Controller
     }
     public function logged(){
         $data_s = $this->session->get_userdata();
-//        debug($data_s);
 
         if(!isset($data_s['logado'])){
             $this->session->sess_destroy();
@@ -149,12 +148,18 @@ class Home extends SI_Controller
         }else{
             if(!empty($data_s)){
                 $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
+                if(count($data)){
+                    $data = reset($data);
+                }
                 $this->load->view('home',$data);
             }
         }
     }
-    public function cadastro(){
-        $data           = (object)$this->input->post("data",TRUE);
+    public function register(){
+        $this->load->view("register");
+    }
+    public function acao_cadastro(){
+        $data           = (object)$this->input->post(NULL,TRUE);
         $sms            = new \ServiceSms\ServiceSms();
         $RestoreAccount = new RestoreAccount();
 
@@ -182,6 +187,7 @@ class Home extends SI_Controller
         if(empty($data->telcel)){
             $error['telcel'] = "Preencha o campo  telefone!";
         }
+        debug($data->telcodpais . $data->telcel);
         $numero_validado    = $sms->validaTelefoneBr($data->telcodpais . $data->telcel);
 
         if(!$numero_validado){
@@ -211,13 +217,14 @@ class Home extends SI_Controller
 
         $validate_login = $this->Usuarios_model->getwhere(["login"=>$data->email]);
 
+
         if(count($validate_login)){
             $validate_login         = reset($validate_login);
             $error['email']         = "Usuário " . $validate_login['login'] ." já está cadastrado!";
         }
 
         $numero_validado    = $sms->validaTelefoneBr($data->telcodpais . $data->telcel);
-        $verifica_tel_repet = $this->Usuarios_model->getwhere(["telcel"=>$numero_validado]);
+        $verifica_tel_repet = $this->Usuarios_model->getwhere(["telcel"=>"f"]);
 
         if(count($verifica_tel_repet)){
             $verifica_tel_repet           = reset($verifica_tel_repet);
@@ -284,18 +291,29 @@ class Home extends SI_Controller
                 ];
                 $this->Usuarios_model->save($new_data);
             }
-
-
         }
 
         $this->session->sess_destroy();
         redirect();
     }
-    public function get_galeria(){
-        $datapost = $this->input->post(NULL,TRUE);
+    public function dashboard_activity(){
+        $data_s = $this->session->get_userdata();
 
-        $html = $this->load->view("home/modal_galeria",FALSE,TRUE);
-        $this->response("success",compact("html"));
+        if(!isset($data_s['logado'])){
+            $this->session->sess_destroy();
+            redirect();
+        }else{
+            if(!empty($data_s)){
+                $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
+                if(count($data)){
+                    $data = reset($data);
+                }
+                $this->load->view("home/dashboard_activity",$data);
+
+            }
+        }
+
+
     }
 
 }
