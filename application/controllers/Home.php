@@ -155,15 +155,37 @@ class Home extends SI_Controller
             }
         }
     }
+    public function search(){
+        $data_s = $this->session->get_userdata();
+
+        if(!isset($data_s['logado'])){
+            $this->session->sess_destroy();
+            redirect();
+        }else{
+            if(!empty($data_s)){
+                $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
+                if(count($data)){
+                    $data = reset($data);
+                }
+                $this->load->view("search_full/index",$data);
+
+            }
+        }
+
+    }
     public function register(){
         $this->load->view("register");
     }
     public function acao_cadastro(){
-        $data           = (object)$this->input->post(NULL,TRUE);
+        $data           = (object)$this->input->post("data",TRUE);
         $sms            = new \ServiceSms\ServiceSms();
         $RestoreAccount = new RestoreAccount();
 
+
         $error  = [];
+
+        $data->datanasc = date_to_us($data->datanasc);
+
 
         if(empty($data->telcodpais)){
             $error['telcel'] = "Preencha o código de telefone de seu país!";
@@ -176,6 +198,7 @@ class Home extends SI_Controller
             $error['email'] = " Preencha o campo e-mail!";
         }
         if(empty($data->senhacadastro)){
+
             $error['senhacadastro'] = "Preencha o campo senha!!";
         }
         if(empty($data->repsenha)){
@@ -187,7 +210,6 @@ class Home extends SI_Controller
         if(empty($data->telcel)){
             $error['telcel'] = "Preencha o campo  telefone!";
         }
-        debug($data->telcodpais . $data->telcel);
         $numero_validado    = $sms->validaTelefoneBr($data->telcodpais . $data->telcel);
 
         if(!$numero_validado){
@@ -205,8 +227,7 @@ class Home extends SI_Controller
             }
         }
         $pre_snome = preg_match('/[^[:alpha:]_]/', $data->sobrenome);
-        $pre_nome  = preg_match('/[^[:alpha:]_]/', $data->nome);
-        if(empty($data->sobrenome) || !empty($pre_snome) || empty($data->nome) || !empty($pre_nome)){
+        if(empty($data->sobrenome) || empty($data->nome) || !empty($pre_snome)){
             $error['sobrenome'] = "Nome e/ou sobrenome inválido(s)!";
         }
 
@@ -308,7 +329,7 @@ class Home extends SI_Controller
                 if(count($data)){
                     $data = reset($data);
                 }
-                $this->load->view("home/dashboard_activity",$data);
+                $this->load->view("home/index",$data);
 
             }
         }

@@ -49,28 +49,49 @@
                                     <div class="login-register-form">
                                         <form action="<?= site_url('Home/acao_cadastro') ?>" method="POST">
                                             <div class="form-group">
-                                                <input class="title-discussion-input" type="text" placeholder="Nome" name="nome">
+                                                <input class="title-discussion-input" type="text" placeholder="Nome" name="nome"  autocomplete="off" v-model="form.nome">
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.sobrenome}}
                                             </div>
                                             <div class="form-group">
-                                                <input class="title-discussion-input" type="text" placeholder="Sobrenome" name="sobrenome">
+                                                <input class="title-discussion-input" type="text" placeholder="Sobrenome" name="sobrenome"  autocomplete="off" v-model="form.sobrenome">
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.sobrenome}}
                                             </div>
                                             <div class="form-group">
-                                                <input class="title-discussion-input" type="email" placeholder="E-mail" name="email">
+                                                <input class="title-discussion-input" type="email" placeholder="E-mail" name="email"  autocomplete="off" v-model="form.email">
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.email}}
                                             </div>
                                             <div class="form-group">
-                                                <input class="title-discussion-input  datepicker-here" type="text" placeholder="Data de nascimento" name="datanasc" data-language="pt-BR">
+                                                <input class="title-discussion-input  datepicker-here" type="text" placeholder="Data de nascimento"  data-language="pt-BR" name="datanasc" autocomplete="off" v-model="form.datanasc">
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.datanasc}}
                                             </div>
                                             <div class="form-group" >
-                                                <select>
+                                                <select name="telcodpais" >
                                                     <option value="55">Brasil (55)</option>
                                                 </select>
-                                                <input class="title-discussion-input phone_br"  type="text" placeholder="Tel. Cel" name="telcel">
+                                                <input class="title-discussion-input phone_br"  type="text" placeholder="Tel. Cel" name="telcel" autocomplete="off" >
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.telcel}}
                                             </div>
                                             <div class="form-group">
-                                                <input class="title-discussion-input" type="password" placeholder="Senha" name="senhacadastro">
+                                                <input class="title-discussion-input" type="password" placeholder="Senha" name="senhacadastro" autocomplete="off" v-model="form.senhacadastro">
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.senhacadastro}}
                                             </div>
                                             <div class="form-group">
-                                                <input class="title-discussion-input" type="password" placeholder="Rep. Senha" name="repsenha">
+                                                <input class="title-discussion-input" type="password" placeholder="Rep. Senha" name="repsenha" autocomplete="off" v-model="form.repsenha">
+                                            </div>
+                                            <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
+                                                {{error.repsenha}}
                                             </div>
                                             <div class="rgstr-dt-txt">
                                                 Antes de concluir o cadastro leia os <a href="#">Termos</a>, <a href="#">a politica de dados</a> e a <a href="#">política de Cookies</a>. Quando você confirmar o cadastro, receberá um sms/email para confirmação de conta.
@@ -92,31 +113,10 @@
 </main>
 <!-- Body End -->
 <!-- Footer Start -->
-<footer class="footer-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <div class="footer-left">
-                    <ul>
-                        <li><a href="privacy_policy.html">Privacidade</a></li>
-                        <li><a href="term_conditions.html">Termos e condições</a></li>
-                        <li><a href="about.html">Sobre</a></li>
-                        <li><a href="contact_us.html">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="footer-right">
-                    <ul class="copyright-text">
-                        <li><div class="ftr-1"><i class="far fa-copyright"></i> 2019 Atos . Todos os direitos reservados.</div></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<?= $this->load->view("footer/footer"); ?>
 <!-- Footer End -->
 <!-- Scripts js -->
+<script src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/skills-search.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.nice-select.js"></script>
@@ -127,6 +127,8 @@
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
+<script src="<?= URL_RAIZ() ?>js/index.js"></script>
 
 </body>
 

@@ -9,8 +9,6 @@ class Verification extends SI_Controller
         $this->output->enable_profiler(FALSE);
         $this->load->model("account/home/Account_home_model");
         $this->load->model("Usuarios_model");
-
-
     }
     public function logged(){
         $this->session->set_userdata(["logado"=>TRUE]);

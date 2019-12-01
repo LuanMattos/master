@@ -6,11 +6,11 @@ var index = {
 
 $("#formulario-cadastro").hide();
 
-$(function () {
+
 
 
     var vue_instance = new Vue({
-        el: "#geral-div-container",
+        el: ".register-mp",
         data: {
             error: "",
             form: {
@@ -27,14 +27,14 @@ $(function () {
         }
     })
 
-    var bg = $("#geral-div-container");
+    var bg = $(".body-bg");
 
-    bg.find("#pronto").on("click", function (event) {
+    bg.find(".login-btn").on("click", function (event) {
         event.preventDefault();
         event.stopPropagation();
-        vue_instance.form.telcel = $("#cadastro-phone").val()
+        vue_instance.form.telcel = $("input[name='telcel']").val();
         $.post(
-            index.Url("cadastro"),
+            index.Url("acao_cadastro"),
             {
                 data: vue_instance.form,
 
@@ -62,7 +62,6 @@ $(function () {
         bg.find("#formulario-cadastro").hide();
         bg.find("#formulario-login").slideToggle();
     });
-})
 
 
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
-    <title>Goeveni - My All Notifications</title>
+    <title>Goeveni - My Dashbaord Activity</title>
 
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="images/fav.png">
@@ -25,12 +25,10 @@
 
 <body>
 <?= $this->load->view("menu/menu"); ?>
-<!-- Header End -->
-<!-- Body Start -->
 <main class="dashboard-mp">
     <?= $this->load->view("area_a/index"); ?>
     <?= $this->load->view("area_b/index"); ?>
-    <?= $this->load->view("area_c_dashboard_all_notifications/index"); ?>
+    <?= $this->load->view("area_c_dashboard_activity/index"); ?>
 </main>
 <!-- Body End -->
 <!-- Footer Start -->

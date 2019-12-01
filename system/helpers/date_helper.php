@@ -79,6 +79,34 @@ if ( ! function_exists('now'))
 	}
 }
 
+/**
+ * CodeIgniter Date Helpers
+ *
+ * @package		CodeIgniter
+ * @subpackage	Helpers
+ * @category	Helpers
+ * @author		EllisLab Dev Team
+ * @link		https://codeigniter.com/user_guide/helpers/date_helper.html
+ */
+
+if ( ! function_exists('date_to_us'))
+{
+
+    function date_to_us(){
+        $data = func_get_args();
+        if(!empty($data)){
+            $data = reset($date);
+            $date = new DateTime($data);
+            return  $date->format('Y-m-d');
+        }else{
+            return "";
+        }
+
+
+
+    }
+}
+
 // ------------------------------------------------------------------------
 
 if ( ! function_exists('mdate'))

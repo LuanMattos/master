@@ -6,7 +6,7 @@ var home = {
 };
 
     new Vue({
-            el:"#div-geral",
+            el:".dashboard-mp",
             data:{
                 testa:"dfdsf"
             },

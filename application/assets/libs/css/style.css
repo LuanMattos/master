@@ -1,4 +1,4 @@
-/*===================== TABLE OF CONTENT =======================
+profile-link/*===================== TABLE OF CONTENT =======================
 /*
 Table Of Content
 ==================
@@ -73,6 +73,9 @@ ol, ul {
 a:hover {
 	color: #fbfff8 !important;
 	text-decoration: none;
+}
+.cursor-pointer{
+    cursor:pointer;
 }
 blockquote, q {
 	quotes: none;
@@ -1069,7 +1072,7 @@ main {
 }
 
 .profile-link a:focus {
-	color: #ff7555 !important;
+	color: #6b84fd !important;
 }
 
 .categories-left-heading {
@@ -1149,7 +1152,7 @@ main {
 
 .request-btn {
     float: right;
-    border: 2px solid #ffffff;
+    border: 2px solid #6b84fd;
     background: #313131;
     border-radius: 3px;
     width: 40px;
@@ -1160,8 +1163,8 @@ main {
 }
 
 .request-btn:hover {
-	border: 2px solid #ff7555;
-	background: #ff7555;
+	border: 2px solid #6b84fd;
+	background: #7e95fd;
 	color: #fff;	
 }
 
@@ -1486,7 +1489,7 @@ main {
 .it-items i {
 	margin-top: -7px;
 	font-size: 14px;
-	color: #ff7555;
+	color: #7e95fd;
 }
 
 .list-text-dt span {
@@ -1561,7 +1564,7 @@ main {
 }
 
 .like-item:hover {
-	color: #ff7555 !important;
+	color: #6b84fd !important;
 }
 
 .treading {
@@ -5068,7 +5071,7 @@ footer {
 
 .about-icon i {
     font-size: 24px;
-    color: #ff7555;
+    color: #6b84fd;
 }
 
 .about-steps {
@@ -5090,7 +5093,7 @@ footer {
 
 .about-item1 h4 {
     font-size: 18px;
-    color: #fff;
+    color: #6b84fd;
     line-height: 24px;
     font-weight: 600;
 	margin-bottom: 8px;
@@ -5112,7 +5115,7 @@ footer {
 
 .post-evnt-btn {
     border-radius: 3px;
-    background: #ff7555;
+    background: #7e95fd;
     font-size: 14px;
     font-weight: 400;
     color: #fff;
@@ -5123,7 +5126,7 @@ footer {
 
 .post-evnt-btn:hover {
     border-radius: 3px;
-    background: #f55f3d;
+    background: #5d73fd;
 }
 
 .expert-team {
@@ -5161,7 +5164,7 @@ footer {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    background-color: rgba(255,117,85,.85);
+    background-color: rgba(117,117,85,.85);
     z-index: 1;
     opacity: 0;
     visibility: hidden;
@@ -5246,7 +5249,7 @@ footer {
 	font-size: 16px;
     font-weight: 400;
     text-transform: uppercase;
-    color: #ff7555;
+    color: #6b84fd;
     margin-bottom: 21px;
 }
 
@@ -5302,7 +5305,7 @@ footer {
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
     background: #313131 !important;
-	border: 2px solid #ff7555;
+	border: 2px solid #00abef;
 }
 
 /* === Our Blog Page === */
@@ -5996,7 +5999,7 @@ footer {
 }
 
 .my-all-evnts a {
-	background: #ff7555;
+	background: #6b84fd;
 	padding: 10px 20px;
 	border-radius: 3px;
 	color: #fff;
@@ -6006,7 +6009,7 @@ footer {
 }
 
 .my-all-evnts a:hover {
-	background: #f55f3d;
+	background: #7e95fd;
 	color: #fff !important;
 }
 
@@ -6606,13 +6609,13 @@ footer {
 }
 
 .mf-field input:focus {
-	border: 1px solid #ff7555;
+	border: 1px solid #6b84fd;
 }
 
 .mf-field button {
 	float: left;
 	width: 13%;
-	background-color: #ff7555;
+	background-color: #707cfd;
 	height: 40px;
 	border-radius: 3px;
 	text-align: center;
@@ -6626,7 +6629,7 @@ footer {
 }
 
 .mf-field button:hover {
-	background-color: #f55f3d;
+	background-color: #6b84fd;
 	color: #fff;
 }
 
@@ -6676,7 +6679,7 @@ footer {
 .message-inner-dt > p {
 	float: right;
 	width: 58%;
-	background-color: #ff7555;
+	background-color: #7e95fd;
 	font-size: 14px;
 	line-height: 20px;
 	padding: 18px 26px 17px 25px;
