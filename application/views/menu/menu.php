@@ -177,7 +177,7 @@
                                data-toggle="dropdown">
                                 <div class="user-dp">
                                     <img src="<?= URL_RAIZ() ?>application/assets/libs/images/dp.jpg" alt=""></div>
-                                <span>Olá <?= isset($nome) ? $nome : ""; ?> </span>
+                                <span>Olá <?= isset($data['nome']) ? $data['nome'] : ""; ?> </span>
                                 <i class="fas fa-angle-down"></i>
                             </a>
                             <div class="dropdown-menu account-dropdown dropdown-menu-right">

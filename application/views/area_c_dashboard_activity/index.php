@@ -1,43 +1,6 @@
 <div class="dash-tab-links" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <ul class="nav nav-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="my_dashboard_activity.html">Activity</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_discussions.html">Discussions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_events.html">Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_followers.html">Followers <span class="badge badge-alrts">20</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_following.html">Following <span class="badge badge-alrts">20</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_messages.html">Messages <span class="badge badge-alrts">2</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_credits.html">Credits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_booked_events.html">Booked Events</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_history.html">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="my_dashboard_setting_info.html">Setting</a>
-                    </li>
-                </ul>
-            </div>
             <div class="col-lg-3 col-md-5">
                 <div class="user-data full-width">
                     <div class="categories-left-heading">
@@ -113,7 +76,7 @@
                             <div class="main-user-dts1">
                                 <img src="images/event-view/user-1.jpg" alt="">
                                 <div class="user-text3">
-                                    <h4>John Doe</h4>
+                                    <h4><?= isset($data['nome'])?$data['nome']:""; ?></h4>
                                     <span>posted an update a 5 min ago</span>
                                 </div>
                             </div>
@@ -152,13 +115,13 @@
                                 <div class="main-user-dts1">
                                     <img src="images/event-view/user-4.jpg" alt="">
                                     <div class="user-text3">
-                                        <h4>Rock William</h4>
+                                        <h4>Rock William > <?= isset($data['nome'])?$data['nome']:""; ?></h4>
                                         <span>posted an update a 3 min ago</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="activity-descp">
-                                <p>Praesent laoreet, dolor ut mollis rutrum, mauris arcu mollis lacus.</p>
+                                <p>Olá Admin feliz aniversário .</p>
                                 <ul>
                                     <li><a href="#">Reply</a></li>
                                     <li><a href="#">Report</a></li>
@@ -176,86 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="activity-posts">
-                        <div class="activity-group1">
-                            <div class="main-user-dts1">
-                                <img src="images/event-view/user-1.jpg" alt="">
-                                <div class="user-text3">
-                                    <h4>John Doe</h4>
-                                    <span>posted an update a 8 min ago</span>
-                                </div>
-                            </div>
-                            <div class="dot-option dropdown">
-                                <span class="dropdown-toggle-no-caret" role="button" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></span>
-                                <div class="dropdown-menu post-rt-dropdown dropdown-menu-right">
-                                    <a class="post-link-item" href="#">Hide</a>
-                                    <a class="post-link-item" href="#">Edit</a>
-                                    <a class="post-link-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="activity-descp">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, dolor ut mollis rutrum, mauris arcu mollis lacus, eget imperdiet neque neque eget nisl.</p>
-                        </div>
-                        <div class="like-comment-view">
-                            <div class="left-comments">
-                                <a href="#" class="like-item" title="Like">
-                                    <i class="fas fa-heart"></i>
-                                    <span><ins>Like</ins> 5</span>
-                                </a>
-                                <a href="#" class="like-item lc-left" title="Comment">
-                                    <i class="fas fa-comment-alt"></i>
-                                    <span><ins>Comment</ins> 0</span>
-                                </a>
-                            </div>
-                            <div class="right-comments">
-                                <a href="#" class="like-item" title="Share">
-                                    <i class="fas fa-eye"></i>
-                                    <span><ins>View</ins> 11</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="activity-posts">
-                        <div class="activity-group1">
-                            <div class="main-user-dts1">
-                                <img src="images/event-view/user-1.jpg" alt="">
-                                <div class="user-text3">
-                                    <h4>John Doe</h4>
-                                    <span>posted an update a 8 min ago</span>
-                                </div>
-                            </div>
-                            <div class="dot-option dropdown">
-                                <span class="dropdown-toggle-no-caret" role="button" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></span>
-                                <div class="dropdown-menu post-rt-dropdown dropdown-menu-right">
-                                    <a class="post-link-item" href="#">Hide</a>
-                                    <a class="post-link-item" href="#">Edit</a>
-                                    <a class="post-link-item" href="#">Delete</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="activity-descp">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, dolor ut mollis rutrum, mauris arcu mollis lacus, eget imperdiet neque neque eget nisl.</p>
-                        </div>
-                        <div class="like-comment-view">
-                            <div class="left-comments">
-                                <a href="#" class="like-item" title="Like">
-                                    <i class="fas fa-heart"></i>
-                                    <span><ins>Like</ins> 6</span>
-                                </a>
-                                <a href="#" class="like-item lc-left" title="Comment">
-                                    <i class="fas fa-comment-alt"></i>
-                                    <span><ins>Comment</ins> 0</span>
-                                </a>
-                            </div>
-                            <div class="right-comments">
-                                <a href="#" class="like-item" title="Share">
-                                    <i class="fas fa-eye"></i>
-                                    <span><ins>View</ins> 15</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="main-loader mb-50">
                         <div class="spinner">
                             <div class="bounce1"></div>

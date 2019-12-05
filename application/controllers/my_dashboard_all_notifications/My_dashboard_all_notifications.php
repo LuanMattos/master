@@ -22,9 +22,10 @@ class My_dashboard_all_notifications extends SI_Controller{
             if(!empty($data_s)){
                 $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
                 if(count($data)){
-                    $data = reset($data);
+                    $dados = reset($data);
                 }
-                $this->load->view("my_dashboard_all_notifications/index",$data);
+
+                $this->load->view("my_dashboard_all_notifications/index",compact("dados"));
 
             }
         }

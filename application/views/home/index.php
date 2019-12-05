@@ -24,7 +24,13 @@
 </head>
 
 <body>
-<?= $this->load->view("menu/menu"); ?>
+<?php   if(isset($dados)):
+    $data = $dados;
+else:
+    $data = [];
+endif;
+?>
+<?= $this->load->view("menu/menu",compact("data")); ?>
 <main class="dashboard-mp">
     <?= $this->load->view("area_a/index"); ?>
     <?= $this->load->view("area_b/index"); ?>

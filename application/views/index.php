@@ -48,7 +48,7 @@
                                             <div class="form-group">
                                                 <input class="title-discussion-input"
                                                        type="email"
-                                                       placeholder="Email ou Phone Number"
+                                                       placeholder="Email ou Telefone"
                                                        name="login"
                                                 >
                                             </div>
@@ -80,29 +80,7 @@
 </main>
 <!-- Body End -->
 <!-- Footer Start -->
-<footer class="footer-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12">
-                <div class="footer-left">
-                    <ul>
-                        <li><a href="privacy_policy.html">Privacidade</a></li>
-                        <li><a href="term_conditions.html">Termos e condições</a></li>
-                        <li><a href="about.html">Sobre</a></li>
-                        <li><a href="contact_us.html">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12">
-                <div class="footer-right">
-                    <ul class="copyright-text">
-                        <li><div class="ftr-1"> 2019 criado por Patrick Luan. Todos os direitos reservados.</div></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<?= $this->load->view("footer/footer"); ?>
 <!-- Footer End -->
 <!-- Scripts js -->
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.min.js"></script>
