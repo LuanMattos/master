@@ -6130,7 +6130,7 @@ footer {
 
 .act-btn-post {
     border-radius: 3px;
-    background: #ff7555;
+    background: #313dc2;
     font-size: 14px;
     font-weight: 400;
     color: #fff;
@@ -6140,7 +6140,7 @@ footer {
 }
 
 .act-btn-post:hover {
-    background: #f55f3d;
+    background: #3340cf;
 }
 
 .activity-posts {

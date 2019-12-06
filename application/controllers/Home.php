@@ -141,7 +141,6 @@ class Home extends SI_Controller
     }
     public function logged(){
         $data_s = $this->session->get_userdata();
-
         if(!isset($data_s['logado'])){
             $this->session->sess_destroy();
             redirect("Home/index");
@@ -328,6 +327,7 @@ class Home extends SI_Controller
                 $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
                 if(count($data)){
                     $dados = reset($data);
+
                 }
                 $this->load->view("home/index",compact("dados"));
 

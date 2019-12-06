@@ -24,7 +24,15 @@
 </head>
 
 <body>
-<?= $this->load->view("menu/menu") ?>
+
+<?php   if(isset($dados)):
+    $data = $dados;
+else:
+    $data = [];
+endif;
+
+?>
+<?= $this->load->view("menu/menu",compact("data")); ?>
 <main class="dashboard-mp " style="margin-top: 80px">
     <div class="main-section">
         <div class="container">
@@ -34,7 +42,7 @@
                         <div class="user-data full-width">
                             <div class="user-profile">
                                 <div class="username-dt dpbg-1">
-                                    <div class="usr-pic">
+                                    <div class="usr-pic cursor-pointer">
                                         <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/left-side/profile-dp.jpg" alt="">
                                     </div>
                                 </div>
