@@ -148,9 +148,9 @@ class Home extends SI_Controller
             if(!empty($data_s)){
                 $data = $this->Usuarios_model->getWhere(["login"=>$data_s['login']]);
                 if(count($data)){
-                    $data = reset($data);
+                    $dados = reset($data);
                 }
-                $this->load->view('home',$data);
+                $this->load->view('home',compact("dados"));
             }
         }
     }
@@ -280,7 +280,7 @@ class Home extends SI_Controller
             "destinatario"  => "$numero_validado",
             "date_to_send"  => date("Y-m-d H:i:s")
         ];
-//        $sms->processesDirect($dataSms);
+        $sms->processesDirect($dataSms);
 
         $save = $this->Usuarios_model->save($data,["codigo","email_hash"]);
         if($save){

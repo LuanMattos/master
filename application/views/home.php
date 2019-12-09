@@ -30,7 +30,6 @@
 else:
     $data = [];
 endif;
-
 ?>
 <?= $this->load->view("menu/menu",compact("data")); ?>
 <main class="dashboard-mp " style="margin-top: 80px">
@@ -143,7 +142,10 @@ endif;
                                     <div class="main-posts">
                                         <div class="event-main-post">
                                             <div class="event-top">
-                                                <?= $this->load->view("search/index"); ?>
+                                                <div class="main-search-bar">
+                                                    <?= $this->load->view("search/index"); ?>
+                                                    <?= $this->load->view("publicar/index"); ?>
+                                                </div>
                                                 <div class="event-top-left">
                                                     <a href="event_detail_view.html"><h4>Nome de quem postou</h4></a>
                                                 </div>
@@ -299,7 +301,7 @@ endif;
                         <div class="post-event">
                             <h6>Crie aqui seus eventos</h6>
                             <p>Publique aqui seus eventos compartilhando com todos seus amigos.</p>
-                            <a href="add_new_event.html" class="add-nw-event">Postar agora</a>
+                            <a href="add_new_event.html" class="add-nw-event">Postar</a>
                         </div>
                         <div class="explore-events">
 <!--                            <h4>Anúncios</h4>-->
