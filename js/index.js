@@ -25,7 +25,7 @@ $("#formulario-cadastro").hide();
 
             }
         }
-    })
+    });
 
     var bg = $(".body-bg");
 

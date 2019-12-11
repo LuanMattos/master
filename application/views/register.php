@@ -32,7 +32,7 @@
                 <div class="col-md-10">
                     <div class="login-register-bg">
                         <div class="row no-gutters">
-                            <div class="col-lg-6">
+                            <div class="col-lg-6" style="background-color: #3a3e3e">
                                 <div class="lg-left">
                                     <div class="lg-logo">
 <!--                                        logo pequeno-->
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6" >
                                 <div class="lr-right">
                                     <h4>Primeiros passos</h4>
                                     <div class="login-register-form">
