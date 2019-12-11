@@ -33,7 +33,7 @@
                         <div class="row no-gutters">
                             <div class="col-lg-6" style="background-color: #3a3e3e">
                                 <div class="text-white">
-                                    <img src="<?= URL_RAIZ() ?>application/assets/libs/images/home.svg">
+                                    <img src="<?= URL_RAIZ() ?>application/assets/libs/images/home.svg" style="width:100%">
                                 </div>
                             </div>
                             <div class="col-lg-6">
