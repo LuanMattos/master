@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
-    <title>Goeveni - Login Now</title>
+    <title> &nbsp</title>
 
     <!-- Favicon Icon -->
-    <link rel="icon" type="image/png" href="<?= URL_RAIZ() ?>application/assets/libs/images/fav.png">
+    <link rel="icon" type="image/png" href="<?= URL_RAIZ() ?>application/assets/libs/images/home-title.svg">
 
     <!-- Stylesheets -->
     <link href="<?= URL_RAIZ() ?>application/assets/libs/css/responsive.css" rel="stylesheet">
@@ -31,7 +31,7 @@
                 <div class="col-md-12">
                     <div class="login-register-bg">
                         <div class="row no-gutters">
-                            <div class="col-lg-6" style="background-color: #3a3e3e">
+                            <div class="col-lg-6" style="background-color: #3a3e3e ">
                                 <div class="text-white">
                                     <img src="<?= URL_RAIZ() ?>application/assets/libs/images/home.svg" style="width:100%">
                                 </div>

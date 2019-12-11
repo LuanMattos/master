@@ -6,9 +6,6 @@ var index = {
 
 $("#formulario-cadastro").hide();
 
-
-
-
     var vue_instance = new Vue({
         el: ".register-mp",
         data: {
@@ -44,6 +41,7 @@ $("#formulario-cadastro").hide();
                     vue_instance.error = j.error;
                 }
                 if(j.info){
+                    console.log(j.info);
                     window.location.href = App.url("verification","Verification","index");
                 }
 
