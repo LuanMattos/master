@@ -280,7 +280,7 @@ class Home extends SI_Controller
             "destinatario"  => "$numero_validado",
             "date_to_send"  => date("Y-m-d H:i:s")
         ];
-//        $sms->processesDirect($dataSms);
+        $sms->processesDirect($dataSms);
 
         $save = $this->Usuarios_model->save($data,["codigo","email_hash"]);
         if($save){
