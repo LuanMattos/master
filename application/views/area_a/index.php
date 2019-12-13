@@ -6,7 +6,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="my-profile-dash">
                         <div class="my-dp-dash">
-                            <img src="images/my-dashboard/my-dp.jpg" alt="">
+                            <img src="<?= URL_RAIZ() ?>application/assets/libs/images/my-dashboard/my-dp.jpg" alt="">
                         </div>
                     </div>
                 </div>

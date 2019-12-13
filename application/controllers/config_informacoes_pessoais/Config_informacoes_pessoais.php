@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Account_settings extends SI_Controller{
+class Config_informacoes_pessoais extends SI_Controller
+{
 
     public function __construct(){
         parent::__construct();
         $this->load->model("Usuarios_model");
+        $this->load->model("account/home/Account_home_model");
         $this->output->enable_profiler(FALSE);
         $this->load->helper("cookie");
         $this->load->helper("url");
@@ -24,7 +26,7 @@ class Account_settings extends SI_Controller{
                 if(count($data)){
                     $dados = reset($data);
                 }
-                $this->load->view("account_settings/index",compact("dados"));
+                $this->load->view("config_informacoes_pessoais/index",compact("dados"));
 
             }
         }

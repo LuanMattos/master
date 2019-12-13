@@ -46,7 +46,7 @@ endif;
                                     </div>
                                 </div>
                                 <div class="user-main-details">
-                                    <h4><?= isset($nome)?$nome:""; ?></h4>
+                                    <h4><?= isset($data['nome'])?$data['nome']:""; ?></h4>
                                     <span>
                                         <i class="fas fa-map-marker-alt"></i>India
                                     </span>
@@ -86,80 +86,24 @@ endif;
                                 <a class="category-item" href="#"><i class="fas fa-ellipsis-h"></i>Outros</a>
                             </div>
                         </div>
-                        <div class="user-data full-width">
-                            <div class="categories-left-heading">
-                                <h3>Pessoas</h3>
-                            </div>
-                            <div class="sugguest-user">
-                                <div class="sugguest-user-dt">
-                                    <a href="user_dashboard_activity.html">
-                                        <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/left-side/left-img-1.jpg" alt=""></a>
-                                    <a href="user_dashboard_activity.html"><h4>Johnson</h4></a>
-                                </div>
-                                <button class="request-btn"><i class="fas fa-user-plus"></i></button>
-                            </div>
-                            <div class="sugguest-user">
-                                <div class="sugguest-user-dt">
-                                    <a href="user_dashboard_activity.html">
-                                        <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/left-side/left-img-2.jpg" alt=""></a>
-                                    <a href="user_dashboard_activity.html"><h4>Jassica William</h4></a>
-                                </div>
-                                <button class="request-btn"><i class="fas fa-user-plus"></i></button>
-                            </div>
-                            <div class="sugguest-user">
-                                <div class="sugguest-user-dt">
-                                    <a href="user_dashboard_activity.html">
-                                        <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/left-side/left-img-3.jpg" alt=""></a>
-                                    <a href="user_dashboard_activity.html"><h4>Rock</h4></a>
-                                </div>
-                                <button class="request-btn"><i class="fas fa-user-plus"></i></button>
-                            </div>
-                            <div class="sugguest-user">
-                                <div class="sugguest-user-dt">
-                                    <a href="user_dashboard_activity.html">
-                                        <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/left-side/left-img-4.jpg" alt=""></a>
-                                    <a href="user_dashboard_activity.html"><h4>Davil Smith</h4></a>
-                                </div>
-                                <button class="request-btn"><i class="fas fa-user-plus"></i></button>
-                            </div>
-                            <div class="sugguest-user">
-                                <div class="sugguest-user-dt">
-                                    <a href="user_dashboard_activity.html">
-                                        <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/left-side/left-img-5.jpg" alt=""></a>
-                                    <a href="user_dashboard_activity.html"><h4>Ricky Doe</h4></a>
-                                </div>
-                                <button class="request-btn"><i class="fas fa-user-plus"></i></button>
-                            </div>
-                        </div>
+                        <?= $this->load->view("pessoas/index"); ?>
                     </div>
                 </div>
 
                 <div class="col-lg-6 col-md-7 mt-20">
                     <div class="center-section">
+                        <div class="main-search-bar" style="background-color: #3f3f3f">
+                                <?= $this->load->view("search/index"); ?>
+                                <?= $this->load->view("publicar/index"); ?>
+                        </div>
                         <div class="main-tabs">
                             <div class="tab-content">
+
                                 <div class="tab-pane active" id="tab-upcoming">
                                     <div class="main-posts">
                                         <div class="event-main-post">
-                                            <div class="event-top">
-                                                <div class="main-search-bar">
-                                                    <?= $this->load->view("search/index"); ?>
-                                                    <?= $this->load->view("publicar/index"); ?>
-                                                </div>
-                                                <div class="event-top-left">
-                                                    <a href="event_detail_view.html"><h4>Nome de quem postou</h4></a>
-                                                </div>
-                                                <div class="event-top-right">
-                                                    <div class="post-dt-dropdown dropdown">
-                                                        <span class="dropdown-toggle-no-caret"  role="button" data-toggle="dropdown"><i class="fas fa-ellipsis-v"></i></span>
-                                                        <div class="dropdown-menu post-rt-dropdown dropdown-menu-right">
-                                                            <a class="post-link-item" href="#">Hide</a>
-                                                            <a class="post-link-item" href="#">Details</a>
-                                                            <a class="post-link-item" href="#">User Profile</a>
-                                                            <a class="post-link-item" href="#">Report</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <div class="event-top" >
+                                                <?= $this->load->view("postagens/index"); ?>
                                             </div>
                                             <div class="event-main-image">
                                                 <div class="main-photo">

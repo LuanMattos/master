@@ -31,9 +31,9 @@
                 <div class="col-md-12">
                     <div class="login-register-bg">
                         <div class="row no-gutters">
-                            <div class="col-lg-6" style="background-color: #3a3e3e ">
+                            <div class="col-lg-6" style="background-color: #3a3e3e; ">
                                 <div class="text-white">
-                                    <img src="<?= URL_RAIZ() ?>application/assets/libs/images/home.svg" style="width:100%">
+                                    <img src="<?= URL_RAIZ() ?>application/assets/libs/images/home.svg" style="width:120%">
                                 </div>
                             </div>
                             <div class="col-lg-6">

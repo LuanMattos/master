@@ -19,74 +19,43 @@
     <link href="<?= URL_RAIZ() ?>application/assets/libs/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= URL_RAIZ() ?>application/assets/libs/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
-    <link href="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/assets/owl.theme.default.min.css"
+          rel="stylesheet">
 
 </head>
 
 <body>
-<?= $this->load->view("menu/menu") ?>
+<?php if (isset($dados)):
+
+    $data = $dados;
+else:
+    $data = [];
+endif;
+
+?>
+<?= $this->load->view("menu/menu", compact("data")) ?>
 <!-- Header End -->
 <!-- Body Start -->
-<main class="dashboard-mp" style="margin-top: 80px">
+<main class="dashboard-mp" style="margin-top: 80px;">
     <div class="dash-tab-links">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_activity.html">Activity</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_discussions.html">Discussions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_events.html">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_followers.html">Followers <span class="badge badge-alrts">20</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_following.html">Following <span class="badge badge-alrts">20</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_messages.html">Messages <span class="badge badge-alrts">2</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_credits.html">Credits</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="my_dashboard_booked_events.html">Booked Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_history.html">History</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="my_dashboard_setting_info.html">Setting</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="booked-events mb-20">
+            <div class="setting-page mb-20">
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="checkout-heading">
-                            <h2>Configurações da conta</h2>
-                        </div>
 
-                    </div>
+                    <?= $this->load->view("menu_config/index"); ?>
+                    <!--                    #configuracoes_pessoais-->
+                    <?= $this->load->view("config_informacoes_pessoais/index"); ?>
+
+
                 </div>
             </div>
         </div>
     </div>
-</main style="margin-top: 80px" style="margin-top: 80px">
-<!-- Body End -->
-<!-- Footer Start -->
+
+</main>
+
 <?= $this->load->view("footer/footer"); ?>
-<!-- Footer End -->
-<!-- Scripts js -->
+
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/skills-search.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.nice-select.js"></script>
@@ -95,6 +64,9 @@
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/owl.carousel.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
+<script src="<?= URL_RAIZ() ?>js/config/config.js"></script>
 
 </body>
 

@@ -6881,10 +6881,10 @@ footer {
 
 .setting-save-btn {
     border-radius: 3px;
-    background: ;
+    background: #2a3030;
     font-size: 14px;
     font-weight: 400;
-    color: #fff;
+    color: #e6f0f0;
     padding: 0 20px;
     height: 50px;
     border: 0;
@@ -6893,8 +6893,8 @@ footer {
 }
 
 .setting-save-btn:hover {
-    background: #f55f3d;
-    color: #fff;
+    background: #3a3e3e;
+    color: white;
 }
 
 /* === My Dashbaord Setting Profile Page === */

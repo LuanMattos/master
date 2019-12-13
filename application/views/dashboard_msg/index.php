@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<?php   ;if(isset($dados)):
+<?php  if(isset($dados)):
     $data = $dados;
 else:
     $data = [];

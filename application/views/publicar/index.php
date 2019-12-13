@@ -1,15 +1,13 @@
 <form>
-    <div class="main-search-inputs">
-        <div class="row no-gutters">
-            <div class="col-lg-11 col-md-12 col-sm-12">
-                <input class="search-form-input" type="text" placeholder="Postar">
+    <div class="add-activity">
+        <div class="activity-group">
+            <div class="maine-activity-img">
+                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/event-view/user-1.jpg" alt="">
             </div>
-            <div class="col-lg-12 col-md-14 col-sm-14">
-                <button class="search-btn" type="submit">
-                    Postar
-                </button>
-            </div>
+            <textarea class="add-activity-des" placeholder="O que tem de novo ai <?= isset($data['nome'])?$data['nome']:'' ?>?"></textarea>
         </div>
-
+        <div class="activity-button">
+            <button class="act-btn-post" type="submit">Publicar</button>
+        </div>
     </div>
 </form>
