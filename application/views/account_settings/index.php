@@ -46,7 +46,6 @@ endif;
                     <!--                    #configuracoes_pessoais-->
                     <?= $this->load->view("config_informacoes_pessoais/index"); ?>
 
-
                 </div>
             </div>
         </div>
