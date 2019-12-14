@@ -36,30 +36,28 @@ endif;
 <?= $this->load->view("menu/menu", compact("data")) ?>
 <!-- Header End -->
 <!-- Body Start -->
-<main class="dashboard-mp" style="margin-top: 80px;">
+<main class="dashboard-mp" style="margin-top: 80px;" id="main-config-account-settings">
     <div class="dash-tab-links">
         <div class="container">
             <div class="setting-page mb-20">
                 <div class="row">
-
                     <?= $this->load->view("menu_config/index"); ?>
                     <!--                    #div-geral-config-informacoes-pessoais-index-->
-                    <?= $this->load->view("config_informacoes_pessoais/index"); ?>
+                    <?= $this->load->view("config_informacoes_pessoais/index",compact("data","pais")); ?>
                     <!--                    #div-geral-config-perfil-index-->
-                    <?= $this->load->view("config_perfil/index"); ?>
+                    <?= $this->load->view("config_perfil/index",compact("data")); ?>
                     <!--                    #div-geral-config-requisicoes-amizades-->
-                    <?= $this->load->view("config_requisicoes_amizades/index"); ?>
+                    <?= $this->load->view("config_requisicoes_amizades/index",compact("data")); ?>
                     <!--                    #div-geral-config-redes-sociais-->
-                    <?= $this->load->view("config_redes_sociais/index"); ?>
+                    <?= $this->load->view("config_redes_sociais/index",compact("data")); ?>
                     <!--                    #div-geral-config-email-->
-                    <?= $this->load->view("config_email/index"); ?>
+                    <?= $this->load->view("config_email/index",compact("data")); ?>
                     <!--                    #div-geral-config-notificacoes-->
-                    <?= $this->load->view("config_notificacoes/index"); ?>
+                    <?= $this->load->view("config_notificacoes/index",compact("data")); ?>
                     <!--                    #div-geral-config-mudar-senha-->
-                    <?= $this->load->view("config_mudar_senha/index"); ?>
+                    <?= $this->load->view("config_mudar_senha/index",compact("data")); ?>
                     <!--                    #div-geral-desativar-conta-->
-                    <?= $this->load->view("config_desativar_conta/index"); ?>
-
+                    <?= $this->load->view("config_desativar_conta/index",compact("data")); ?>
                 </div>
             </div>
         </div>
@@ -71,7 +69,6 @@ endif;
 
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/skills-search.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.nice-select.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/datepicker.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/i18n/datepicker.en.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -79,6 +76,7 @@ endif;
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <script src="<?= URL_RAIZ() ?>js/config/config.js"></script>
 
 </body>

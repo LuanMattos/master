@@ -71,7 +71,7 @@ class Migrate extends CI_Controller{
                                         CONSTRAINT pais_pkey
                                             PRIMARY KEY (id))");
         $this->db->query("INSERT INTO pais (id, nome, nome_pt, sigla, bacen) VALUES
-                        (1, 'Brazil', 'Brasil', 'BR', 1058),
+                        (1, 'Brasil', 'Brasil', 'BR', 1058),
                         (2, 'Afghanistan', 'Afeganistão', 'AF', 132),
                         (3, 'Albania', 'Albânia, Republica da', 'AL', 175),
                         (4, 'Algeria', 'Argélia', 'DZ', 590),

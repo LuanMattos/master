@@ -25,8 +25,8 @@ $ (document).ready(function() {
 
 
 // Nice Select
-$(document).ready(function() { 			
-	$('select').niceSelect();
+$(document).ready(function() {
+	$('select').addClass("form-control");
 });
 
 

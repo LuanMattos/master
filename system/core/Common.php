@@ -105,6 +105,18 @@ if ( ! function_exists('debug')) {
         exit;
     }
 }
+// ------------------------------------------------------------------------
+
+if ( ! function_exists('set_val')) {
+    function set_val($value = "")
+    {
+        if(isset($value)){
+            return $value;
+        }else{
+            return "";
+        }
+    }
+}
 if ( ! function_exists('debug_json')) {
     function debug_json()
     {

@@ -10,7 +10,10 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label>Nome*</label>
-                                <input class="payment-input" type="text" placeholder="Nome">
+                                <input class="payment-input"
+                                       type="text"
+                                       placeholder="Nome"
+                                       value="<?= set_val($data['nome']) ?>">
                             </div>
 
 
@@ -18,40 +21,55 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label>Sobrenome*</label>
-                                <input class="payment-input" type="text" placeholder="Sobrenome">
+                                <input class="payment-input"
+                                       type="text"
+                                       placeholder="Sobrenome"
+                                       value="<?= set_val($data['sobrenome']) ?>"
+                                       name="sobrenome"
+                                >
                             </div>
 
                         </div>
                         <div class="col-lg-4 col-md-12">
                             <div class="form-group">
                                 <label>Data de nascimento*</label>
-                                <input class="payment-input datepicker-here" data-language="en" type="text"
-                                       placeholder="08/29/1991">
+                                <input class="payment-input datepicker-here"
+                                       data-language="en"
+                                       type="text"
+                                       placeholder="08/29/1991"
+                                       value="<?= set_val(date_to_br($data['datanasc'])) ?>"
+                                >
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12">
                             <div class="form-group">
                                 <label>País*</label>
                                 <div class="select-bg">
-                                    <select class="wide" style="display: none;">
-                                        <option>India</option>
-                                        <option>Australia</option>
-                                        <option>Canada</option>
-                                        <option>Nepal</option>
-                                        <option>Pakistan</option>
-                                        <option>Bangladesh</option>
-                                        <option>England</option>
-                                        <option>United States</option>
+                                    <select class="wide " @change="get_cidade" id="selec-pais">
+                                        <option value="">Selecione um país</option>
+                                        <?php
+                                            if(isset($pais)):
+                                            foreach($pais as $row)
+                                                echo "<option value='{$row['id']}'>{$row['nome']}</option>";
+                                            endif;
+                                            ?>
+
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12">
+                        <div class="col-lg-4 col-md-12" >
                             <div class="form-group">
                                 <label>Cidade*</label>
                                 <div class="select-bg">
-                                    <select class="wide" style="display: none;">
-                                        <option></option>
+                                    <select class="wide"  >
+                                        <option value="">Selecione</option>
+                                        <option v-for="i in informacoes_pessoais.data_cidade"
+                                                v-html="i.nome"
+                                                :value="i.id"
+                                        >
+                                        </option>
+
                                     </select>
                                 </div>
                             </div>

@@ -12,7 +12,7 @@
                                 <li>
                                     <div class="noti-st">
                                         <div class="noti-left-t">
-                                            Notificar sobre novas mensagens
+                                            Mensagens
                                         </div>
                                         <div class="noti-right-b">
                                             <div class="custom-control custom-switch">
@@ -26,7 +26,7 @@
                                 <li>
                                     <div class="noti-st">
                                         <div class="noti-left-t">
-                                            Notificar sobre novas amizades
+                                            Novas amizades
                                         </div>
                                         <div class="noti-right-b">
                                             <div class="custom-control custom-switch">
@@ -40,7 +40,7 @@
                                 <li>
                                     <div class="noti-st">
                                         <div class="noti-left-t">
-                                            Notificar sobre curtidas
+                                            Curtidas
                                         </div>
                                         <div class="noti-right-b">
                                             <div class="custom-control custom-switch">
@@ -53,7 +53,7 @@
                                 <li>
                                     <div class="noti-st">
                                         <div class="noti-left-t">
-                                            Notificar sobre comentarios
+                                            Comentarios
                                         </div>
                                         <div class="noti-right-b">
                                             <div class="custom-control custom-switch">

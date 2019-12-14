@@ -106,7 +106,23 @@ if ( ! function_exists('date_to_us'))
 
     }
 }
+if ( ! function_exists('date_to_br'))
+{
 
+    function date_to_br(){
+        $data = func_get_args();
+        if(!empty($data)){
+            $data = reset($date);
+            $date = new DateTime($data);
+            return  $date->format('d/m/Y');
+        }else{
+            return "";
+        }
+
+
+
+    }
+}
 // ------------------------------------------------------------------------
 
 if ( ! function_exists('mdate'))

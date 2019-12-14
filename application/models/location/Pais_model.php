@@ -8,6 +8,13 @@ class Pais_model extends CI_Model {
         $this->set_table_index("id");
         $this->set_table("pais");
     }
+    public function get_cidade_where_pais($codpais){
+        return $this->db->query("SELECT cidade.nome,cidade.id FROM pais
+                                LEFT JOIN estado ON estado.pais = pais.id
+                                LEFT JOIN cidade ON cidade.estado = estado.id WHERE pais.id = $codpais
+                                ORDER BY cidade.nome ASC
+                                ;")->result_array();
+    }
 
 
 
