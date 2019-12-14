@@ -4520,7 +4520,7 @@ footer {
 }
 
 .custom-control-input:checked~.custom-control-label::before {
-    border-color: #ff7555 !important;
+    border-color: #4284cf !important;
     background-color: #ff7555 !important;
 }
 
@@ -7082,7 +7082,7 @@ footer {
 }
 
 .noti-right-b .custom-switch .custom-control-input:checked~.custom-control-label::after {
-    background-color: #fff;
+    background-color: #4284cf;
     -webkit-transform: translateX(2.5rem);
     transform: translateX(2.5rem);
 }

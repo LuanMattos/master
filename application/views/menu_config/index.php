@@ -4,18 +4,15 @@
             <h3>Configurações</h3>
         </div>
         <div class="categories-items">
-            <a class="tab-item-1 active"href="#" id="informacoesPessoais" onClick="config.OpenInfPess()">Informações
-                pessoais</a>
-            <a class="tab-item-1" href="my_dashboard_setting_profile.html">Perfil</a>
-            <a class="tab-item-1 active" href="my_dashboard_all_requests.html">Requisições de
-                amizade</a>
-            <a class="tab-item-1" href="my_dashboard_setting_social.html">Redes sociais</a>
-            <a class="tab-item-1" href="my_dashboard_setting_email.html">Configurações de E-mail</a>
-            <a class="tab-item-1" href="my_dashboard_setting_email.html">Configurações de A-mail</a>
-            <a class="tab-item-1" href="my_dashboard_setting_notification.html">Configurações de
-                notificação</a>
-            <a class="tab-item-1" href="my_dashboard_setting_change_pass.html">Mudar Senha</a>
-            <a class="tab-item-1" href="my_dashboard_setting_delete_account.html">Desativar
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(1)" >Informações pessoais</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(2)" >Perfil</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(3)" >Requisições de amizade</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(4)" >Redes sociais</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(5)" >E-mail da conta</a>
+            <a class="tab-item-1" href="#">A-mail (Em breve)</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(6)">Notificação</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(7)">Mudar Senha</a>
+            <a class="tab-item-1" href="#" onClick="config.MenuconfigClick(8)">Desativar
                 conta</a>
 
         </div>

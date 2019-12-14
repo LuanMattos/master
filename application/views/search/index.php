@@ -1,4 +1,4 @@
-<div style="padding-bottom: 50px">
+<div style="padding-bottom: 100px">
     <form>
         <div class="main-search-inputs">
             <div class="row no-gutters">
@@ -7,7 +7,7 @@
                 </div>
                 <div class="col-lg-1 col-md-12 col-sm-12">
                     <button class="search-btn" type="submit">
-                        <i class="fas fa-search"></i><span>Search</span>
+                        <i class="fas fa-search"></i><span>Buscar</span>
                     </button>
                 </div>
             </div>

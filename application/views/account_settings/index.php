@@ -43,8 +43,22 @@ endif;
                 <div class="row">
 
                     <?= $this->load->view("menu_config/index"); ?>
-                    <!--                    #configuracoes_pessoais-->
+                    <!--                    #div-geral-config-informacoes-pessoais-index-->
                     <?= $this->load->view("config_informacoes_pessoais/index"); ?>
+                    <!--                    #div-geral-config-perfil-index-->
+                    <?= $this->load->view("config_perfil/index"); ?>
+                    <!--                    #div-geral-config-requisicoes-amizades-->
+                    <?= $this->load->view("config_requisicoes_amizades/index"); ?>
+                    <!--                    #div-geral-config-redes-sociais-->
+                    <?= $this->load->view("config_redes_sociais/index"); ?>
+                    <!--                    #div-geral-config-email-->
+                    <?= $this->load->view("config_email/index"); ?>
+                    <!--                    #div-geral-config-notificacoes-->
+                    <?= $this->load->view("config_notificacoes/index"); ?>
+                    <!--                    #div-geral-config-mudar-senha-->
+                    <?= $this->load->view("config_mudar_senha/index"); ?>
+                    <!--                    #div-geral-desativar-conta-->
+                    <?= $this->load->view("config_desativar_conta/index"); ?>
 
                 </div>
             </div>
