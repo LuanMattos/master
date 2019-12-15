@@ -180,11 +180,9 @@ class Home extends SI_Controller
         $sms            = new \ServiceSms\ServiceSms();
         $RestoreAccount = new RestoreAccount();
 
-
         $error  = [];
 
         $data->datanasc = date_to_us($data->datanasc);
-
 
         if(empty($data->telcodpais)){
             $error['telcel'] = "Preencha o código de telefone de seu país!";

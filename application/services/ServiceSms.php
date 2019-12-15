@@ -49,7 +49,7 @@ class ServiceSms extends  GeneralService{
 
     }
     public function validaTelefoneBr($tel){
-        $search = ["(",")",".","-"," ","X","*","!","@","'","´",","];
+        $search = ["(",")",".","-"," ","X","*","!","@","'","´",",","+"];
 
         $numer  = str_replace($search,"",$tel);
 

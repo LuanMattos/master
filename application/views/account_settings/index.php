@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
+    <meta name="google-site-verification" content="e4bov_0HBlqHh2TGYMvNLAkJUFl6NQzjT7nrHYkMkOU" />
     <title>Goeveni - My Dashbaord Booked Events</title>
 
     <!-- Favicon Icon -->
@@ -22,8 +23,10 @@
     <link href="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/assets/owl.theme.default.min.css"
           rel="stylesheet">
 
-</head>
 
+
+</head>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6bqIsYACsiTkx2B2-8dDaKcuvq3ArXC4&libraries=places"></script>
 <body>
 <?php if (isset($dados)):
 
@@ -67,18 +70,18 @@ endif;
 
 <?= $this->load->view("footer/footer"); ?>
 
+
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/jquery.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/skills-search.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/libs/js/datepicker.min.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/libs/js/i18n/datepicker.en.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/owl.carousel.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <script src="<?= URL_RAIZ() ?>js/config/config.js"></script>
-
+<script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/libs/js/datepicker.min.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/libs/js/i18n/datepicker.en.js"></script>
 </body>
 
 </html>

@@ -42,5 +42,60 @@ class Account_settings extends SI_Controller{
         endif;
         $this->response("success",compact("data"));
     }
+    public function acao_salvar_informacoes_pessoais(){
+
+        $data = $this->input->post("usuarios",TRUE);
+
+
+        if(empty($data['nome'])){
+            $error['nome'] = "*";
+        }
+        if(empty($data['sobrenome'])){
+            $error['sobrenome'] = "*";
+        }
+        if(empty($data['datanasc'])){
+            $error['datanasc'] = "*";
+        }
+        if(empty($data['telcel'])){
+            $error['telcel'] = "*";
+        }
+        if(empty($data['codpais'])){
+            $error['codpais'] = "*";
+        }
+        if(empty($data['codcidade'])){
+            $data['codcidade'] = NULL;
+        }
+
+        $data['datanasc']   = date_to_us($data['datanasc']);
+        $sms            = new \ServiceSms\ServiceSms();
+
+        $data['telcel'] = $sms->validaTelefoneBr($data['telcel']);
+
+        if(empty($data['telcel'])){
+            $error['telceli'] = "Telefone inválido";
+        }
+        if(isset($error)){
+            $this->response("error",$error);
+        }
+
+        $usuario            = $this->session->get_userdata();
+        $data_user          = reset($this->Usuarios_model->getWhere(["login"=>$usuario['login']]));
+        $new_data           = array_merge($data,["codigo"=>$data_user['codigo']]);
+
+        $save = $this->Usuarios_model->save($new_data);
+
+
+        if(!$save){
+            $error['errors'] = "Houve um erro ao salvar os dados, tente novamente mais tarde!";
+            $this->response("error",$error);
+        }
+
+
+        $this->response("success",["msg"=>"Alterações salvas!"]);
+
+
+
+    }
+
 
 }
