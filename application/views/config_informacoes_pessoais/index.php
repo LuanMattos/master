@@ -83,7 +83,7 @@
                                         <option v-for="i in informacoes_pessoais.data_cidade"
                                                 v-html="i.nome"
                                                 :value="i.id"
-                                                :selected="i.id == <?= $data['codcidade'] ?>"
+                                                :selected="i.id == <?= set_val($data['codcidade']) ?>"
                                         >
                                         </option>
 
