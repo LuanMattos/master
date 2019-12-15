@@ -6,7 +6,7 @@ class Account_settings extends SI_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->model("Usuarios_model");
-        $this->load->model("location/Pais_model");
+        $this->load->model("location/Location_user_model");
         $this->output->enable_profiler(FALSE);
         $this->load->helper("cookie");
         $this->load->helper("url");
@@ -25,27 +25,46 @@ class Account_settings extends SI_Controller{
                 if(count($data)){
                     $dados = reset($data);
                 }
-                $pais   = $this->Pais_model->all();
-
-                $this->load->view("account_settings/index",compact("dados","pais"));
-
-
+                $location = reset($this->Location_user_model->getWhere(['codusuario'=>$dados['codigo']]));
+                $this->load->view("account_settings/index",compact("dados","location"));
             }
         }
 
     }
-    public function get_cidade(){
-        $codpais = $this->input->post("id",TRUE);
+    public function acao_salvar_localizacao(){
+        $session    = $this->session->get_userdata();
 
-        if(!empty($codpais)):
-            $data = $this->Pais_model->get_cidade_where_pais($codpais);
-        endif;
-        $this->response("success",compact("data"));
+        if(empty($session['login'])){
+            $this->session->sess_destroy();
+            redirect();
+        }
+        $data_user  = reset($this->Usuarios_model->getWhere(['login'=>$session['login']]));
+        $codusuario = $data_user['codigo'];
+        $datapost   = $this->input->post("data",TRUE);
+
+        $new_data = [
+            "codusuario" => $codusuario
+        ];
+        $data             = array_merge($new_data,$datapost);
+        $valida_location  = reset($this->Location_user_model->getWhere(["codusuario"=>$codusuario]));
+
+        if(!empty($valida_location)){
+            ;
+            $new_data = [
+                "codigo"     => $valida_location['codigo'],
+                "codusuario" => $codusuario
+            ];
+            $data             = array_merge($new_data,$datapost);
+        }
+
+        $this->Location_user_model->save($data);
+
     }
+
     public function acao_salvar_informacoes_pessoais(){
 
-        $data = $this->input->post("usuarios",TRUE);
-
+        $data       = $this->input->post("usuarios",TRUE);
+        $location   = $this->input->post("location_user",TRUE);
 
         if(empty($data['nome'])){
             $error['nome'] = "*";
@@ -59,12 +78,10 @@ class Account_settings extends SI_Controller{
         if(empty($data['telcel'])){
             $error['telcel'] = "*";
         }
-        if(empty($data['codpais'])){
-            $error['codpais'] = "*";
+        if(empty($location['descricao'])){
+            $error['descricao'] = "*";
         }
-        if(empty($data['codcidade'])){
-            $data['codcidade'] = NULL;
-        }
+
 
         $data['datanasc']   = date_to_us($data['datanasc']);
         $sms            = new \ServiceSms\ServiceSms();

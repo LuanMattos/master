@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=9">
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
-    <meta name="google-site-verification" content="e4bov_0HBlqHh2TGYMvNLAkJUFl6NQzjT7nrHYkMkOU" />
-    <title>Goeveni - My Dashbaord Booked Events</title>
+    <title>Configurações da conta</title>
 
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="images/fav.png">
@@ -26,10 +25,13 @@
 
 
 </head>
+
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6bqIsYACsiTkx2B2-8dDaKcuvq3ArXC4&libraries=places"></script>
+
+
+
 <body>
 <?php if (isset($dados)):
-
     $data = $dados;
 else:
     $data = [];
@@ -46,7 +48,7 @@ endif;
                 <div class="row">
                     <?= $this->load->view("menu_config/index"); ?>
                     <!--                    #div-geral-config-informacoes-pessoais-index-->
-                    <?= $this->load->view("config_informacoes_pessoais/index",compact("data","pais")); ?>
+                    <?= $this->load->view("config_informacoes_pessoais/index",compact("data","location")); ?>
                     <!--                    #div-geral-config-perfil-index-->
                     <?= $this->load->view("config_perfil/index",compact("data")); ?>
                     <!--                    #div-geral-config-requisicoes-amizades-->
@@ -78,6 +80,7 @@ endif;
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <script src="<?= URL_RAIZ() ?>js/config/config.js"></script>
+<script src="<?= URL_RAIZ() ?>js/maps/maps_google_account_settings.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/datepicker.min.js"></script>

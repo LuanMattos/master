@@ -4,30 +4,7 @@ var config = {
     }
 };
 
-
-
-
-
-    var input = document.getElementById('searchTextField');
-    var autocomplete = new google.maps.places.Autocomplete(input, {
-        types: ["geocode"]
-        ,  componentRestrictions: {country: 'AU'}
-    });
-
-    google.maps.event.addListener(autocomplete, 'place_changed', function() {
-
-        var place = autocomplete.getPlace();
-        $('#lblFormattedAddress').html(place.formatted_address);
-        $('#hidFormattedAddress').val(place.formatted_address);
-
-    });
-
-
-
-
 $(function () {
-
-
 
 
     var pais_option =  $("#selec-pais option:selected").val();
@@ -47,25 +24,6 @@ $(function () {
             },
         },
         methods: {
-            get_cidade: function () {
-                const id = $("#selec-pais option:selected").val();
-                const url = config.Url("get_cidade");
-
-                var pais_option =  $("#selec-pais option:selected").val();
-                if(pais_option === ""){
-                    $("#telcel").attr("disabled",true);
-                }else{
-                    $("#telcel").attr("disabled",false);
-                }
-
-                $.post(
-                    url,
-                    {id:id},
-                    function(json){ if(json){
-                            vue_instance.informacoes_pessoais.data_cidade = json.data;
-                }
-            },'json')
-        },
         acao_salvar_informacoes_pessoais:function(){
                 const url = config.Url("acao_salvar_informacoes_pessoais");
                 const data = App.form_data("#form-informacoes-pessoais");
@@ -90,7 +48,6 @@ $(function () {
 
                 this.informacoes_pessoais.error = "";
                 this.informacoes_pessoais.success = "";
-                this.get_cidade();
 
                 switch (id) {
                     case 1:

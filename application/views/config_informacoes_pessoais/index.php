@@ -1,3 +1,4 @@
+
 <div class="col-lg-9 col-md-7 config-itens" id="div-geral-config-informacoes-pessoais-index" style="display: none">
     <div class="setting-form">
         <form action="<?= site_url("account_settings/Account_settings/acao_salvar_informacoes_pessoais") ?>" method="POST" id="form-informacoes-pessoais">
@@ -17,8 +18,6 @@
                                        value="<?= set_val($data['nome']) ?>">
 
                             </div>
-
-
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
@@ -44,50 +43,15 @@
                                 >
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-12">
+                        <div class="col-lg-8 col-md-12">
                             <div class="form-group">
-                                <label>País<span style="color:red">{{informacoes_pessoais.error.codpais}}</span></label>
-                                <div class="select-bg">
-                                    <select class="wide " @change="get_cidade" id="selec-pais" name="usuarios[codpais]">
-                                        <option value="">Selecione um país</option>
-                                        <?php if(isset($pais)):
-                                            foreach($pais as $row){ ?>
-                                                <option value="<?php echo $row['id']  ?>" <?= $data['codpais']===$row['id']?'selected':'' ?> ><?php echo $row['nome']  ?></option>
-                                            <?php }endif; ?>
-
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="form-group">
-                                <label>Endereço:</label>
-                                <div class="select-bg">
-<!--                                    <input type="text" class="payment-input" id="autocomplete" id="autocomplete_search" name="autocomplete_search">-->
-                                    <input id="searchTextField" type="text" size="50">
-
-                                    <div id='lblFormattedAddress'></div>
-
-                                    <input type='text' name='hidFormattedAddress' id='hidFormattedAddress'/>
-
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12" >
-                            <div class="form-group">
-                                <label>Cidade</label>
-                                <div class="select-bg">
-                                    <select class="wide"  name="usuarios[codcidade]">
-                                        <option value="">Selecione</option>
-                                        <option v-for="i in informacoes_pessoais.data_cidade"
-                                                v-html="i.nome"
-                                                :value="i.id"
-
-                                        >
-                                        </option>
-
-                                    </select>
+                                <label>Onde você mora?<span style="color:red">{{informacoes_pessoais.error.descricao}}</span></label>
+                                    <input class="payment-input"
+                                           id="searchTextField"
+                                           type="text"
+                                           value="<?= set_val($location['formatted_address_google_maps']) ?>"
+                                           name="location_user[descricao]"
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -205,4 +169,4 @@
             </div>
         </form>
     </div>
-</div>
+
