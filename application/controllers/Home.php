@@ -141,6 +141,7 @@ class Home extends SI_Controller
     }
     public function logged(){
         $data_s = $this->session->get_userdata();
+
         if(!isset($data_s['logado'])){
             $this->session->sess_destroy();
             redirect("Home/index");
@@ -289,7 +290,8 @@ class Home extends SI_Controller
             ];
             $this->Account_home_model->save($data_account);
         }
-        $this->session->set_userdata(["verification_user"=>$save['email_hash']], 1);
+
+        $this->session->set_userdata(["verification_user"=>$save['email_hash'],"login"=>$data['login']], 1);
         $this->response("success");
     }
     public function logout(){

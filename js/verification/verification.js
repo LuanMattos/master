@@ -27,7 +27,7 @@ $(function(){
                     vue_instance.form.error = j.error;
                 }
                 if(j.info){
-                    window.location.href = App.url("verification","Verification","logged");
+                    window.location.href = App.url("","Home","logged");
                 }
 
 

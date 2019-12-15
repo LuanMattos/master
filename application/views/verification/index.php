@@ -58,8 +58,7 @@
 <!-----------------------------------------jquery-default-sistema------------------------------------------------------>
 <script type="text/javascript" src="<?= site_url("application/assets/js/libs/jquery-3.4.1/jquery.js") ?>"></script>
 <!------------------------------------------jquery-ui-p/-modal--------------------------------------------------------->
-<script type="text/javascript"
-        src="<?= site_url("application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js") ?>"></script>
+<script type="text/javascript" src="<?= site_url("application/assets/js/libs/jquery-1.12.4/jquery-1.12.4.js") ?>"></script>
 <!----------------------------------------------jquery-ui-------------------------------------------------------------->
 <script type="text/javascript"
         src="<?= site_url("application/assets/js/libs/jquery-ui-1.12.1/jquery-ui.js") ?> "></script>
