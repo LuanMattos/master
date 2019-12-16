@@ -4916,30 +4916,29 @@ footer {
     width: 100px;
     height: 35px;
     border: 0;
-    background: ;
+    background: #4284cf;
     color: #fff;
     border-radius: 3px;
     font-size: 14px;
 }
 
 .msg-btn1:hover {
-    background: #f55f3d;
+    background: #4387d3;
 }
 
 .follow-btn1 {
     width: 100px;
     height: 35px;
     border: 1px solid ;
-    background: #fff;
-    color: ;
+    background: #2a3030;
+    color: #edf9f1;
     border-radius: 3px;
     font-size: 14px;
 }
 
 .follow-btn1:hover {
-    color: #fff;
-    background: #f55f3d;
-    border: 1px solid #f55f3d;
+    color: white;
+    background: #3a3e3e;
 }
 
 .userbg-dt {

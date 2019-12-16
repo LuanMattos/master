@@ -1,6 +1,6 @@
 <div class="user-data full-width">
     <div class="categories-left-heading">
-        <h3>Pessoas</h3>
+        <h3><a href="<?= site_url("pessoas/Pessoas/index")?>">Pessoas</a></h3>
     </div>
     <div class="sugguest-user">
         <div class="sugguest-user-dt">
