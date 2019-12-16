@@ -48,7 +48,10 @@ endif;
                                 <div class="user-main-details">
                                     <h4><?= isset($data['nome'])?$data['nome']:""; ?></h4>
                                     <span>
-                                        <i class="fas fa-map-marker-alt"></i>India
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <?= set_val($pais_cidade['nome'][0]) ?> -
+                                        <?= set_val($pais_cidade['nome'][2]) ?>
+                                        <?= set_val($pais_cidade['nome'][3])?" - " . set_val($pais_cidade['nome'][3]):"" ?>
                                     </span>
                                 </div>
                                 <ul class="followers-dts">
@@ -93,7 +96,6 @@ endif;
                 <div class="col-lg-6 col-md-7 mt-20">
                     <div class="center-section">
                         <div class="main-search-bar" style="background-color: #515555">
-                                <?= $this->load->view("search/index"); ?>
                                 <?= $this->load->view("publicar/index"); ?>
                         </div>
                         <?= $this->load->view("timeline_home/index"); ?>

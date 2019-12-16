@@ -8,6 +8,7 @@ class Dashboard_msg extends SI_Controller
         parent::__construct();
         $this->load->model("Usuarios_model");
         $this->load->model("account/home/Account_home_model");
+        $this->load->model("location/Location_user_model");
         $this->output->enable_profiler(FALSE);
         $this->load->helper("cookie");
         $this->load->helper("url");
@@ -26,7 +27,9 @@ class Dashboard_msg extends SI_Controller
                 if(count($data)){
                     $dados = reset($data);
                 }
-                $this->load->view("dashboard_msg/index",compact("dados"));
+                $location            = reset($this->Location_user_model->getWhere(['codusuario'=>$dados['codigo']]));
+                $pais_cidade['nome'] = explode(',',$location['formatted_address_google_maps']);
+                $this->load->view("dashboard_msg/index",compact("dados","pais_cidade"));
 
             }
         }

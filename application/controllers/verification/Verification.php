@@ -45,7 +45,7 @@ class Verification extends SI_Controller
 
         if($verificationCode['code_verification'] === $datapost){
             $this->db->update("account_home",["verification_ok"=>TRUE],["code_verification"=>$datapost],1);
-            $this->session->set_userdata(["logado"=>1]);
+            $this->session->set_userdata(["logado" => 1]);
             $this->response("success");
         }else{
             $error['codigov'] = "Código de verificação inválido";

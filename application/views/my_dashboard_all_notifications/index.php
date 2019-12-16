@@ -29,8 +29,9 @@
 else:
     $data = [];
 endif;
+
 ?>
-<?= $this->load->view("menu/menu",compact("data")); ?>
+<?= $this->load->view("menu/menu",compact("data","pais_cidade")); ?>
 
 
 <!-- Header End -->

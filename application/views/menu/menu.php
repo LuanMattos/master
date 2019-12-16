@@ -15,6 +15,19 @@
                                 <b style="font-size: 25px">atos</b>
                             </a>
                         </div>
+                        <div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-start bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu">
+                            <div class="col-lg-12 col-md-12">
+                                    <input class="appearance-none  bg-gray-200 text-gray-700 border border-gray-200 rounded-0 py-1 px-4"
+                                           type="text"
+                                           placeholder="Buscar"
+                                           style="width: 100%"
+                                    >
+<!--                                    <button class="search-btn" type="submit" style="width: 3em">-->
+<!--                                        <i class="fas fa-search"></i>-->
+<!--                                    </button>-->
+                            </div>
+                        </div>
+
                         <ul class="group-icons">
                             <li>
                                 <a href="<?= site_url('Home/search') ?>" class="icon-set" title="Explorar">

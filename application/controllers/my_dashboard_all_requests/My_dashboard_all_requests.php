@@ -6,6 +6,7 @@ class My_dashboard_all_requests extends SI_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->model("Usuarios_model");
+        $this->load->model("location/Location_user_model");
         $this->output->enable_profiler(FALSE);
         $this->load->helper("cookie");
         $this->load->helper("url");
@@ -24,7 +25,10 @@ class My_dashboard_all_requests extends SI_Controller{
                 if(count($data)){
                     $dados = reset($data);
                 }
-                $this->load->view("my_dashboard_all_requests/index",compact("dados"));
+                $location            = reset($this->Location_user_model->getWhere(['codusuario'=>$dados['codigo']]));
+                $pais_cidade['nome'] = explode(',',$location['formatted_address_google_maps']);
+//                debug($pais_cidade['nome']);
+                $this->load->view("my_dashboard_all_requests/index",compact("dados","pais_cidade"));
 
             }
         }

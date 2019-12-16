@@ -55,16 +55,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label>Endereço de E-mail profissional</label>
-                                <input class="payment-input"
-                                       type="email"
-                                       placeholder="Endereço de E-mail profissional"
-                                       name="usuarios[emailprofissional]"
-                                >
-                            </div>
-                        </div>
+<!--                        <div class="col-lg-6 col-md-12">-->
+<!--                            <div class="form-group">-->
+<!--                                <label>Endereço de E-mail profissional</label>-->
+<!--                                <input class="payment-input"-->
+<!--                                       type="email"-->
+<!--                                       placeholder="Endereço de E-mail profissional"-->
+<!--                                       name="usuarios[emailprofissional]"-->
+<!--                                >-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label>Número de telefone<span style="color:red">{{informacoes_pessoais.error.telcel}}</span></label>
