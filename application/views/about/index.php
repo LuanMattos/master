@@ -53,7 +53,7 @@
                         </div>
                         <div class="about-text">
                             <p>Uma rede que inspira</p>
-                            <p>Abluba abluba em abluba, ablubando abluba abluba abluba abluba abluba abluba abluba abluba abluba abluba abluba abluba abluba abluba.</p>
+                            <p>TESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTSTTESTESTESTST.</p>
                         </div>
                     </div>
                 </div>
@@ -203,22 +203,22 @@
                                 </div>
                                 <div class="item">
                                     <div class="testi-text">
-                                        <h6>This is a best plateform for event sharing in the world.</h6>
-                                        <p>“ Quisque at arcu ipsum. Proin sit amet diam auctor lectus imperdiet hendrerit. Quisque laoreet tristique scelerisque. Suspendisse augue nunc, consequat quis fermentum id, dignissim at mi. Nullam eu lorem fermentum nisl imperdiet rutrum non ac sapien. ”</p>
+                                        <h6>Teste testste teste teste testste .</h6>
+                                        <p>“ Teste testste teste teste testste teste teste testste teste teste testste teste teste testste teste teste teste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste testeteste teste testste teste teste. ”</p>
                                     </div>
                                     <div class="testi-user-dt">
-                                        <h4>Joginder Singh</h4>
-                                        <span>India</span>
+                                        <h4>João</h4>
+                                        <span>Teste</span>
                                     </div>
                                 </div>
                                 <div class="item">
                                     <div class="testi-text">
-                                        <h6>This is a best plateform for event sharing in the world.</h6>
-                                        <p>“ Quisque at arcu ipsum. Proin sit amet diam auctor lectus imperdiet hendrerit. Quisque laoreet tristique scelerisque. Suspendisse augue nunc, consequat quis fermentum id, dignissim at mi. Nullam eu lorem fermentum nisl imperdiet rutrum non ac sapien. ”</p>
+                                        <h6>Teste testste teste teste.</h6>
+                                        <p>“ Teste testste teste teste testste teste teste testste teste teste testste teste teste testste teste teste . ”</p>
                                     </div>
                                     <div class="testi-user-dt">
-                                        <h4>Jassica Smith</h4>
-                                        <span>Canada</span>
+                                        <h4>Maria</h4>
+                                        <span>Teste</span>
                                     </div>
                                 </div>
                             </div>

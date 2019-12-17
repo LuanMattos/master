@@ -52,23 +52,16 @@
                             <h2>Termos e condições</h2>
                         </div>
                         <div class="policy-text">
-                            <p>Você é 100% responsável do que você faz, e se o sistema falhar, responsável também pelo que não faz.</p>
+                            <p>teste teste testste teste teste teste teste testste teste teste teste teste testste teste teste.</p>
                         </div>
                         <div class="policy-text-1">
-                            <h4>Lei 1</h4>
-                            <p>Artigo jacaré 270.</p>
+                            <h4>Teste</h4>
+                            <p>teste teste testste teste teste.</p>
                         </div>
+
                         <div class="policy-text-1">
-                            <h4>Lei 2</h4>
-                            <p>Não estamos "nem ai" se um hacker fdp roubou sua senha e exibiu as fotos de sua namorada pelada.</p>
-                        </div>
-                        <div class="policy-text-1">
-                            <h4>Lei 3 </h4>
-                            <p>Nós mesmos, vamos rir da sua cara se tiver fotos descritas na Lei 2.</p>
-                        </div>
-                        <div class="policy-text-1">
-                            <h4>Lei 3</h4>
-                            <p class="mb-2">Não me encha o saco.</p>
+                            <h4>Teste</h4>
+                            <p class="mb-2">teste teste testste teste teste.</p>
                             <ul>
                                 <li>
                                     <p>Abluba abluba abluba.</p>

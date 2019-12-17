@@ -20,23 +20,23 @@
                 </div>
             </div>
             <div class="activity-descp">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent laoreet, dolor ut mollis rutrum, mauris arcu mollis lacus, eget imperdiet neque neque eget nisl.</p>
+                <p>Teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste.</p>
             </div>
             <div class="like-comment-view">
                 <div class="left-comments">
                     <a href="#" class="like-item" title="Like">
                         <i class="fas fa-heart"></i>
-                        <span><ins>Like</ins> 251</span>
+                        <span><ins>Gostei</ins> 251</span>
                     </a>
                     <a href="#" class="like-item lc-left" title="Comment">
                         <i class="fas fa-comment-alt"></i>
-                        <span><ins>Comment</ins> 1</span>
+                        <span><ins>Comentários</ins> 1</span>
                     </a>
                 </div>
                 <div class="right-comments">
                     <a href="#" class="like-item" title="Share">
                         <i class="fas fa-eye"></i>
-                        <span><ins>View</ins> 351</span>
+                        <span><ins>View's</ins> 351</span>
                     </a>
                 </div>
             </div>
@@ -45,17 +45,17 @@
                     <div class="main-user-dts1">
                         <img src="<?= URL_RAIZ() ?>application/assets/libs/images/event-view/user-4.jpg" alt="">
                         <div class="user-text3">
-                            <h4>Rock William > <?= isset($data['nome'])?$data['nome']:""; ?></h4>
-                            <span>posted an update a 3 min ago</span>
+                            <h4>João teste > <?= isset($data['nome'])?$data['nome']:""; ?></h4>
+                            <span>postado a 3 min</span>
                         </div>
                     </div>
                 </div>
                 <div class="activity-descp">
                     <p>Olá Admin feliz aniversário .</p>
                     <ul>
-                        <li><a href="#">Reply</a></li>
-                        <li><a href="#">Report</a></li>
-                        <li><a href="#">Delete</a></li>
+                        <li><a href="#">Comentar</a></li>
+                        <li><a href="#">Responder</a></li>
+                        <li><a href="#">Excluir</a></li>
                     </ul>
                 </div>
                 <div class="activity-post-reply">
@@ -63,8 +63,8 @@
                         <img src="<?= URL_RAIZ() ?>application/assets/libs/images/event-view/user-1.jpg" alt="">
                     </div>
                     <form>
-                        <input class="areply-post" type="text" placeholder="Write a reply">
-                        <button class="areply-post-btn" type="submit">Reply</button>
+                        <input class="areply-post" type="text" placeholder="Responder">
+                        <button class="areply-post-btn" type="submit">Responder</button>
                     </form>
                 </div>
             </div>

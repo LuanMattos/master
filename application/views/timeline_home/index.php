@@ -17,8 +17,8 @@
                                 <div class="dropdown-menu post-rt-dropdown dropdown-menu-right">
                                     <a class="post-link-item" href="#">Ocultar</a>
                                     <a class="post-link-item" href="#">Detalhes</a>
-                                    <a class="post-link-item" href="#">User Profile</a>
-                                    <a class="post-link-item" href="#">Report</a>
+                                    <a class="post-link-item" href="#">Perfil usuário</a>
+                                    <a class="post-link-item" href="#">Reportar</a>
                                 </div>
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                                 <div class="it-items">
                                     <i class="fas fa-map-marker-alt"></i>
                                     <div class="list-text-dt">
-                                        <span>City</span>
-                                        <ins>London</ins>
+                                        <span>Cidade</span>
+                                        <ins>Novo Hamburgo</ins>
                                     </div>
                                 </div>
                             </li>
@@ -45,7 +45,7 @@
                                 <div class="it-items">
                                     <i class="fas fa-calendar-alt"></i>
                                     <div class="list-text-dt">
-                                        <span>Date</span>
+                                        <span>Data</span>
                                         <ins>21 Nov 2019</ins>
                                     </div>
                                 </div>
@@ -54,48 +54,8 @@
                                 <div class="it-items">
                                     <i class="fas fa-clock"></i>
                                     <div class="list-text-dt">
-                                        <span>Time</span>
-                                        <ins>6 PM to 9 PM</ins>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="it-items">
-                                    <i class="fas fa-cloud-sun"></i>
-                                    <div class="list-text-dt">
-                                        <span>Weather</span>
-                                        <ins>Clear</ins>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="event-go-dt">
-                        <ul class="go-dt-list">
-                            <li>
-                                <div class="it-items">
-                                    <i class="fas fa-check" style="color:#a7a8aa;"></i>
-                                    <div class="list-text-dt">
-                                        <span>Going</span>
-                                        <ins>45</ins>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="it-items">
-                                    <i class="fas fa-question-circle" style="color:#a7a8aa;"></i>
-                                    <div class="list-text-dt">
-                                        <span>MayBe</span>
-                                        <ins>120</ins>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="it-items">
-                                    <i class="fas fa-times" style="color:#a7a8aa;"></i>
-                                    <div class="list-text-dt">
-                                        <span>Can't Go</span>
-                                        <ins>70</ins>
+                                        <span>Hora</span>
+                                        <ins>6 PM</ins>
                                     </div>
                                 </div>
                             </li>
@@ -105,17 +65,17 @@
                         <div class="left-comments">
                             <a href="#" class="like-item" title="Like">
                                 <i class="fas fa-heart"></i>
-                                <span><ins>Like</ins> 251</span>
+                                <span><ins>Gostei</ins> 251</span>
                             </a>
                             <a href="#" class="like-item lc-left" title="Comment">
                                 <i class="fas fa-comment-alt"></i>
-                                <span><ins>Comment</ins> 10</span>
+                                <span><ins>Comentários</ins> 10</span>
                             </a>
                         </div>
                         <div class="right-comments">
                             <a href="#" class="like-item" title="Share">
                                 <i class="fas fa-share-alt"></i>
-                                <span><ins>Share</ins> 21</span>
+                                <span><ins>Compartilhamentos</ins> 21</span>
                             </a>
                         </div>
                     </div>
