@@ -24,7 +24,7 @@ reiniciar apache
 instalar curl para php:
 
 sudo apt-get install curl
-
+sudo apt-get install php-curl
 patrick.mattos@acad.ftec.com.br
 
 
