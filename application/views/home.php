@@ -98,8 +98,8 @@ endif;
                         <div class="main-search-bar" style="background-color: #515555">
                                 <?= $this->load->view("publicar/index"); ?>
                         </div>
-                        <?= $this->load->view("timeline_home/index"); ?>
                     </div>
+                    <?= $this->load->view("timeline_home/index"); ?>
                 </div>
 
 <!--                <div class="col-lg-3 mt-20">-->
@@ -266,6 +266,8 @@ endif;
 <!--        </div>-->
 <!--    </div>-->
 </main>
+
+
 <!-- Body End -->
 <!-- Footer Start -->
 <?= $this->load->view("footer/footer"); ?>
@@ -280,9 +282,10 @@ endif;
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/owl.carousel.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js/libs/vue.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/js/libs/vue-mugen-scroll/vue-mugen-scroll.min.js"></script>
 <script src="<?= URL_RAIZ() ?>js/home/home.js"></script>
 
-
+<!---->
 </body>
 
 </html>
