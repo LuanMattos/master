@@ -1,4 +1,4 @@
-<div id="vue-instance">
+<div id="vue-instance-time-line">
     <div class="col-sm-12 " v-for="(post, index) in posts" style="margin-bottom: 50px">
         <div class="card m-12">
             <div class="card-body">
@@ -15,9 +15,9 @@
                                         </div>
                                         <div class="event-top-right">
                                             <div class="post-dt-dropdown dropdown">
-                                 <span class="dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
-                                     <i class="fas fa-ellipsis-v"></i>
-                                 </span>
+                                                <span class="dropdown-toggle-no-caret" role="button" data-toggle="dropdown">
+                                                     <i class="fas fa-ellipsis-v"></i>
+                                                </span>
                                                 <div class="dropdown-menu post-rt-dropdown dropdown-menu-right">
                                                     <a class="post-link-item" href="#">Ocultar</a>
                                                     <a class="post-link-item" href="#">Detalhes</a>

@@ -5,7 +5,7 @@ var home = {
 
 };
 var vm = new Vue({
-    el: '#vue-instance',
+    el: '#vue-instance-time-line',
     data: {
         posts: [],
         loading: false
@@ -15,11 +15,9 @@ var vm = new Vue({
     },
     methods: {
         getPosts() {
-            for (var i = 0; i < 16; i++) {
+            for (var i = 0; i < 5; i++) {
                 var count = this.posts.length + i
-                this.posts.push({
-                    title: 'title ' + count
-                })
+                this.posts.push({count})
             }
         }
     }
