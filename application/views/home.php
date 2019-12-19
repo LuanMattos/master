@@ -94,11 +94,9 @@ endif;
                 </div>
 
                 <div class="col-lg-6 col-md-7 mt-20">
-                    <div class="center-section">
-                        <div class="main-search-bar" style="background-color: #515555">
-                                <?= $this->load->view("publicar/index"); ?>
-                        </div>
-                    </div>
+
+                    <?= $this->load->view("publicar/index"); ?>
+
                     <?= $this->load->view("timeline_home/index"); ?>
                 </div>
 

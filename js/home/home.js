@@ -19,7 +19,21 @@ var vm = new Vue({
                 var count = this.posts.length + i
                 this.posts.push({count})
             }
+        },
+        rola:function(){
+            alert('dfasf');
         }
     }
 });
+
+var postar_home = new Vue({
+    el:"#div-geraç-publicar-home",
+    data:{
+
+    },methods:{
+        postar:function(){
+            alert('dfasfasd');
+        }
+    }
+})
 
