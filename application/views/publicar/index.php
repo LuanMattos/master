@@ -1,4 +1,4 @@
-<div class="col-lg-12 col-md-12 " style="z-index: 1" id="div-geraç-publicar-home">
+<div class="col-lg-12 col-md-12 " style="z-index: 1">
     <div class="main-posts" style="z-index: 2">
         <div class="add-activity" style="z-index: 3">
             <div class="activity-group">

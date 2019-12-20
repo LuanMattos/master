@@ -5,7 +5,7 @@ var home = {
 
 };
 var vm = new Vue({
-    el: '#vue-instance-time-line',
+    el: '#div-geral-time-line',
     data: {
         posts: [],
         loading: false
@@ -20,20 +20,9 @@ var vm = new Vue({
                 this.posts.push({count})
             }
         },
-        rola:function(){
+        postar:function(){
             alert('dfasf');
         }
     }
 });
-
-var postar_home = new Vue({
-    el:"#div-geraç-publicar-home",
-    data:{
-
-    },methods:{
-        postar:function(){
-            alert('dfasfasd');
-        }
-    }
-})
 
