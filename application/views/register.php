@@ -67,7 +67,7 @@
                                                 {{error.email}}
                                             </div>
                                             <div class="form-group">
-                                                <input class="title-discussion-input  datepicker-here" type="text" placeholder="Data de nascimento"  data-language="pt-BR" name="datanasc" autocomplete="off" v-model="form.datanasc">
+                                                <input class="date title-discussion-input  datepicker-here " type="text" placeholder="Data de nascimento"  data-language="pt-BR" name="datanasc" autocomplete="off" >
                                             </div>
                                             <div class="text-left" style="color:red;font-size:12px;font-family: Roboto;">
                                                 {{error.datanasc}}
@@ -125,10 +125,11 @@
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/vendor/OwlCarousel/owl.carousel.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/libs/js/custom1.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
-<script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
 <script src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <script src="<?= URL_RAIZ() ?>js/index.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/js/libs/jquery.mask.js"></script>
+<script src="<?= URL_RAIZ() ?>application/assets/mascaras.js"></script>
+
 
 </body>
 

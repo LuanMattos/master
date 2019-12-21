@@ -30,6 +30,7 @@ $("#formulario-cadastro").hide();
         event.preventDefault();
         event.stopPropagation();
         vue_instance.form.telcel = $("input[name='telcel']").val();
+        vue_instance.form.datanasc = $("input[name='datanasc']").val();
         $.post(
             index.Url("acao_cadastro"),
             {
@@ -41,7 +42,6 @@ $("#formulario-cadastro").hide();
                     vue_instance.error = j.error;
                 }
                 if(j.info){
-                    console.log(j.info);
                     window.location.href = App.url("verification","Verification","index");
                 }
 
