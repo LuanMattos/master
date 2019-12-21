@@ -94,10 +94,11 @@ if ( ! function_exists('date_to_us'))
 
     function date_to_us(){
         $data = func_get_args();
+
         if(!empty($data)){
-            $data = reset($date);
-            $date = new DateTime($data);
-            return  $date->format('Y-m-d');
+            $date_s = reset($data);
+            $date_f = new DateTime($date_s);
+            return $date_f->format('Y-m-d');
         }else{
             return "";
         }
@@ -112,9 +113,9 @@ if ( ! function_exists('date_to_br'))
     function date_to_br(){
         $data = func_get_args();
         if(!empty($data)){
-            $data = reset($date);
-            $date = new DateTime($data);
-            return  $date->format('d/m/Y');
+            $data_s = reset($data);
+            $date_f = new DateTime($data_s);
+            return  $date_f->format('d/m/Y');
         }else{
             return "";
         }

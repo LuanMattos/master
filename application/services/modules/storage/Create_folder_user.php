@@ -15,7 +15,7 @@ class Create_folder_user extends \CI_Model
 
             $this->load->model('storage/Us_storage');
             $validate           = reset($this->Us_storage->getWhere(['codusuario' => $data['codigo']]));
-            $validate_usuarios  = reset($this->Usuarios_model->getWhere(["codigo"     => $data['codigo']]));
+            $validate_usuarios  = reset($this->Usuarios_model->getWhere(["codigo" => $data['codigo']]));
 
 
             if($validate_usuarios['create_folder_img'] !== 't') {
@@ -40,20 +40,20 @@ class Create_folder_user extends \CI_Model
         }
     }
 
-    public function create_folder($data)
-    {
+    public function create_folder($data){
 
-        $name = $data['login'] . date('Y-m-d H:i:s');
-        $search = ["(", ")", ".", "-", " ", "X", "*", "!", "@", "'", "´", ",", "+", ":"];
+        $name         = $data['login'] . date('Y-m-d H:i:s');
+        $search       = ["(", ")", ".", "-", " ", "X", "*", "!", "@", "'", "´", ",", "+", ":"];
         $name_replace = str_replace($search, "", $name);
-        $uuid = uniqid(rand());
-        $name = $uuid . $name_replace;
+        $uuid         = uniqid(rand());
+        $name         = $uuid . $name_replace;
 
         shell_exec('mkdir ../imagens/' . $name);
         shell_exec('chmod -R 777 ../imagens/' . $name);
+        shell_exec('mkdir ../imagens/'. $name . '/img');
+        shell_exec('chmod -R 777 ../imagens/' . $name. '/img');
 
         return $name;
-
     }
 
 
