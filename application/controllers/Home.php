@@ -180,6 +180,7 @@ class Home extends SI_Controller
         $this->load->view("register");
     }
     public function acao_cadastro(){
+
         $data           = (object)$this->input->post("data",TRUE);
         $sms            = new \ServiceSms\ServiceSms();
         $RestoreAccount = new RestoreAccount();
@@ -282,9 +283,13 @@ class Home extends SI_Controller
             "destinatario"  => "$numero_validado",
             "date_to_send"  => date("Y-m-d H:i:s")
         ];
-        $sms->processesDirect($dataSms);
+//        $sms->processesDirect($dataSms);
 
-        $save = $this->Usuarios_model->save($data,["codigo","email_hash"]);
+        $save = $this->Usuarios_model->save($data,["codigo","email_hash","login"]);
+
+        $create_folder  = new Modules\Storage\Create_folder_user\Create_folder_user();
+        $create_folder->index($save);
+
         if($save){
             $data_account = [
               "code_verification" => $codigo_verificacao,

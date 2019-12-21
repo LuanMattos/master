@@ -92,6 +92,15 @@ class Migrate extends CI_Controller{
                         );");
         $this->db->query("ALTER TABLE location_user DROP constraint if exists usuarios_pkey;");
         $this->db->query("ALTER TABLE location_user ADD COLUMN IF NOT EXISTS codusuario bigint constraint usuarios_pkey references usuarios;");
+        $this->db->query("ALTER TABLE  usuarios ADD COLUMN  IF NOT EXISTS create_folder_img boolean");
+        $this->db->query("CREATE TABLE IF NOT EXISTS us_storage_img(
+                                        codigo              serial not null,
+                                        name_folder_user    varchar(1000),
+                                        created_at          timestamp default now(),
+                                        updated_at          timestamptz default now()
+                                    );");
+        $this->db->query("ALTER TABLE us_storage_img DROP constraint if exists usuarios_pkey;");
+        $this->db->query("ALTER TABLE us_storage_img ADD COLUMN IF NOT EXISTS codusuario bigint constraint usuarios_pkey references usuarios");
 
         $transaction = $this->db->trans_complete();
 
