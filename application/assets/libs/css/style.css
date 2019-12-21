@@ -57,7 +57,9 @@ footer, header, hgroup, menu, nav, section {
     color: white;
     background: #4284cf;
 }
-
+[v-cloak] {
+    display: none;
+}
 body {
     line-height: 1;
     font-family: "Roboto" !important;

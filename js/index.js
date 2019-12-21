@@ -4,10 +4,8 @@ var index = {
     }
 }
 
-$("#formulario-cadastro").hide();
-
     var vue_instance = new Vue({
-        el: ".register-mp",
+        el: "#login-register-index-container",
         data: {
             error: "",
             form: {
@@ -50,16 +48,6 @@ $("#formulario-cadastro").hide();
 
     });
 
-    bg.find("#comecar").click(function () {
-
-        bg.find("#formulario-cadastro").slideToggle();
-        bg.find("#formulario-login").hide();
-    });
-
-    bg.find("#back").click(function () {
-        bg.find("#formulario-cadastro").hide();
-        bg.find("#formulario-login").slideToggle();
-    });
 
 
 
