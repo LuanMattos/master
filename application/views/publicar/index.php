@@ -7,9 +7,21 @@
                 </div>
                 <textarea style="z-index:0" class="add-activity-des" placeholder="O que tem de novo?"></textarea>
             </div>
-            <div class="activity-button" >
-                <button class="act-btn-post cursor-pointer" @click="postar">Postar</button>
-            </div>
+            <form id="form-input-time-line" method="post" enctype="multipart/form-data">
+                <div class="setting-upload">
+                    <div class="addpic">
+                        <input type="file" id="input-file-postagem" name="file">
+                        <span class="cursor-pointer input-file-photo" style="font-size:25px">
+                            <i @click="openfile()" class=" fas fa-camera-retro "></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="activity-button">
+                    <button class="act-btn-post cursor-pointer" type="submit" @click.prevent="postar">Postar</button>
+                </div>
+            </form>
+
+
         </div>
     </div>
 </div>

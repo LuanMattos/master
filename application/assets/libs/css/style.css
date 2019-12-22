@@ -60,6 +60,20 @@ footer, header, hgroup, menu, nav, section {
 [v-cloak] {
     display: none;
 }
+.cursor-pointer{
+    cursor:pointer;
+}
+
+.input-file-photo:hover{
+    color:#4387d3;
+}
+.input-file-photo{
+    color:#4387d3;
+    padding:10px;
+    transition: 1s;
+    -moz-transition: 1s;
+    -webkit-transition: 1s;
+}
 body {
     line-height: 1;
     font-family: "Roboto" !important;
@@ -4716,7 +4730,7 @@ footer {
 }
 
 .addpic [type="file"] + label {
-    background: ;
+    background:#515555 ;
     border: none;
     border-radius: 3px;
     color: #fff;
@@ -4733,8 +4747,8 @@ footer {
 }
 
 .addpic [type="file"] + label:hover {
-    background: #f55f3d;
-    color: #fff;
+    background:#000000 ;
+    color: #4387d3;
 }
 
 .addpic p {

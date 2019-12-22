@@ -346,5 +346,26 @@ class Home extends SI_Controller
 
 
     }
+    public function add_time_line(){
+     $data_file    = $_FILES['fileimagem'];
+     $hash         = uniqid(rand()).date("Y-m-d H:i:s");
+     $search       = ["(", ")", ".", "-", " ", "X", "*", "!", "@", "'", "´", ",", "+", ":"];
+     $name_replace = str_replace($search, "", $hash);
+
+     $configuracao = array(
+         'upload_path'   => PATH_IMG_LINUX(),
+         'allowed_types' => "jpeg",
+         'file_name'     => $name_replace. "." . "jpeg",
+         'max_size'      => '50000'
+     );
+//     debug($configuracao);
+     $this->load->library('upload');
+     $this->upload->initialize($configuracao);
+     if ($this->upload->do_upload('fileimagem'))
+          echo 'Arquivo salvo com sucesso.';
+     else
+         echo $this->upload->display_errors();
+
+    }
 
 }

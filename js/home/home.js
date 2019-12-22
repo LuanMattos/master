@@ -20,8 +20,26 @@ var vm = new Vue({
                 this.posts.push({count})
             }
         },
+        openfile:function(){
+            $("#input-file-postagem").click();
+        },
         postar:function(){
-            alert('dfasf');
+            var data = App.form_data("#input-file-postagem");
+            var url = home.Url("add_time_line");
+
+            var data = new FormData();
+            data.append('fileimagem', $('#input-file-postagem')[0].files[0]);
+
+            $.ajax({
+                url: url,
+                data: data,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+                success: function(data) {
+                }
+            });
+
         }
     }
 });
