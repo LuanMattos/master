@@ -33,7 +33,6 @@ var index = {
             index.Url("acao_cadastro"),
             {
                 data: vue_instance.form,
-
             },
             function (j) {
                 if(!j.info){

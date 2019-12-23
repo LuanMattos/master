@@ -187,6 +187,7 @@ class Home extends SI_Controller
 
         $error  = [];
 
+
         $data->datanasc = date_to_us($data->datanasc);
 
         if(empty($data->telcodpais)){

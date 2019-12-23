@@ -18,6 +18,10 @@ class Shell extends CI_Controller{
         $this->response("success","Imagens ok");
 
     }
+    public function rm_rf(){
+//        rm -rf
+
+    }
 
 
 }

@@ -93,18 +93,18 @@ if ( ! function_exists('date_to_us'))
 {
 
     function date_to_us(){
+
         $data = func_get_args();
 
+        $data = str_replace("/", "-", $data);
+
         if(!empty($data)){
-            $date_s = reset($data);
-            $date_f = new DateTime($date_s);
-            return $date_f->format('Y-m-d');
-        }else{
-            return "";
-        }
-
-
-
+                $data_s = reset($data);
+                $date_f = new DateTime($data_s);
+                return  $date_f->format('Y-m-d');
+            }else{
+                return "";
+            }
     }
 }
 if ( ! function_exists('date_to_br'))
