@@ -13,7 +13,7 @@ class Create_folder_user extends \CI_Model
 
         if (!empty($data['codigo'])) {
 
-            $this->load->model('storage/Us_storage');
+            $this->load->model('storage/Us_storage_model');
             $validate           = reset($this->Us_storage_model->getWhere(['codusuario' => $data['codigo']]));
             $validate_usuarios  = reset($this->Usuarios_model->getWhere(["codigo" => $data['codigo']]));
 
