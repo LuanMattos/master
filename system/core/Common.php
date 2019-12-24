@@ -40,7 +40,7 @@ if ( ! function_exists('URL_RAIZ')) {
 // ------------------------------------------------------------------------
 if ( ! function_exists('PATH_IMG_LINUX')) {
     /**
-     * PATH default para servidor de imagem linux
+     * PATH default para servidor de imagem linux (DOCUMENT ROOT PADRAO APACHE)
      *
      */
     function PATH_IMG_LINUX(){

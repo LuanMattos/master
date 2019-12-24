@@ -5,14 +5,14 @@
                 <div class="maine-activity-img">
                     <img src="<?= URL_RAIZ() ?>application/assets/libs/images/event-view/user-1.jpg" alt="">
                 </div>
-                <textarea style="z-index:0" class="add-activity-des" placeholder="O que tem de novo?"></textarea>
+                <textarea style="z-index:0" :class="error_text_area?'border-danger-postagem':''" class="add-activity-des"  id='text-area-postagem' placeholder="O que tem de novo?"></textarea>
             </div>
             <form id="form-input-time-line" method="post" enctype="multipart/form-data">
                 <div class="setting-upload">
                     <div class="addpic">
                         <input type="file" id="input-file-postagem" name="file">
                         <span class="cursor-pointer input-file-photo" style="font-size:25px">
-                            <i @click="openfile()" class=" fas fa-camera-retro "></i>
+                            <i @click="openfile()" class=" fas fa-camera-retro " :class="error_input_file?'danger-input-file':''"></i>
                         </span>
                     </div>
                 </div>

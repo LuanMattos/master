@@ -60,6 +60,12 @@ footer, header, hgroup, menu, nav, section {
 [v-cloak] {
     display: none;
 }
+.danger-input-file{
+    color:red;
+}
+.border-danger-postagem{
+    color:red;
+}
 .cursor-pointer{
     cursor:pointer;
 }

@@ -120,10 +120,12 @@ class Migrate extends CI_Controller{
     private function storage_img(){
         $this->db->query("CREATE TABLE IF NOT EXISTS us_storage_img(
                         codigo serial not null,
-                        path_file varchar(1000)
+                        path_file varchar(1000),
+                        created_at   timestamp default now(),
+                        updated_at   timestamptz default now()
                     );");
-        $this->db->query("ALTER TABLE us_storage_img DROP constraint if exists usuarios_pkey;");
-        $this->db->query("ALTER TABLE us_storage_img ADD COLUMN IF NOT EXISTS codstorage bigint constraint usuarios_pkey references usuarios;");
+        $this->db->query("ALTER TABLE us_storage_img DROP constraint if exists us_storage_pkey;");
+        $this->db->query("ALTER TABLE us_storage_img ADD COLUMN IF NOT EXISTS codstorage bigint constraint us_storage_pkey references us_storage;");
     }
 
 

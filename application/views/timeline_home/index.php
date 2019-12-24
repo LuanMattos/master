@@ -1,5 +1,5 @@
 <div class="col-lg-12 col-md-12 ">
-    <div  >
+    <div>
         <div class="col-sm-12" v-for="(post, index) in posts" style="margin-bottom: 30px">
                     <div class="main-tabs ">
                         <div class="tab-content">
@@ -10,6 +10,7 @@
                                             <div class="event-top-left">
                                                 <a href="#">
                                                     <h4>Nome de quem postou</h4>
+                                                    <div>{{post.frase}}</div>
                                                 </a>
                                             </div>
                                             <div class="event-top-right">
@@ -29,7 +30,7 @@
                                         </div>
                                         <div class="event-main-image" >
                                             <div class="main-photo">
-                                                <img src="<?= URL_RAIZ() ?>application/assets/libs/images/homepage/center/post-img-1.jpg"
+                                                <img :src="post.path"
                                                      alt="">
                                             </div>
                                         </div>
