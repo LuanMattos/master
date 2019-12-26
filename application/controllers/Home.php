@@ -360,7 +360,7 @@ class Home extends SI_Controller
 
      $configuracao = array(
          'upload_path'   => PATH_IMG_LINUX()."/".$path['name_folder_user'] . "/img",
-         'allowed_types' => "jpeg",
+         'allowed_types' => "jpeg|gif|jpg|png|bmp",
          'file_name'     => $name_replace. "." . "jpeg",
          'max_size'      => '50000'
      );
