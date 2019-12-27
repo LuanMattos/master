@@ -7,6 +7,7 @@ var home = {
     }
 
 };
+
 var vm = new Vue({
     el: '#div-geral-time-line',
     data: {
@@ -59,7 +60,7 @@ var vm = new Vue({
                     var text_area = $('#text-area-postagem').val();
                     if(response){
                         var data = {
-                           'frase' : text_area,
+                            'frase' : text_area,
                             'path' : response.path
                         };
                         console.log(response.path);
@@ -73,3 +74,11 @@ var vm = new Vue({
     }
 });
 
+$.post(
+    home.Url("get_storage_img"),
+    {},
+    function(json){
+
+            vm.$data.posts = json.data
+
+    },'json')

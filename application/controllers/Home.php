@@ -379,5 +379,20 @@ class Home extends SI_Controller
      endif;
 
     }
+    public function get_storage_img(){
+        $this->load->model("storage/Us_storage_model");
+
+        $data_user          = $this->session->get_userdata();
+
+        if(set_val($data_user['login'])):
+            if(!empty($data_user['login'])){
+
+                $data = $this->Us_storage_model->get_img_usr("us.login = '{$data_user['login']}'");
+               $this->response("success",compact("data"));
+               exit();
+            }
+         endif;
+        $this->response("success");
+    }
 
 }

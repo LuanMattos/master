@@ -30,8 +30,7 @@
                                         </div>
                                         <div class="event-main-image" >
                                             <div class="main-photo">
-                                                <img :src="post.path"
-                                                     alt="">
+                                                <img :src="post.path">
                                             </div>
                                         </div>
                                         <div class="event-city-dt p-2">

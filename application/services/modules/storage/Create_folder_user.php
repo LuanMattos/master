@@ -55,6 +55,4 @@ class Create_folder_user extends \CI_Model
 
         return $name;
     }
-
-
 }
