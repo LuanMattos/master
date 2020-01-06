@@ -128,70 +128,17 @@ class Home extends SI_Controller
     }
 
     public function back(){
-        $loop = 5000000;
-        $vai = 0;
-        while($vai < $loop){
-            $this->db->trans_start();
-            $vai ++;
-            $data = [
-                'login'=>'teste@teste.com.br',
-                'senha'=>'$argon2i$v=19$m=65536,t=4,p=1$a0wxMC5BOW1hcUtNNEtNSw$9dS9DuHGXlS/OEc0RvNwdhGVUSyohc3GihZDkSCWZbM',
-                'ultimoacesso'=>null,
-                'created_at'=>'2019-12-23 21:38:47.955810',
-                'updated_at'=>'2019-12-23 21:38:47.955810',
-                '__ci_last_regenerate'=>'233232323232',
-                'logado'=>'f',
-                'session_coo'=>'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'email'=>'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'datanasc'=>'1990-10-10',
-                'telcel'=>'2222222222222222222222222222222222222222222',
-                'nome'=>'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'sobrenome'=>'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-                'email_hash'=>'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'codpais'=>null,
-                'codcidade'=>null,
-                'emailprofissional'=>'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'create_folder_img'=>false
-            ];
-            $save = $this->Usuarios_model->save($data,['codigo']);
-            $data = [
-                'code_verification' => 'asdfasdfasfdasfasdfasdfasdfasdfasdfasdfasfasdfasdfasdfasfasdfasfasdfasdfsafasdf',
-                'code_restore' => 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                'created_at'=>'2019-12-23 21:38:47.992186',
-                'updated_at'=>'2019-12-23 21:38:47.992186',
-                'codusuarios'=>$save['codigo'],
-                'verification_ok'=>'t'
-            ];
-            $save_ah = $this->Account_home_model->save($data,['codigo']);
-            $data = [
-                'formatted_address_google_maps'=>'fasdfsadfasdfasdfsadfasdfasdfasdfasdfsadfasdfasdfasfasdfasdfas',
-                'latitude'=>'dsafdsafasdfasdfasdfasfdasdfasfasdfasdfasdfasdfasfasfasdfasdfs',
-                'longitude'=>'fsadfsdfasdfasdfasdfasdfasdfasdfasdfas',
-                'codusuario'=>$save['codigo']
-            ];
-            $this->Location_user_model->save($data);
-            $data = [
-                'name_folder_user'=>'dfasdfadsfsfd asdfsadfsadfasdfsdfasfdasdfsdf dsfsadfasdfasdfasdfsdafasdfasdf',
-                'created_at'=>'2019-12-23 21:38:47.989320',
-                'updated_at'=>'2019-12-23 21:38:47.989320',
-                'codusuario'=>$save['codigo']
-            ];
-            $this->load->model('storage/Us_storage_model');
-            $this->Us_storage_model->save($data);
-            $this->db->trans_complete();
-        }
+        $data = [];
+        $error = $this->session->get_userdata();
 
-//        $data = [];
-//        $error = $this->session->get_userdata();
-//
-//        if(isset($error['toError'])){
-//            if($error['toError']):
-//                $data['error_senha'] = "Usuário/senha incorreto(s)";
-//            endif;
-//        }
-//        $this->session->sess_destroy();
-//
-//        $this->load->view('index',$data);
+        if(isset($error['toError'])){
+            if($error['toError']):
+                $data['error_senha'] = "Usuário/senha incorreto(s)";
+            endif;
+        }
+        $this->session->sess_destroy();
+
+        $this->load->view('index',$data);
     }
     public function logged(){
         $data_s = $this->session->get_userdata();
