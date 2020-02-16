@@ -17,7 +17,6 @@ class Cadastro_usuarios extends SI_Controller {
             $datapost->search       = addslashes( $datapost->search );
             $where['login ILIKE ']  = "%$datapost->search%";
         }
-        debug($where);
 
         $data   = $this->Un_cadastro_usuarios_model->getwhere( $where,"codigo" );
         $html   = $this->load->view( 'unico/cadastro_usuarios/index',NULL,TRUE );
