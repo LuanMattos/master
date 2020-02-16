@@ -11,8 +11,6 @@ class Cadastro_unico extends UN_Controller {
     }
 
     public function index(){
-        $teste = new sms();
-        $teste->index();
 
         $datapost = (object)$this->input->post(NULL,TRUE);
         $where = NULL;
@@ -25,10 +23,10 @@ class Cadastro_unico extends UN_Controller {
         $data = $this->Un_cadastro_unificado_model->getwhere($where,"codigo");
         $count_result = $this->Un_cadastro_unificado_model->count_result_table();
 
-
         $html   = $this->load->view('unico/cadastro_unico/index',NULL,TRUE);
         $this->response("success",compact("html","data"));
     }
+
     public function salvar(){
         $codigo     = reset(func_get_args());
         $where = [1=>2];
@@ -37,21 +35,17 @@ class Cadastro_unico extends UN_Controller {
         }
         $data = $this->db->get_where('da_dados_globais', $where , $limit = NULL, $offset = NULL)->result_array();
 
-//        $data   = $this->Un_cadastro_unificado_model->getWhere($where);
-
-
         if(count($data) > 0){
             $data   = reset($data);
         }
 
-
         $html   = $this->load->view('unico/cadastro_unico/form',NULL,TRUE);
         $this->response("success",compact("html","data"));
     }
+
     public function acao_salvar(){
         $data = $this->input->post("data",TRUE);
         $save = $this->Un_cadastro_unificado_model->save($data);
-//        debug($this->db->last_query());
         if(!$save){
             $error["msg"] = "Erro ao salvar o registro";
             $this->response("error",$error);
@@ -68,7 +62,6 @@ class Cadastro_unico extends UN_Controller {
     }
 
     public function logout(){
-//        $this->session->unset_userdata();
         $this->session->sess_destroy();
         redirect();
     }

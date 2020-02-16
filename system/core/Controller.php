@@ -48,17 +48,20 @@ class CI_Controller
     public function response($type="",$data = NULL){
 
         if($type === "success"){
-            $info = ["info"=>1];
+            $info = ['info'=>1];
         }elseif($type === "error"){
-            $info = ["info"=>0];
+            $info = ['info'=>0];
         }
         if(!$data){
             $data = NULL;
-            return $this->output->set_output(json_encode($info));
+            echo json_encode($info);
+            exit();
         }
-        array_push($data,$info);
-        return $this->output->set_output(json_encode($data));
 
+        array_push($data,$info);
+
+        echo json_encode($data);
+        exit();
 
     }
 

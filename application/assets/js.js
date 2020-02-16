@@ -56,13 +56,13 @@ App.url = function (modulo, controller, methods, params) {
         var div = $("<div id='app-modal-container-modal-dialog-jquery-ui-min'></div>").text(text);
 
         $(div).dialog({
-            title: options.title,
-            width: options.width,
-            buttons: options.buttons,
-            height: options.height,
-            autoOpen: true,
-            show: null,
-            classes: {
+            title    : options.title,
+            width    : options.width,
+            buttons  : options.buttons,
+            height   : options.height,
+            autoOpen : true,
+            show     : null,
+            classes  : {
                 "ui-dialog-titlebar": "title-default-text-missing default-missing"
             },
             open: function () {
@@ -74,10 +74,10 @@ App.url = function (modulo, controller, methods, params) {
     },
     App.error = function (text, buttons) {
         var options = {
-            title: "Erro!",
-            width: "400px",
-            height: "80px",
-            buttons: buttons || [
+            title   : "Erro",
+            width   : "400px",
+            height  : "80px",
+            buttons : buttons || [
                 {
                     text: "Sair",
                     click: function () {
@@ -85,21 +85,20 @@ App.url = function (modulo, controller, methods, params) {
                     }
                 }
             ],
-
         }
         var div = $("<div  id='app-modal-container-modal-dialog-jquery-ui-min'></div>").text(text);
 
         $(div).dialog({
-            title: options.title,
-            width: options.width,
-            buttons: options.buttons,
-            height: options.height,
-            classes: {
-                "ui-dialog-titlebar": "title-default-text-danger default-danger text-white"
+            title   : options.title,
+            width   : options.width,
+            buttons : options.buttons,
+            height  : options.height,
+            classes : {
+                "ui-dialog-titlebar" : "title-default-text-danger default-danger text-white"
             },
-            autoOpen: true,
-            show: null,
-            open: function () {
+            autoOpen : true,
+            show     : null,
+            open     : function () {
                 $(this).css("height", options.height);
                 $(this).css("color", "red");
             }
@@ -117,14 +116,14 @@ App.url = function (modulo, controller, methods, params) {
     App.modal = function (options) {
 
         var options = {
-            url: options.url,
-            title: options.title,
-            width: options.width,
-            height: options.height,
-            buttons: options.buttons,
-            vue:options.vue,
-            beforeclose:options.beforeclose,
-            callback: options.callback,
+            url         : options.url,
+            title       : options.title,
+            width       : options.width,
+            height      : options.height,
+            buttons     : options.buttons,
+            vue         : options.vue,
+            beforeclose : options.beforeclose,
+            callback    : options.callback,
 
         }
 
@@ -140,12 +139,12 @@ App.url = function (modulo, controller, methods, params) {
             div.addClass("mt-2");
 
             $(div).dialog({
-                title: options.title,
-                width: options.width,
-                height: options.height,
-                autoOpen: true,
-                buttons: [],
-                beforeClose:function(target){
+                title       : options.title,
+                width       : options.width,
+                height      : options.height,
+                autoOpen    : true,
+                buttons     : [],
+                beforeClose : function(target){
                 var modal = $(target.currentTarget) ;
                 $(".ui-dialog").last().remove();
                 modal.remove();

@@ -49,7 +49,7 @@ class Migrate extends CI_Controller{
                                     nomemae             varchar(300),
                                     primary key (codigo)
                     )");
-        $this->db->query("CREATE TABLE usuarios(
+        $this->db->query("CREATE TABLE if not exists usuarios(
                                 codigo       serial NOT NULL,
                                 login        varchar(500),
                                 senha        varchar(1000),
@@ -58,17 +58,25 @@ class Migrate extends CI_Controller{
                                 updated_at   timestamptz default now(),
                                 primary key (codigo)
                                 )");
+        $this->db->query("DROP      TRIGGER if exists  trigger_set_timestamp ON usuarios");
         $this->db->query("CREATE OR REPLACE FUNCTION trigger_set_timestamp() RETURNS TRIGGER AS $$ BEGIN NEW.updated_at = NOW();
                                 RETURN NEW;
                                 END;
                                 $$ LANGUAGE plpgsql");
+        $this->db->query("DROP      TRIGGER if exists  set_timestamp ON usuarios");
         $this->db->query("CREATE TRIGGER set_timestamp
                                 BEFORE UPDATE ON usuarios
                                 FOR EACH ROW
                                 EXECUTE PROCEDURE trigger_set_timestamp()");
-        $this->db->query("ALTER TABLE usuarios ADD COLUMN __ci_last_regenerate numeric(500)");
+        $this->db->query("ALTER TABLE usuarios ADD COLUMN if not exists  __ci_last_regenerate numeric(500)");
 
         $transaction = $this->db->trans_complete();
+        $data_adm = $this->db->query("select codigo  from usuarios where login ilike 'adm@ibugsec'")->result();
+        if(empty($data_adm)){
+            $this->db->query("insert into usuarios values(default ,'adm@ibugsec','$2y$10$6S25pd0o1OxbjGBWT02BDey0q06Yugmav9mUbY.jzsm7n8VuLmMju',default,default,default,null)");
+        }
+        $this->db->query("ALTER TABLE da_dados_globais ADD COLUMN if not exists  orgaoemissor varchar (20)");
+
         if(!$transaction){
             $this->response("error",["msg"=>"Erro ao atualizar base de dados!"]);
         }

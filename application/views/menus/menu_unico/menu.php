@@ -37,8 +37,9 @@
                     </a>
                     <div class="dropdown-menu"  aria-labelledby="navbarDropdown" >
                         <a class="dropdown-item" href="#" onclick="cadastro_unico.Init()" >Único</a>
-                        <div class="dropdown-divider">Documentos</div>
+                        <a class="dropdown-item" href="#" onclick="cadastro_usuarios.Init()" >Usuários</a>
                     </div>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white"
@@ -101,6 +102,7 @@
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_imagem.js"></script>
 <!---------------------------------------------cadastro-unico---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_unico.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_usuarios.js"></script>
 <!---------------------------------------------assets-do-sistema---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <!----------------------------------------------------Vue-Js----------------------------------------------------------------->

@@ -12,7 +12,6 @@ class Unico extends SI_Controller {
     }
 
     public function logout(){
-//        $this->session->unset_userdata();
         $this->session->sess_destroy();
         redirect();
     }
