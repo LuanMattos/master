@@ -79,6 +79,38 @@ class Migrate extends CI_Controller{
         $this->db->query("ALTER TABLE da_dados_globais ADD COLUMN if not exists  catcnh varchar (2)");
         $this->db->query("ALTER TABLE da_dados_globais ADD COLUMN if not exists  pasep varchar (500)");
 
+
+        $this->db->query("create table IF NOT EXISTS wiki (
+                                          codigo       serial NOT NULL,
+                                          descricao    varchar (1000),
+                                          link         varchar (600),                                          
+                                          created_at   timestamp default now(),
+                                          updated_at   timestamptz default now(),                                          
+                                          texto        varchar(100000),
+                                          script       varchar (100000),                                         
+                                          font         varchar (100000),
+                                          primary key (codigo)
+
+                                    )");
+        $this->db->query("CREATE TABLE IF NOT EXISTS linguagem(
+                                                    codigo          serial   NOT NULL,
+                                                    descricao       varchar(600),
+                                                    sigla           varchar(8),
+                                                    primary key (codigo)
+                                                    
+                                        );");
+
+        $this->db->query("ALTER TABLE wiki DROP constraint if exists linguagem_pkey;");
+        $this->db->query("ALTER TABLE wiki ADD COLUMN IF NOT EXISTS codlinguagem bigint constraint linguagem_pkey references linguagem");
+        $this->db->query("insert into linguagem values
+                                        (default ,'PHP','PHP'),
+                                        (default ,'JavaScript','JS'),
+                                        (default ,'Java','J2'),
+                                        (default ,'PostgreSql','PGSQL'),
+                                        (default ,'MySql','MySql')
+                                        ");
+
+
         if(!$transaction){
             $this->response("error",["msg"=>"Erro ao atualizar base de dados!"]);
         }

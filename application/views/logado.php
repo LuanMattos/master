@@ -32,8 +32,8 @@
                         </a>
                     </div>
                     <div class="col-7">
-                        <a href="<?= site_url('estudos/Estudos/index') ?>">
-                            Estudos
+                        <a href="<?= site_url('wiki/Wiki/index') ?>">
+                            Wiki
                         </a>
                     </div>
 

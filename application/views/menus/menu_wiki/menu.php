@@ -36,28 +36,9 @@
                         Cadastro
                     </a>
                     <div class="dropdown-menu"  aria-labelledby="navbarDropdown" >
-                        <a class="dropdown-item" href="#" onclick="cadastro_unico.Init()" >Único</a>
-                        <a class="dropdown-item" href="#" onclick="cadastro_usuarios.Init()" >Usuários</a>
+                        <a class="dropdown-item" href="#" onclick="wiki.Init()" >Wiki</a>
                     </div>
 
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white"
-                       href="#"
-                       id="navbarDropdown"
-                       role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true"
-                       aria-expanded="false"
-                    >
-                        Relatórios
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Quantidade</a>
-                        <a class="dropdown-item" href="#">Em breve</a>
-                        <div class="dropdown-divider">Em breve</div>
-                        <a class="dropdown-item" href="#">Em breve</a>
-                    </div>
                 </li>
 
             </ul>
@@ -98,8 +79,7 @@
 <!---------------------------------------------cadastro-imagem--------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_imagem.js"></script>
 <!---------------------------------------------cadastro-unico---------------------------------------------------------->
-<script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_unico.js"></script>
-<script type="text/javascript" src="<?= URL_RAIZ() ?>js/unico/cadastro_usuarios.js"></script>
+<script type="text/javascript" src="<?= URL_RAIZ() ?>js/wiki/wiki.js"></script>
 <!---------------------------------------------assets-do-sistema---------------------------------------------------------->
 <script type="text/javascript" src="<?= URL_RAIZ() ?>application/assets/js.js"></script>
 <!----------------------------------------------------Vue-Js----------------------------------------------------------------->
