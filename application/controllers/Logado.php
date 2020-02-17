@@ -14,41 +14,50 @@ class Logado extends CI_Controller
     public function index()
     {
         $data = $this->input->post(NULL, TRUE);
+        $data_s = $this->session->get_userdata();
 
-        if (!empty($data['login']) && !empty($data['senha'])) {
-            $user = $this->Usuarios_model->login($data['login']);
-        } else {
-            $data['error_senha'] = "Usuário/senha incorreto(s)";
-            $this->load->view('index', $data);
+        if(isset($data_s['logado']) && $data_s['logado']){
+
+            $this->load->view('logado', $data);
             return true;
-        }
+        }else {
+
+            if (!empty($data['login']) && !empty($data['senha'])) {
+                $user = $this->Usuarios_model->login($data['login']);
+            } else {
+                $data['error_senha'] = "Usuário/senha incorreto(s)";
+                $this->load->view('index', $data);
+                return true;
+            }
 
 //        var_dump(password_hash("admin", PASSWORD_DEFAULT));//criptografa a sessão
-        if (!empty($data) && !empty($user)) {
-            foreach ($user as $line) {
+            if (!empty($data) && !empty($user)) {
+                foreach ($user as $line) {
 
-                if ($line['login'] === $data['login']) {
-                    if (password_verify($data['senha'], $line['senha']) == true) {
-                        $this->session->set_userdata($line['login'], 1);
-                        $this->load->view('logado');
+                    if ($line['login'] === $data['login']) {
+                        if (password_verify($data['senha'], $line['senha']) == true) {
+                            $this->session->set_userdata(['usuario' => $line['login']], 1);
+                            $this->session->set_userdata(['logado' => true], 1);
+                            $this->load->view('logado');
+                        } else {
+                            debug("bbb");
+
+                            $data['error_senha'] = "Usuário/senha incorreto(s)";
+                            $this->load->view('index', $data);
+                        }
                     } else {
-                        debug("bbb");
+                        debug("ccc");
 
                         $data['error_senha'] = "Usuário/senha incorreto(s)";
                         $this->load->view('index', $data);
                     }
-                } else {
-                    debug("ccc");
-
-                    $data['error_senha'] = "Usuário/senha incorreto(s)";
-                    $this->load->view('index', $data);
                 }
-            }
-        } else {
+            } else {
 //            debug("ultimo");
 
-            $data['error_senha'] = "Usuário/senha incorreto(s)";
-            $this->load->view('index', $data);
+                $data['error_senha'] = "Usuário/senha incorreto(s)";
+                $this->load->view('index', $data);
+            }
         }
 
     }

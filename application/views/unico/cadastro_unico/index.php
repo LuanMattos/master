@@ -20,9 +20,9 @@
     <thead>
     <tr>
         <th class="col-sm-0 text-center">Código:</th>
-        <th class="col-sm-3 text-center">Login:</th>
-        <th class="col-sm-3 text-center">Criado em:</th>
-        <th class="col-sm-3 text-center">Atualizado em :</th>
+        <th class="col-sm-3 text-center">Nome:</th>
+        <th class="col-sm-3 text-center">E-mail:</th>
+        <th class="col-sm-3 text-center">CPF :</th>
         <th colspan="3" class="text-center">
             <i class="fas fa-cog"></i>
         </th>
@@ -31,9 +31,9 @@
     <tbody>
     <tr class="table-light" v-for="(i,index) in data">
         <td class="text-right">{{i.codigo}}</td>
-        <td>{{i.login}}</td>
-        <td>{{i.created_at}}</td>
-        <td>{{i.updated_at}}</td>
+        <td>{{i.nome}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.cpf}}</td>
         <td class="text-center" @click="excluir(index,i.codigo)">
             <i class="fas fa-times cursor-pointer"></i>
         </td>

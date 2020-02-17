@@ -76,6 +76,8 @@ class Migrate extends CI_Controller{
             $this->db->query("insert into usuarios values(default ,'adm@ibugsec','$2y$10$6S25pd0o1OxbjGBWT02BDey0q06Yugmav9mUbY.jzsm7n8VuLmMju',default,default,default,null)");
         }
         $this->db->query("ALTER TABLE da_dados_globais ADD COLUMN if not exists  orgaoemissor varchar (20)");
+        $this->db->query("ALTER TABLE da_dados_globais ADD COLUMN if not exists  catcnh varchar (2)");
+        $this->db->query("ALTER TABLE da_dados_globais ADD COLUMN if not exists  pasep varchar (500)");
 
         if(!$transaction){
             $this->response("error",["msg"=>"Erro ao atualizar base de dados!"]);

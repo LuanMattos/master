@@ -31,7 +31,7 @@ class Cadastro_unico extends UN_Controller {
         $codigo     = reset(func_get_args());
         $where = [1=>2];
         if(!empty($codigo)){
-            $where = ["codigo"=>$codigo];
+            $where = [ "codigo" => $codigo ];
         }
         $data = $this->db->get_where('da_dados_globais', $where , $limit = NULL, $offset = NULL)->result_array();
 

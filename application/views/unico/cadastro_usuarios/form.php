@@ -25,7 +25,6 @@
             </div>
         </form>
     </div>
-
     <div class="row">
         <div class="col">
             <h3 class="one"></h3>
